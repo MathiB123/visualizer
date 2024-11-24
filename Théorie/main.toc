@@ -1,0 +1,4 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Fonctions}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Parité d'une fonction}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Fonction périodique}{2}{subsection.1.2}%

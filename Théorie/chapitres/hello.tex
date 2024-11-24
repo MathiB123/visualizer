@@ -1,0 +1,70 @@
+\section{Fonctions}
+\subsection{Parité d'une fonction}
+Dans plusieurs contextes, connaître la parité d'une fonction peut être très utile afin de simplifier les calculs. On dit qu'une fonction $f(x)$ est paire si
+
+\begin{equation}
+    f(-x) = f(x)
+\end{equation}
+
+et on dit qu'elle est impaire dans le cas où
+
+\begin{equation}
+    f(-x) = -f(x)    
+\end{equation}
+  
+Par exemple, la fonction $\cos(x)$ est une fonction paire et la fonction $\sin(x)$ est une fonction impaire. Sans grande surprise, le produit de deux fonctions paires $f(x)$ et $g(x)$ donne aussi une fonction paire. En effet, si on note $h(x) = f(x)g(x)$, alors
+
+\begin{equation*}
+    h(-x) = f(-x)g(-x) = f(x)g(x) = h(x)
+\end{equation*}
+
+Par ailleurs, si $f(x)$ et $g(x)$ sont deux fonctions impaires, leur produit donne encore une fois une fonction paire. 
+
+\begin{equation*}
+    h(-x) = f(-x)g(-x) = (-1)f(x)(-1)g(x) = f(x)g(x) = h(x)
+\end{equation*}
+
+Toutefois, sans perte de généralité, si $f(x)$ est une fonction paire et $g(x)$ une fonction impaire, le produit donne une fonction impaire.
+
+\begin{equation*}
+    h(-x) = f(-x)g(-x) = f(x)(-1)g(x) = -h(x)
+\end{equation*}
+
+La parité d'une fonction peut nous éviter beaucoup de troubles lorsqu'on calcule son intégrale. Pour une valeur $a$ du domaine et une fonction paire $f(x)$, on trouve que 
+
+\begin{equation*}
+    \int_{-a}^{a}f(x)dx = \int_{-a}^{0}f(x)dx + \int_{0}^{a}f(x)dx = \int_{-a}^{0}f(-x)dx + \int_{0}^{a}f(x)dx = -\int_{a}^{0}f(t)dt + \int_{0}^{a}f(x)dx
+\end{equation*}
+\begin{equation*}
+    = \int_{0}^{a}f(t)dt + \int_{0}^{a}f(x)dx = 2\int_{0}^{a}f(x)dx
+\end{equation*}
+
+où on utilise la substitution $t = -x$. Bien qu'on intègre sur $t$ et sur $x$, les deux intégrales sont complètement équivalentes, car $t$ et $x$ sont des variables bidons. Ainsi, on se retrouve avec la même intégrale en double. Cependant, si $f(x)$ est impaire, on a 
+
+\begin{equation*}
+    \int_{-a}^{a}f(x)dx = \int_{-a}^{0}f(x)dx + \int_{0}^{a}f(x)dx = -\int_{-a}^{0}f(-x)dx + \int_{0}^{a}f(x)dx = \int_{a}^{0}f(t)dt + \int_{0}^{a}f(x)dx
+\end{equation*}
+\begin{equation*}
+    = -\int_{0}^{a}f(t)dt + \int_{0}^{a}f(x)dx = 0
+\end{equation*}
+
+Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégrales s'annulent du fait qu'elles sont équivalentes.
+
+Finalement, on peut montrer que toute fonction $f(x)$ peut s'écrire comme la somme d'une fonction paire $g(x)$ et une fonction impaire $h(x)$.
+
+\begin{equation*}
+    f(x) = \frac{1}{2}f(x) + \frac{1}{2}f(x) + \frac{1}{2}f(-x) - \frac{1}{2}f(-x) = \left(\frac{1}{2}f(x) + \frac{1}{2}f(-x)\right) + \left(\frac{1}{2}f(x) - \frac{1}{2}f(-x)\right) = g(x) + h(x)
+\end{equation*}
+
+On remarque que $g(x)$ est paire et que $h(x)$ est impaire.
+
+\begin{equation*}
+    g(-x) = \frac{1}{2}f(-x) + \frac{1}{2}f(-(-x)) = \frac{1}{2}f(-x) + \frac{1}{2}f(x) = g(x)
+\end{equation*}
+\begin{equation*}
+    h(-x) = \frac{1}{2}f(-x) - \frac{1}{2}f(-(-x)) = \frac{1}{2}f(-x) - \frac{1}{2}f(x) = -\left(-\frac{1}{2}f(-x) + \frac{1}{2}f(x)\right) = -h(x)
+\end{equation*}
+
+Ainsi, $f(x) = g(x) + h(x)$ s'écrit comme la somme d'une fonction paire et d'une fonction impaire. Par ailleurs, cette décomposition est unique.
+
+\subsection{Fonction périodique}
