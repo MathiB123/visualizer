@@ -13,20 +13,20 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 #EXEMPLE SÉRIE DE FOURIER DENTS DE SCIE
-# A = 1
-# L = 1
-# N = 1000 #Dans la somme
-# m = 500 #Nb de points 
+A = 1
+L = 1
+N = 10 #Dans la somme
+m = 500 #Nb de points 
 
-# x_s = np.linspace(-1, 1, m)
+x_s = np.linspace(-1, 1, m)
 
-# f = np.zeros(x_s.shape)
+f = np.zeros(x_s.shape)
 
-# for i in range(N):
-#     values = (1/(np.pi*(i+1)))*np.sin(2*np.pi*(i+1)*x_s)
-#     sign = (-1)**(i+2)
-#     f += sign*values
+for i in range(N):
+    values = (1/(np.pi*(i+1)))*np.sin(2*np.pi*(i+1)*x_s)
+    sign = (-1)**(i+2)
+    f += sign*values
 
-# plt.plot(x_s, f)
-# plt.grid()
-# plt.show()
+plt.plot(x_s, f)
+plt.grid()
+plt.show()
