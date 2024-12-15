@@ -68,15 +68,44 @@ Une fonction $f(x)$ définie sur l'ensemble des réels est périodique et de pé
     f(x + T) = f(x)
 \end{equation}
 
-Autrement dit, une fonction périodique se répète après une période $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$.
+Autrement dit, une fonction périodique se répète après une période $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$. Un résultat important pour l'intégrale d'une fonction périodique est que 
 
-On prouve un résultat important pour l'intégrale d'une fonction périodique : $\int_{0}^{T}f(x)dx = \int_{a}^{a+T}f(x)dx$.
+\begin{equation}
+    \int_{0}^{T}f(x)dx = \int_{a}^{a+T}f(x)dx
+\end{equation}
+
+En effet,
 
 \begin{equation*}
-    \derivative{}{a}\left(\int_{a}^{a+T}f(x)dx\right) = \derivative{}{a}\left(F(a+T) - F(a)\right) = \derivative{F(a+T)}{(a+T)} \derivative{(a+T)}{a} - \derivative{F(a)}{a} = f(a+T) - f(a)
+    \derivative{}{a}\left(\int_{a}^{a+T}f(x)dx\right) = \derivative{}{a}\left(F(a+T) - F(a)\right) = \derivative{F(a+T)}{(a+T)} \derivative{(a+T)}{a} - \derivative{F(a)}{a} = f(a+T) - f(a) 
 \end{equation*}
 \begin{equation*}
-    = f(a) - f(a) = 0 \implies \text{l'intégrale } \int_{a}^{a+T}f(x)dx \text{ vaut la même chose } \forall a \implies \int_{0}^{T}f(x)dx = \int_{a}^{a+T}f(x)dx
+    = f(a) - f(a) = 0
 \end{equation*}
+
+ce qui indique que l'intégrale qui vient d'être dérivée vaut la même chose peu importe la valeur de $a$. Donc, on en déduit (1.4) en prenant $a=0$.
 
 \subsection{Fonctions orthogonales}
+Pour deux vecteurs $\vec{u}$ et $\vec{v}$, ces derniers sont orthogonaux si leur produit scalaire est nul. 
+
+\begin{equation*}
+    \vec{u} \cdot \vec{v} = \sum_{i}^{}u_iv_i = 0
+\end{equation*}
+
+En quelque sorte, on peut dire qu'une fonction est un vecteur de taille infinie. Alors, le produit scalaire de fonctions, si on se fie à la définition pour les vecteurs, consisterait à sommer la valeur de leur produit à chaque point d'un domaine commun. Cependant, la somme ici est infinie et on discrétise le produit par un élément de largeur $dx$. Au final, on se retrouve à faire une intégrale. Ainsi, des fonctions $f(x)$ et $g(x)$ orthogonales respectent 
+
+\begin{equation}
+    \int_{a}^{b}f(x)g(x)dx = 0
+\end{equation}
+
+Par exemple, les fonctions $f(x) = 1$ et $ g(x) = x$ sur l'intervalle $[-1,1]$ sont des fonctions orthogonales puisque
+
+\begin{equation*}
+    \int_{-1}^{1}(1 \cdot x) dx = \int_{-1}^{1}x dx = 0 
+\end{equation*}
+
+par la parité de $x$. Si maintenant plusieurs fonctions $\{f_1, ..., f_n\}$ sont orthogonales les unes aux autres, on peut dire qu'il s'agit d'un ensemble orthogonal de fonctions respectant 
+
+\begin{equation*}
+    \int_{a}^{b}f_n(x)f_m(x)dx = 0 \ \ \ \forall n \neq m
+\end{equation*}

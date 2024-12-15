@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1734142869.99975 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1734142871.24581 0
+["pdflatex"] 1734227267.92036 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1734227269.1901 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731251578 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732411151 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -224,12 +224,13 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729261622 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693732032 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1732412117 2255 e2619798b116a05b49edf6273ba5cc8e ""
-  "chapitres/hello.tex" 1734142868 4203 cb1fd3c5cc00cb2dbb1ff730a48fc966 ""
-  "main.aux" 1734142871 850 1ab794d1182639a3615934d180e99485 "pdflatex"
-  "main.out" 1734142871 587 25166f5b216f2026512ff339254b89a9 "pdflatex"
-  "main.tex" 1732412117 2255 e2619798b116a05b49edf6273ba5cc8e ""
-  "main.toc" 1734142871 356 354c43c36b2d1616e4c40bec88f44574 "pdflatex"
+  "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1734227220 2302 410d7d95ff288465163bd696fe6381c5 ""
+  "chapitres/fonctions.tex" 1734227003 5514 6bf3d7936ef493676494d76a9e408ec0 ""
+  "chapitres/series_fourier.tex" 1734227267 30 2e75be9e99206af861a8142fc19a574c ""
+  "main.aux" 1734227268 965 49163534883a5d5d260eafd9e428364a "pdflatex"
+  "main.out" 1734227268 724 01ead1debe8e3e55a3159834c2330a51 "pdflatex"
+  "main.tex" 1734227220 2302 410d7d95ff288465163bd696fe6381c5 ""
+  "main.toc" 1734227268 430 829d227607d1cc7f1aa652c64be0fa5d "pdflatex"
   (generated)
   "main.aux"
   "main.log"
