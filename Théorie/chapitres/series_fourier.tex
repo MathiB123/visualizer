@@ -2,7 +2,7 @@
 Une série de Fourier est l'équivalent pour les fonctions périodiques d'une série de Taylor. Autrement dit, une série de Fourier permet d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques. Pour le moment, on assume qu'il existe une telle forme et on regardera plus tard les conditions qu'une fonction doit respecter pour avoir une série de Fourier.
 
 \subsection{Série de Fourier trigonométriques}
-Soit $f(x)$ une fonction périodique sur $[0,T]$ pouvant s'écrire en série de Fourier. Alors, sa série de Fourier trigonométrique, utilisant des sinus et cosinus, correspond à
+Soit $f(x)$ une fonction périodique de période $T$ pouvant s'écrire en série de Fourier. Alors, sa série de Fourier trigonométrique, utilisant des sinus et cosinus, correspond à
 
 \begin{equation}
     f(x) = \sum_{n=0}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right) = a_0 + \sum_{n=1}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)
@@ -13,10 +13,58 @@ où les $a_n$ et $b_n$ sont des coefficients.
 \textcolor{red}{*Expliquer plus en détails la forme...}
 Le terme $\frac{2\pi nx}{T}$ permet de faire un changement de période pour les cosinus et sinus. Effectivement, ils vont avoir une période $\frac{T}{n}$ et donc faire $n$ oscillations complètes dans le temps d'une période $T$. C'est ce qui correspond aux harmoniques de la fonction périodique $f(x)$.
 
-Avant de continuer, on présente quelques résultats qui seront pertinents dans cette section. 
-\begin{enumerate}
-    \item Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer 
-    \begin{equation*}
-        \int_{0}^{T}\sin(\frac{2\pi nx}{T})\cos(\frac{2\pi nx}{T})
-    \end{equation*}
-\end{enumerate}
+\subsubsection{Orthogonalité}
+Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer l'intégrale suivante :
+
+\begin{equation*}
+    \int_{0}^{T}\sin(\frac{2\pi nx}{T})\cos(\frac{2\pi mx}{T})dx
+\end{equation*}
+
+Sachant que $\sin(x)\cos(y) = \frac{1}{2}\left[\sin(x+y) + \sin(x-y)\right]$, l'intégrale précédente devient 
+
+\begin{equation*}
+    \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n-m)\right)dx 
+\end{equation*}
+\begin{equation*}
+    = -\frac{T}{4\pi}\left[\cos\left(\frac{2\pi x}{T}(n+m)\right)\frac{1}{n+m}\eval{}_{0}^{T} + \cos\left(\frac{2\pi x}{T}(n-m)\right)\frac{1}{n-m}\eval{}_{0}^{T}\right]
+\end{equation*}
+\begin{equation*}
+    = -\frac{T}{4\pi}\left[\cos\left(2\pi (n+m)\right)\frac{1}{n+m} - \cos\left(0\right)\frac{1}{n+m} + \cos\left(2\pi (n-m)\right)\frac{1}{n-m} - \cos\left(0\right)\frac{1}{n-m}\right]
+\end{equation*}
+\begin{equation*}
+    = -\frac{T}{4\pi}\left[\frac{1}{n+m} - \frac{1}{n+m} + \frac{1}{n-m} - \frac{1}{n-m}\right] = 0
+\end{equation*}
+
+si $n\neq m$. Dans le cas $n=m$, on peut revenir un peu plus haut dans les calculs pour dire que 
+
+\begin{equation*}
+    \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n-m)\right)dx = \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(0\right)dx
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx = 0 
+\end{equation*}
+
+par les mêmes calculs qu'avant. Ainsi, dans tous les cas,
+
+\begin{equation*}
+    \int_{0}^{T}\sin(\frac{2\pi nx}{T})\cos(\frac{2\pi mx}{T})dx = 0
+\end{equation*}
+
+Avec des calculs similaires, on trouve aussi que 
+
+\begin{equation*}
+    \int_{0}^{T}\cos(\frac{2\pi nx}{T})\cos(\frac{2\pi mx}{T})dx = \begin{cases}
+        0 & \text{si $n \neq m$}\\
+        \frac{T}{2} & \text{si $n = m$}
+      \end{cases}    
+\end{equation*}
+\begin{equation*}
+    \int_{0}^{T}\sin(\frac{2\pi nx}{T})\sin(\frac{2\pi mx}{T})dx = \begin{cases}
+        0 & \text{si $n \neq m$}\\
+        \frac{T}{2} & \text{si $n = m$}
+      \end{cases}   
+\end{equation*}
+
+On remarque donc que ces fonctions sont orthogonales, ce qui simplifie grandement les calculs la prochaine fois qu'on reverra ces équations.
+
+\subsubsection{Calcul des coefficients $a_n$ et $b_n$}
