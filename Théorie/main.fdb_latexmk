@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1734639401.46778 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1734639402.92635 0
+["pdflatex"] 1734643298.58903 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1734643299.95732 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731251578 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732411151 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -229,15 +229,15 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693732032 123 a302f2c651a95033260db60e51527ae8 ""
   "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1734227220 2302 410d7d95ff288465163bd696fe6381c5 ""
   "chapitres/fonctions.tex" 1734625992 6994 f6fd86c3c9f63eb5de1319d04bde6a25 ""
-  "chapitres/series_fourier.tex" 1734639399 3780 ccd0f3b257189ff9230adba5ebc55be7 ""
+  "chapitres/series_fourier.tex" 1734643298 3268 436c5d321072c1003595da697493673f ""
   "images/ch1/cos.png" 1734623232 19688 f19cbde4b176eef0ce6d1f5de93b1777 ""
   "images/ch1/integrale_periode.jpg" 1734625194 104152 8279802930523d4ae1ffc66da80974d5 ""
   "images/ch1/periodique.png" 1734624039 21649 8464e116c35f369146cf75b11fbe76da ""
   "images/ch1/sin.png" 1734623166 20903 b1305c844a26260f7b2046c21907e03d ""
-  "main.aux" 1734639402 1936 f54dce1c4f211e2e1eb8fb1e5185c3dc "pdflatex"
-  "main.out" 1734639402 1338 c83dc50df699f3983329114f49d4b466 "pdflatex"
+  "main.aux" 1734643299 1936 f54dce1c4f211e2e1eb8fb1e5185c3dc "pdflatex"
+  "main.out" 1734643299 1338 c83dc50df699f3983329114f49d4b466 "pdflatex"
   "main.tex" 1734227220 2302 410d7d95ff288465163bd696fe6381c5 ""
-  "main.toc" 1734639402 735 62fa8b817acf4715376406e744ce96ea "pdflatex"
+  "main.toc" 1734643299 735 62fa8b817acf4715376406e744ce96ea "pdflatex"
   (generated)
   "main.aux"
   "main.log"

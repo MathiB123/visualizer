@@ -28,23 +28,14 @@ Sachant que $\sin(x)\cos(y) = \frac{1}{2}\left[\sin(x+y) + \sin(x-y)\right]$, l'
 \begin{equation*}
     = -\frac{T}{4\pi}\left[\cos\left(\frac{2\pi x}{T}(n+m)\right)\frac{1}{n+m}\eval{}_{0}^{T} + \cos\left(\frac{2\pi x}{T}(n-m)\right)\frac{1}{n-m}\eval{}_{0}^{T}\right]
 \end{equation*}
-\begin{equation*}
-    = -\frac{T}{4\pi}\left[\cos\left(2\pi (n+m)\right)\frac{1}{n+m} - \cos\left(0\right)\frac{1}{n+m} + \cos\left(2\pi (n-m)\right)\frac{1}{n-m} - \cos\left(0\right)\frac{1}{n-m}\right]
-\end{equation*}
-\begin{equation*}
-    = -\frac{T}{4\pi}\left[\frac{1}{n+m} - \frac{1}{n+m} + \frac{1}{n-m} - \frac{1}{n-m}\right] = 0
-\end{equation*}
 
-si $n\neq m$. Dans le cas $n=m$, on peut revenir un peu plus haut dans les calculs pour dire que 
+Dans le cas où $n\neq m$, on trouve que cette intégrale est nulle. Si $n=m$, on peut revenir au début des calculs pour dire que 
 
 \begin{equation*}
-    \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n-m)\right)dx = \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(0\right)dx
-\end{equation*}
-\begin{equation*}
-    = \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx = 0 
+    \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n-m)\right)dx = \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx = 0 
 \end{equation*}
 
-par les mêmes calculs qu'avant. Ainsi, dans tous les cas,
+Ainsi, dans tous les cas,
 
 \begin{equation*}
     \int_{0}^{T}\sin(\frac{2\pi nx}{T})\cos(\frac{2\pi mx}{T})dx = 0
