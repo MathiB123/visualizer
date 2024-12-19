@@ -12,7 +12,17 @@ et on dit qu'elle est impaire dans le cas où
     f(-x) = -f(x)    
 \end{equation}
   
-Par exemple, la fonction $\cos(x)$ est une fonction paire et la fonction $\sin(x)$ est une fonction impaire. Sans grande surprise, le produit de deux fonctions paires $f(x)$ et $g(x)$ donne aussi une fonction paire. En effet, si on note $h(x) = f(x)g(x)$, alors
+En d'autres mots, une fonction paire est symétrique par rapport à l'axe des $y$ et une fonction impaire est antisymétrique par rapport à l'axe des $y$. Par exemple, la fonction $\cos(x)$ est une fonction paire et la fonction $\sin(x)$ est une fonction impaire. 
+
+\begin{figure}[h!]
+    \centering
+     \includegraphics[width=0.48\textwidth]{images/ch1/sin.png}
+     \ \
+     \includegraphics[width=0.48\textwidth]{images/ch1/cos.png}
+    \caption{La fonction impaire $\sin(x)$ (à gauche) et la fonction paire $\cos(x)$ (à droite)}
+    \end{figure}
+
+Sans grande surprise, le produit de deux fonctions paires $f(x)$ et $g(x)$ donne aussi une fonction paire. En effet, si on note $h(x) = f(x)g(x)$, alors
 
 \begin{equation*}
     h(-x) = f(-x)g(-x) = f(x)g(x) = h(x)
@@ -33,7 +43,7 @@ La parité d'une fonction peut nous éviter beaucoup de troubles lorsqu'on calcu
     = \int_{0}^{a}f(t)dt + \int_{0}^{a}f(x)dx = 2\int_{0}^{a}f(x)dx
 \end{equation*}
 
-où on utilise la substitution $t = -x$. Bien qu'on intègre sur $t$ et sur $x$, les deux intégrales sont complètement équivalentes, car $t$ et $x$ sont des variables bidons. Ainsi, on se retrouve avec la même intégrale en double. Cependant, si $f(x)$ est impaire, on a 
+où on utilise la substitution $t = -x$. Bien qu'on intègre sur $t$ et sur $x$, les deux intégrales sont complètement équivalentes, car $t$ et $x$ sont des variables bidons. Ainsi, on se retrouve avec la même intégrale en double, ce qui a du sens si on regarde le graphique de droite à la figure 1. Cependant, si $f(x)$ est impaire, on a 
 
 \begin{equation*}
     \int_{-a}^{a}f(x)dx = \int_{-a}^{0}f(x)dx + \int_{0}^{a}f(x)dx = -\int_{-a}^{0}f(-x)dx + \int_{0}^{a}f(x)dx = \int_{a}^{0}f(t)dt + \int_{0}^{a}f(x)dx
@@ -42,9 +52,9 @@ où on utilise la substitution $t = -x$. Bien qu'on intègre sur $t$ et sur $x$,
     = -\int_{0}^{a}f(t)dt + \int_{0}^{a}f(x)dx = 0
 \end{equation*}
 
-Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégrales s'annulent du fait qu'elles sont équivalentes. 
+Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégrales s'annulent du fait qu'elles sont équivalentes. Ce résultat semble clair si on regarde le graphique de gauche à la figure 1.
 
-Finalement, on peut montrer que toute fonction $f(x)$ peut s'écrire comme la somme d'une fonction paire $g(x)$ et une fonction impaire $h(x)$.
+Finalement, on peut montrer que toute fonction $f(x)$ peut s'écrire comme la somme d'une fonction paire $g(x)$ et d'une fonction impaire $h(x)$.
 
 \begin{equation*}
     f(x) = \frac{1}{2}f(x) + \frac{1}{2}f(x) + \frac{1}{2}f(-x) - \frac{1}{2}f(-x) = \left(\frac{1}{2}f(x) + \frac{1}{2}f(-x)\right) + \left(\frac{1}{2}f(x) - \frac{1}{2}f(-x)\right) = g(x) + h(x)
@@ -68,7 +78,15 @@ Une fonction $f(x)$ définie sur l'ensemble des réels est périodique et de pé
     f(x + T) = f(x)
 \end{equation}
 
-Autrement dit, une fonction périodique se répète après une période $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$. Un résultat important pour l'intégrale d'une fonction périodique est que 
+Autrement dit, une fonction périodique se répète après une période $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$. 
+
+\begin{figure}[h!]
+    \centering
+     \includegraphics[width=1\textwidth]{images/ch1/periodique.png}
+    \caption{La fonction périodique $\cos(x)$ de période $2\pi$}
+    \end{figure}
+
+Un résultat important pour l'intégrale d'une fonction périodique est que 
 
 \begin{equation}
     \int_{0}^{T}f(x)dx = \int_{a}^{a+T}f(x)dx
@@ -83,7 +101,13 @@ En effet,
     = f(a) - f(a) = 0
 \end{equation*}
 
-ce qui indique que l'intégrale qui vient d'être dérivée vaut la même chose peu importe la valeur de $a$. Donc, on en déduit (1.4) en prenant $a=0$.
+ce qui indique que l'intégrale qui vient d'être dérivée vaut la même chose peu importe la valeur de $a$. Donc, on en déduit (1.4) en prenant $a=0$. Essentiellement, ce résultat nous dit que l'intégrale sur une période d'une fonction périodique est la même peu importe les bornes d'intégration tant que celles-ci soient séparées par la longueur de la période. Cela se voit graphiquement en "déplaçant" un bout de l'intégrale (en vert à la figure 3) pour intégrer du début de la fonction jusqu'au point où elle se répète.
+
+\begin{figure}[h!]
+    \centering
+     \includegraphics[width=0.43\textwidth]{images/ch1/integrale_periode.jpg}
+    \caption{Représentation graphique de l'équation (1.4)}
+    \end{figure}
 
 \subsection{Fonctions orthogonales}
 Pour deux vecteurs $\vec{u}$ et $\vec{v}$, ces derniers sont orthogonaux si leur produit scalaire est nul. 
@@ -92,7 +116,7 @@ Pour deux vecteurs $\vec{u}$ et $\vec{v}$, ces derniers sont orthogonaux si leur
     \vec{u} \cdot \vec{v} = \sum_{i}^{}u_iv_i = 0
 \end{equation*}
 
-En quelque sorte, on peut dire qu'une fonction est un vecteur de taille infinie. Alors, le produit scalaire de fonctions, si on se fie à la définition pour les vecteurs, consisterait à sommer la valeur de leur produit à chaque point d'un domaine commun. Cependant, la somme ici est infinie et on discrétise le produit par un élément de largeur $dx$. Au final, on se retrouve à faire une intégrale. Ainsi, des fonctions $f(x)$ et $g(x)$ orthogonales respectent 
+En quelque sorte, on peut dire qu'une fonction est un vecteur de taille infinie. Alors, le produit scalaire de fonctions $f(x)$ et $g(x)$ consisterait à sommer la valeur de leur produit $f(x)g(x)$ à chaque point d'un domaine commun. Cependant, la somme ici est infinie et on discrétise le produit par un élément de largeur $dx$ comme lorsqu'on apprend à intégrer. Au final, avec cette approche, on se retrouve à faire une intégrale pour calculer le produit scalaire entre deux fonctions. Ainsi, des fonctions $f(x)$ et $g(x)$ orthogonales respectent 
 
 \begin{equation}
     \int_{a}^{b}f(x)g(x)dx = 0

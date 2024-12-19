@@ -1,1 +1,22 @@
 \section{Séries de Fourier}
+Une série de Fourier est l'équivalent pour les fonctions périodiques d'une série de Taylor. Autrement dit, une série de Fourier permet d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques. Pour le moment, on assume qu'il existe une telle forme et on regardera plus tard les conditions qu'une fonction doit respecter pour avoir une série de Fourier.
+
+\subsection{Série de Fourier trigonométriques}
+Soit $f(x)$ une fonction périodique sur $[0,T]$ pouvant s'écrire en série de Fourier. Alors, sa série de Fourier trigonométrique, utilisant des sinus et cosinus, correspond à
+
+\begin{equation}
+    f(x) = \sum_{n=0}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right) = a_0 + \sum_{n=1}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)
+\end{equation}
+
+où les $a_n$ et $b_n$ sont des coefficients. 
+
+\textcolor{red}{*Expliquer plus en détails la forme...}
+Le terme $\frac{2\pi nx}{T}$ permet de faire un changement de période pour les cosinus et sinus. Effectivement, ils vont avoir une période $\frac{T}{n}$ et donc faire $n$ oscillations complètes dans le temps d'une période $T$. C'est ce qui correspond aux harmoniques de la fonction périodique $f(x)$.
+
+Avant de continuer, on présente quelques résultats qui seront pertinents dans cette section. 
+\begin{enumerate}
+    \item Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer 
+    \begin{equation*}
+        \int_{0}^{T}\sin(\frac{2\pi nx}{T})\cos(\frac{2\pi nx}{T})
+    \end{equation*}
+\end{enumerate}
