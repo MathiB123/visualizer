@@ -10,9 +10,6 @@ Soit $f(x)$ une fonction périodique de période $T$ pouvant s'écrire en série
 
 où les $a_n$ et $b_n$ sont des coefficients. 
 
-\textcolor{red}{*Expliquer plus en détails la forme...}
-Le terme $\frac{2\pi nx}{T}$ permet de faire un changement de période pour les cosinus et sinus. Effectivement, ils vont avoir une période $\frac{T}{n}$ et donc faire $n$ oscillations complètes dans le temps d'une période $T$. C'est ce qui correspond aux harmoniques de la fonction périodique $f(x)$.
-
 \subsubsection{Orthogonalité}
 Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer l'intégrale suivante :
 
@@ -74,8 +71,6 @@ On revient à l'équation (2.1) et on cherche d'abord à connaître la valeur du
     \implies a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx
 \end{equation*}
 
-\textcolor{red}{Ici, on a pu échanger la somme et l'intégrale, car ...}
-
 \subsubsection{Calcul des coefficients $a_n$ ($n > 0$)}
 Pour trouver ces coefficients, on intègre maintenant $f(x)$ en multipliant par $\cos(\frac{2\pi mx}{T})$ où $m$ est un entier. On a
 
@@ -95,7 +90,7 @@ Pour trouver ces coefficients, on intègre maintenant $f(x)$ en multipliant par 
     = \sum_{n=1}^{\infty}\int_{0}^{T}\left(a_n\cos(\frac{2\pi n x}{T})\cos(\frac{2\pi m x}{T})\right)dx = a_m\frac{T}{2} \implies a_n = \frac{2}{T}\int_{0}^{T}f(x)\cos(\frac{2\pi n x}{T})dx
 \end{equation*}
 
-où \textcolor{red}{on a pu échanger la somme avec l'intégrale} et utiliser les relations d'orthogonalité de la section 2.1.1.
+où on utilise les relations d'orthogonalité de la section 2.1.1.
 
 \subsubsection{Calcul des coefficients $b_n$}
 Cette fois, on intègre en multipliant par $\sin(\frac{2\pi m x}{T})$. On obtient 
@@ -116,7 +111,7 @@ Cette fois, on intègre en multipliant par $\sin(\frac{2\pi m x}{T})$. On obtien
     = \sum_{n=1}^{\infty}\int_{0}^{T}\left(b_n\sin(\frac{2\pi n x}{T})\sin(\frac{2\pi m x}{T})\right)dx = b_m\frac{T}{2} \implies b_n = \frac{2}{T}\int_{0}^{T}f(x)\sin(\frac{2\pi n x}{T})dx
 \end{equation*}
 
-où \textcolor{red}{on a pu échanger la somme avec l'intégrale} et utiliser les relations d'orthogonalité de la section 2.1.1.
+où on utilise les relations d'orthogonalité de la section 2.1.1.
 
 \subsubsection{Les coefficients de la série de Fourier trigonométrique}
 Au final, on trouve les coefficients de la manière suivante : 
