@@ -1,16 +1,16 @@
-\section{Séries de Fourier}
-Une série de Fourier est l'équivalent pour les fonctions périodiques d'une série de Taylor. Autrement dit, une série de Fourier permet d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques. Pour le moment, on assume qu'il existe une telle forme et on regardera plus tard les conditions qu'une fonction doit respecter pour avoir une série de Fourier.
+\section{Série de Fourier}
+Une série de Fourier est l'équivalent d'une série de Taylor pour les fonctions périodiques. Autrement dit, une série de Fourier permet d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques.
 
 \subsection{Série de Fourier trigonométrique}
-Soit $f(x)$ une fonction périodique de période $T$ pouvant s'écrire en série de Fourier. Alors, sa série de Fourier trigonométrique, utilisant des sinus et cosinus, correspond à
+Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourier trigonométrique correspond à
 
 \begin{equation}
     f(x) = \sum_{n=0}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right) = a_0 + \sum_{n=1}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)
 \end{equation}
 
-où les $a_n$ et $b_n$ sont des coefficients. 
+où les $a_n$ et $b_n$ sont des coefficients. Cela semble sortir de nulle part pour le moment, mais on verra plus tard d'où vient cette forme et les conditions pour qu'elle soit valable.
 
-\subsubsection{Orthogonalité}
+\subsubsection{Quelques identités}
 Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer l'intégrale suivante :
 
 \begin{equation*}
@@ -26,10 +26,10 @@ Sachant que $\sin(x)\cos(y) = \frac{1}{2}\left[\sin(x+y) + \sin(x-y)\right]$, l'
     = -\frac{T}{4\pi}\left[\cos\left(\frac{2\pi x}{T}(n+m)\right)\frac{1}{n+m}\eval{}_{0}^{T} + \cos\left(\frac{2\pi x}{T}(n-m)\right)\frac{1}{n-m}\eval{}_{0}^{T}\right]
 \end{equation*}
 
-Dans le cas où $n\neq m$, on trouve que cette intégrale est nulle. Si $n=m$, on aurait une division par 0. On peut revenir au début des calculs pour dire que 
+Dans le cas où $n\neq m$, on trouve que cette intégrale est nulle tout le temps. Si $n=m$, on aurait une division par 0 dans la dernière égalité. On peut revenir au début des calculs pour dire que 
 
 \begin{equation*}
-    \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n-m)\right)dx = \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx = 0 
+    \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx + \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}\underbrace{(n-m)}_\text{0}\right)dx = \frac{1}{2}\int_{0}^{T}\sin\left(\frac{2\pi x}{T}(n+m)\right)dx = 0 
 \end{equation*}
 
 Ainsi, dans tous les cas,
@@ -53,8 +53,6 @@ Avec des calculs similaires et d'autres identités trigonométriques, on trouve 
       \end{cases}   
 \end{equation*}
 
-On remarque donc que ces fonctions sont orthogonales, ce qui simplifie grandement les calculs la prochaine fois qu'on reverra ces équations.
-
 \subsubsection{Calcul du coefficient $a_0$}
 On revient à l'équation (2.1) et on cherche d'abord à connaître la valeur du coefficient $a_0$. Pour y arriver, on peut simplement intégrer la fonction $f(x)$ sur une période. En effet,
 
@@ -65,14 +63,11 @@ On revient à l'équation (2.1) et on cherche d'abord à connaître la valeur du
     = \int_{0}^{T}a_0 dx + \int_{0}^{T}\sum_{n=1}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)dx 
 \end{equation*}
 \begin{equation*}
-    = \int_{0}^{T}a_0 dx + \sum_{n=1}^{\infty}\int_{0}^{T}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)dx = \int_{0}^{T}a_0 dx + 0 = a_0T
-\end{equation*}
-\begin{equation*}
-    \implies a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx
+    = \int_{0}^{T}a_0 dx + \sum_{n=1}^{\infty}\int_{0}^{T}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)dx = \int_{0}^{T}a_0 dx + 0 = a_0T \implies a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx
 \end{equation*}
 
-\subsubsection{Calcul des coefficients $a_n$ ($n > 0$)}
-Pour trouver ces coefficients, on intègre maintenant $f(x)$ en multipliant par $\cos(\frac{2\pi mx}{T})$ où $m$ est un entier. On a
+\subsubsection{Calcul des coefficients $a_n$ ($n \geq 1$)}
+Pour trouver ces coefficients, on intègre maintenant $f(x)$ en multipliant par $\cos(\frac{2\pi mx}{T})$ où $m \geq 1$. On a
 
 \begin{equation*}
     \int_{0}^{T}f(x)\cos(\frac{2\pi m x}{T})dx
@@ -90,10 +85,10 @@ Pour trouver ces coefficients, on intègre maintenant $f(x)$ en multipliant par 
     = \sum_{n=1}^{\infty}\int_{0}^{T}\left(a_n\cos(\frac{2\pi n x}{T})\cos(\frac{2\pi m x}{T})\right)dx = a_m\frac{T}{2} \implies a_n = \frac{2}{T}\int_{0}^{T}f(x)\cos(\frac{2\pi n x}{T})dx
 \end{equation*}
 
-où on utilise les relations d'orthogonalité de la section 2.1.1.
+où on utilise les identités de la section 2.1.1.
 
-\subsubsection{Calcul des coefficients $b_n$}
-Cette fois, on intègre en multipliant par $\sin(\frac{2\pi m x}{T})$. On obtient 
+\subsubsection{Calcul des coefficients $b_n$ ($n \geq 1$)}
+Cette fois, on intègre en multipliant par $\sin(\frac{2\pi m x}{T})$ où $m \geq 1$. On obtient 
 
 \begin{equation*}
     \int_{0}^{T}f(x)\sin(\frac{2\pi m x}{T})dx
@@ -111,7 +106,7 @@ Cette fois, on intègre en multipliant par $\sin(\frac{2\pi m x}{T})$. On obtien
     = \sum_{n=1}^{\infty}\int_{0}^{T}\left(b_n\sin(\frac{2\pi n x}{T})\sin(\frac{2\pi m x}{T})\right)dx = b_m\frac{T}{2} \implies b_n = \frac{2}{T}\int_{0}^{T}f(x)\sin(\frac{2\pi n x}{T})dx
 \end{equation*}
 
-où on utilise les relations d'orthogonalité de la section 2.1.1.
+où on utilise les identités de la section 2.1.1.
 
 \subsubsection{Les coefficients de la série de Fourier trigonométrique}
 Au final, on trouve les coefficients de la manière suivante : 
@@ -126,9 +121,9 @@ Au final, on trouve les coefficients de la manière suivante :
     b_n = \frac{2}{T}\int_{0}^{T}f(x)\sin(\frac{2\pi n x}{T})dx
 \end{equation}
 
-Depuis le début, on intègre sur une période de 0 à $T$ qui semble être un choix assez arbitraire. En fait, par l'équation (1.4), les bornes d'intégration importent peu tant qu'elles sont séparées d'une période complète (d'une longueur $T$). Par exemple, on aurait eu les mêmes résultats si on avait intégré de $-\frac{T}{4}$ à $\frac{3T}{4}$.
+Depuis le début, on intègre sur une période de 0 à $T$, ce qui semble être un choix assez arbitraire. En fait, par l'équation (1.4), les bornes d'intégration importent peu tant qu'elles sont séparées d'une période complète (d'une longueur $T$). Par exemple, on aurait eu les mêmes résultats si on avait intégré de $-\frac{T}{4}$ à $\frac{3T}{4}$.
 
-De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients sont nuls. Effectivement, en déplaçant les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par l'équation (1.4), une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, selon la section 1.1, leur produit est une fonction impaire et l'intégrale d'une fonction impaire sur un intervalle symétrique est nulle. Par un même raisonnement, une fonction impaire n'aura que des termes en $b_n$ dans sa série de Fourier.
+De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients seront nuls. Effectivement, une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, selon la section 1.1, leur produit est une fonction impaire. Si ensuite on déplace les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par l'équation (1.4), l'intégrale pour les $b_n$ sera donc celle d'une fonction impaire sur un intervalle symétrique. Par la section 1.1, cette intégrale est nulle. Par un même raisonnement, une fonction impaire n'aura aucun terme $a_0$ et $a_n$ dans sa série de Fourier.
 
 \subsection{Exemple : Fonction en dents de scie}
 Soit $f(x) = Ax$ pour $-\frac{T}{2} < x < \frac{T}{2}$ de période $T$. Calculons sa série de Fourier. Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il n'y a que les termes en $b_n$ dans sa série de Fourier. Selon (2.4), on a 
@@ -160,3 +155,4 @@ Avec surprise, au point $x = \frac{T}{4}$, on peut obtenir une expression pour $
     \caption{La fonction en dents de scie ($A=1, T=2$)}
     \end{figure}
 
+\subsection{Série de Fourier exponentielle}
