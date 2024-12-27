@@ -125,10 +125,20 @@ Depuis le début, on intègre sur une période de 0 à $T$, ce qui semble être 
 
 De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients seront nuls. Effectivement, une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, leur produit est une fonction impaire. Si ensuite on déplace les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par l'équation (1.4), l'intégrale pour les $b_n$ sera donc celle d'une fonction impaire sur un intervalle symétrique. On sait par la section 1.1 que cette intégrale est nulle. Par un même raisonnement, une fonction impaire n'aura aucun terme $a_0$ et $a_n$ dans sa série de Fourier.
 
-Aussi, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères (comme la convergence unifrome) qui nous indiqueraient s'il est possible ou non de faire une telle opération. Cependant, il aurait été difficile de les vérifier, car on ne sait même pas la valeur des coefficients à priori. Autrement dit, il manque de l'information et on doit assumer que la manipulation est possible pour pouvoir progresser. Donc, en plus de se demander à la base si l'équation (2.1) fonctionne, il faut aussi s'informer sur la validité d'inversion de la somme et de l'intégrale (à voir plus tard).
+Aussi, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères (comme la convergence uniforme) qui nous indiqueraient s'il est possible ou non de faire une telle opération. Cependant, il aurait été difficile de les vérifier, car on ne sait même pas la valeur des coefficients à priori. Autrement dit, il manque de l'information et on doit assumer que la manipulation est possible pour pouvoir progresser. Donc, en plus de se demander à la base si l'équation (2.1) fonctionne, il faut aussi s'informer sur la validité d'inversion de la somme et de l'intégrale (à voir plus tard).
 
 \subsection{Exemple : Fonction en dents de scie}
-Soit $f(x) = Ax$ pour $-\frac{T}{2} < x < \frac{T}{2}$ de période $T$. Calculons sa série de Fourier. Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il n'y a que les termes en $b_n$ dans sa série de Fourier. Selon (2.4), on a 
+Soit $f(x) = Ax$ pour $-\frac{T}{2} < x < \frac{T}{2}$ de période $T$ où $A$ est une constante. 
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=0.55\textwidth]{images/ch2/exemple_scie.png}
+    \caption{La fonction en dents de scie ($A=2, T=2$)}
+    \end{figure}
+
+On cherche à calculer sa série de Fourier. Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il n'y a que les termes en $b_n$ à trouver. Selon (2.4), on a 
+
+
 
 \begin{equation*}
     b_n = \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}Ax\sin(\frac{2\pi n x}{T})dx = \frac{2A}{T}\left[\frac{-Tx}{2\pi n}\cos(\frac{2\pi nx}{T})\eval{}_{-T/2}^{T/2} - \int_{-\frac{T}{2}}^{\frac{T}{2}}\sin(\frac{2\pi nx}{T})dx\right]
@@ -143,18 +153,79 @@ Ainsi, la série de Fourier pour $f(x)$ est
     f(x) = Ax = \frac{AT}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(\frac{2\pi nx}{T}) = \frac{AT}{\pi}\left[\sin(\frac{2\pi x}{T}) - \frac{1}{2}\sin(\frac{4\pi x}{T}) + ...\right]
 \end{equation*}
 
-Plus on incorpore de termes dans la série, plus la série de Fourier se rapprochera dans la fonction cible (voir figure 4 et 5). La figure 5 montre un drôle de comportement aux discontinuités, c'est ce qu'on appelle le phénomène de Gibbs.
-
-Avec surprise, au point $x = \frac{T}{4}$, on peut obtenir une expression pour $\frac{\pi}{4}$.
-
-\begin{equation*}
-    A\frac{T}{4} = \frac{AT}{\pi}\left[1 + 0 -\frac{1}{3} + 0 + \frac{1}{5} + ...\right] \implies \frac{\pi}{4} = 1 -\frac{1}{3} + \frac{1}{5} - ...
-\end{equation*}
+Plus on incorpore de termes dans la série, plus elle se rapprochera de la fonction cible. Pour expérimenter avec cet exemple, le notebook \lstinline|exemple_dents_de_scie.ipynb| permet de voir l'évolution de l'approximation à mesure qu'on ajoute des termes dans la série.
 
 \begin{figure}[H]
     \centering
-     \includegraphics[width=0.5\textwidth]{images/ch2/exemple_scie.png}
-    \caption{La fonction en dents de scie ($A=1, T=2$)}
+     \includegraphics[width=0.55\textwidth]{images/ch2/scie_fourier.png}
+    \caption{Série de Fourier (5  premiers termes) de la fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
 
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.55\textwidth]{images/ch2/scie_fourier_2.png}
+    \caption{Série de Fourier (25  premiers termes) de la fonction en dents de scie ($A=2, T=2$)}
+    \end{figure}
+
+
+D'ailleurs, par cet exemple, on voit qu'une fonction discontinue peut avoir une série de Fourier. Par contre, on voit par la figure 6 qu'un drôle de comportement semble se produire aux discontinuités. En effet, on remarque de grandes fluctuations près de ces points, ce qu'on appelle le phénomène de Gibbs (à voir plus tard). De plus, comme ici on utilise des fonctions continues pour approximer une fonction discontinue, on peut s'intéresser à la valeur de la série de Fourier aux discontinuités (c'est la moyenne de chaque côté de la discontinuité, à voir plus tard).
+
 \subsection{Série de Fourier exponentielle}
+La série de Fourier trigonométrique peut être condensée grâce aux identités suivantes pour la fonction sinus et cosinus : 
+
+\begin{equation*}
+    \cos(x) = \frac{e^{ix} + e^{-ix}}{2}, \ \ \sin(x) = \frac{e^{ix} - e^{-ix}}{2i}
+\end{equation*}
+
+Donc, en remplaçant dans l'équation (2.1), on a
+
+\begin{equation*}
+    f(x) = a_0 + \sum_{n=1}^{\infty}\left(a_n \frac{e^{2\pi inx/T} + e^{-2\pi inx/T}}{2} + b_n \frac{e^{2\pi inx/T} - e^{-2\pi inx/T}}{2i}\right)
+\end{equation*}
+\begin{equation*}
+    = a_0 + \sum_{n=1}^{\infty}\left(e^{2\pi inx/T}\left(\frac{a_n}{2} + \frac{b_n}{2i}\right) + e^{-2\pi inx/T}\left(\frac{a_n}{2} - \frac{b_n}{2i}\right)\right)
+\end{equation*}
+\begin{equation*}
+    = a_0 + \sum_{n=1}^{\infty}e^{2\pi inx/T}\left(\frac{a_n - ib_n}{2}\right) + \sum_{n=1}^{\infty}e^{-2\pi inx/T}\left(\frac{a_n + ib_n}{2}\right)
+\end{equation*}
+\begin{equation}
+    = a_0 + \sum_{n=1}^{\infty}e^{2\pi inx/T}\left(\frac{a_n - ib_n}{2}\right) + \sum_{n=-1}^{-\infty}e^{2\pi inx/T}\left(\frac{a_{-n} + ib_{-n}}{2}\right) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T}
+\end{equation}
+
+où on définit 
+
+\begin{equation*}
+    c_n = \begin{cases}
+        \frac{a_n - ib_n}{2} & \text{si } n\geq 1\\
+        a_0 & \text{si } n=0\\
+        \frac{a_{-n} + ib_{-n}}{2} & \text{si } n\leq -1\\
+    \end{cases}
+\end{equation*}
+
+\subsubsection{Calcul des coefficients $c_n$}
+On regarde chacun des cas possibles pour la valeur des $c_n$. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par l'équation (2.2) : 
+
+\begin{equation*}
+    a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx
+\end{equation*}
+
+Pour $n\geq 1$, les équations (2.3) et (2.4) indiquent que 
+
+\begin{equation*}
+    \frac{a_n - ib_n}{2} = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{2\pi nx}{T}) - i\sin(\frac{2\pi nx}{T})\right)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
+\end{equation*}
+
+Dans le dernier cas, on trouve 
+
+\begin{equation*}
+    \frac{a_{-n} + ib_{-n}}{2} = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{-2\pi nx}{T}) + i\sin(\frac{-2\pi nx}{T})\right)dx
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{2\pi nx}{T}) - i\sin(\frac{2\pi nx}{T})\right)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
+\end{equation*}
+
+Ainsi, dans tous les cas, on a 
+
+\begin{equation}
+    c_n = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
+\end{equation}
