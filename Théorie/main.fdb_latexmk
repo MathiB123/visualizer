@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1735258666.95929 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1735258668.48709 0
+["pdflatex"] 1735327265.82343 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1735327267.43106 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731251578 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732411151 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -235,7 +235,7 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693732032 123 a302f2c651a95033260db60e51527ae8 ""
   "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1734227220 2302 410d7d95ff288465163bd696fe6381c5 ""
   "chapitres/fonctions.tex" 1734737676 6746 97fc201f585329a5aa4216e4504f9d5f ""
-  "chapitres/series_fourier.tex" 1735258666 13136 51551b7edb6a5d748164254c3ccac1a1 ""
+  "chapitres/series_fourier.tex" 1735327265 15321 01bbd26b4ba783f7ce85d535cade3077 ""
   "images/ch1/cos.png" 1734623232 19688 f19cbde4b176eef0ce6d1f5de93b1777 ""
   "images/ch1/integrale_periode.jpg" 1734625194 104152 8279802930523d4ae1ffc66da80974d5 ""
   "images/ch1/periodique.png" 1734624039 21649 8464e116c35f369146cf75b11fbe76da ""
@@ -243,10 +243,10 @@
   "images/ch2/exemple_scie.png" 1735253685 27305 6a35a519ba02773c3637d40e61245f75 ""
   "images/ch2/scie_fourier.png" 1735253772 44063 d04c9e5c1185e266d02b949d685de5fe ""
   "images/ch2/scie_fourier_2.png" 1735254181 34334 75d6963ccee4602fb1b9f79a54e89b29 ""
-  "main.aux" 1735258668 3249 9d432ed094225a587a73fe16604185ea "pdflatex"
-  "main.out" 1735258668 2684 bc53985d1d02e8ec9316ce150e910ce8 "pdflatex"
+  "main.aux" 1735327267 3369 46c159ecde1121e0e3aaf13df768b180 "pdflatex"
+  "main.out" 1735327267 2847 fe90cbd1a1ed50e279212e9b594fa3a0 "pdflatex"
   "main.tex" 1734227220 2302 410d7d95ff288465163bd696fe6381c5 ""
-  "main.toc" 1735258668 1311 3d37d2bc3b22d8373806b746ef1fe28f "pdflatex"
+  "main.toc" 1735327267 1390 5f72296f88cc26c89cb3704a449adc72 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
