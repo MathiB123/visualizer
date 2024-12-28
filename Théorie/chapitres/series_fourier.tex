@@ -1,5 +1,5 @@
 \section{Série de Fourier}
-Une série de Fourier est l'équivalent d'une série de Taylor pour les fonctions périodiques. Autrement dit, une série de Fourier permet d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques.
+Une série de Fourier est l'équivalent d'une série de Taylor pour les fonctions périodiques. Autrement dit, une série de Fourier a comme objectif d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques. Bien qu'on puisse se demander si cela marche tout le temps, il s'agit au moins d'une hypothèse qui a un minimum de sens.
 
 \subsection{Série de Fourier trigonométrique}
 Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourier trigonométrique correspond à
@@ -8,7 +8,9 @@ Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourie
     f(x) = \sum_{n=0}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right) = a_0 + \sum_{n=1}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)
 \end{equation}
 
-où les $a_n$ et $b_n$ sont des coefficients. Cela semble sortir de nulle part pour le moment, mais on verra plus tard d'où vient cette forme et les conditions pour qu'elle soit valable.
+où les $a_n$ et $b_n$ sont des coefficients. Essayons de faire sens de tout cela. D'abord, la présence de $\sin(x)$ et $\cos(x)$ a du sens puisqu'elles sont les fonctions périodiques les plus simples. Dans un sens, on peut les voir comme des blocs de base pour générer d'autres fonctions périodiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que chaque terme dans la série est une telle période. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus court, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (2.1) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$ et cette dernière ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations, ça ne sera pas la "plus petite période" qui elle ne compte qu'une oscillation complète). Une façon de le voir est en remarquant que $\sin(x)$ a normalement une période de $2\pi$, mais $4\pi$ ou $6\pi$ peuvent aussi bien être ses périodes. Au final, l'équation (2.1) est une combinaison linéaire de fonctions périodiques (cos et sin) ayant tous une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
+
+Évidemment, rien ne garantit à priori que l'équation (2.1) est juste pour décrire $f(x)$. En fait, on verra plus tard qu'il existe des conditions pour que $f(x)$ puisse avoir une série de Fourier. Pour le moment, on assume qu'une telle forme existe.
 
 \subsubsection{Quelques identités}
 Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer l'intégrale suivante :
@@ -258,4 +260,4 @@ où on pose
     c(k) = \frac{1}{2\pi}\int_{-\infty}^{\infty}f(x)e^{-ikx}dx
 \end{equation}
 
-%Dire qu'est-ce qui est la transfo de fourier/transfo inverse, expliquer la signification, etc...
+% De manière analogue à la série de Fourier, $c(k)$ est un coefficient qui nous dit "combien" il y a de $e^{ikx}$ dans $f(x)$. L'équation (3.3) est ce qu'on appelle la transformée de Fourier de $f(x)$ et permet de décrire les fréquences $k$ contenues dans $f(x)$. Grâce à cela, l'équation (3.2) correspond à la transformée de Fourier inverse et permet de recomposer $f(x)$ selon les fréquences qu'elle contient. 
