@@ -8,7 +8,7 @@ Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourie
     f(x) = \sum_{n=0}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right) = a_0 + \sum_{n=1}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)
 \end{equation}
 
-où les $a_n$ et $b_n$ sont des coefficients. Essayons de faire sens de tout cela. D'abord, la présence de $\sin(x)$ et $\cos(x)$ a du sens puisqu'elles sont les fonctions périodiques les plus simples. Dans un sens, on peut les voir comme des blocs de base pour générer d'autres fonctions périodiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que chaque terme dans la série est une telle période. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus court, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (2.1) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$ et cette dernière ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations, ça ne sera pas la "plus petite période" qui elle ne compte qu'une oscillation complète). Une façon de le voir est en remarquant que $\sin(x)$ a normalement une période de $2\pi$, mais $4\pi$ ou $6\pi$ peuvent aussi bien être ses périodes. Au final, l'équation (2.1) est une combinaison linéaire de fonctions périodiques (cos et sin) ayant tous une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
+où les $a_n$ et $b_n$ sont des coefficients. Essayons de faire sens de tout cela. D'abord, la présence de $\sin(x)$ et $\cos(x)$ a du sens puisqu'elles sont les fonctions périodiques les plus simples. Dans un sens, on peut les voir comme des blocs de base pour générer d'autres fonctions périodiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que chaque terme dans la série est une telle période. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus court, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (2.1) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$ et cette dernière ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations, ça ne sera pas la "plus petite période" qui elle ne compte qu'une oscillation complète). Une façon de le voir est en remarquant que $\sin(x)$ a normalement une période de $2\pi$, mais $4\pi$ ou $6\pi$ peuvent aussi être des périodes équivalentes. Tout de même, chaque sinus et cosinus vont avoir une fréquence angulaire différente, soit $\frac{2\pi n}{T}$. Au final, l'équation (2.1) est une combinaison linéaire de fonctions périodiques (cos et sin) ayant tous une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
 
 Évidemment, rien ne garantit à priori que l'équation (2.1) est juste pour décrire $f(x)$. En fait, on verra plus tard qu'il existe des conditions pour que $f(x)$ puisse avoir une série de Fourier. Pour le moment, on assume qu'une telle forme existe.
 
@@ -127,7 +127,7 @@ Depuis le début, on intègre sur une période de 0 à $T$, ce qui semble être 
 
 De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients seront nuls. Effectivement, une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, leur produit est une fonction impaire. Si ensuite on déplace les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par l'équation (1.4), l'intégrale pour les $b_n$ sera donc celle d'une fonction impaire sur un intervalle symétrique. On sait par la section 1.1 que cette intégrale est nulle. Par un même raisonnement, une fonction impaire n'aura aucun terme $a_0$ et $a_n$ dans sa série de Fourier.
 
-Aussi, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères (comme la convergence uniforme) qui nous indiqueraient s'il est possible ou non de faire une telle opération. Cependant, il aurait été difficile de les vérifier, car on ne sait même pas la valeur des coefficients à priori. Autrement dit, il manque de l'information et on doit assumer que la manipulation est possible pour pouvoir progresser. Donc, en plus de se demander à la base si l'équation (2.1) fonctionne, il faut aussi s'informer sur la validité d'inversion de la somme et de l'intégrale (à voir plus tard).
+Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères (comme la convergence uniforme) qui nous indiqueraient s'il est possible ou non de faire une telle opération. Cependant, il aurait été difficile de les vérifier, car on ne sait même pas la valeur des coefficients à priori. Autrement dit, il manque de l'information et on doit assumer que la manipulation est possible pour pouvoir progresser. Donc, en plus de se demander à la base si l'équation (2.1) fonctionne, il faut aussi s'informer sur la validité d'inversion de la somme et de l'intégrale (à voir plus tard).
 
 \subsection{Exemple : Fonction en dents de scie}
 Soit $f(x) = Ax$ pour $-\frac{T}{2} < x < \frac{T}{2}$ de période $T$ où $A$ est une constante. 
@@ -159,13 +159,13 @@ Plus on incorpore de termes dans la série, plus elle se rapprochera de la fonct
 
 \begin{figure}[H]
     \centering
-     \includegraphics[width=0.55\textwidth]{images/ch2/scie_fourier.png}
+     \includegraphics[width=0.47\textwidth]{images/ch2/scie_fourier.png}
     \caption{Série de Fourier (5  premiers termes) de la fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.55\textwidth]{images/ch2/scie_fourier_2.png}
+        \includegraphics[width=0.47\textwidth]{images/ch2/scie_fourier_2.png}
     \caption{Série de Fourier (25  premiers termes) de la fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
 
@@ -204,6 +204,8 @@ où on définit
     \end{cases}
 \end{equation*}
 
+Comme une exponentielle complexe tourne dans le cercle complexe à la même fréquence angulaire que le sinus et le cosinus qui la composent, on retrouve naturellement la fréquence angulaire $\frac{2\pi n}{T}$ dans l'exponentielle complexe.
+
 \subsubsection{Calcul des coefficients $c_n$}
 On regarde chacun des cas possibles pour la valeur des $c_n$. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par l'équation (2.2) : 
 
@@ -239,7 +241,7 @@ Ce qu'on a vu jusqu'à maintenant fonctionne pour des fonctions périodiques, ma
     f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \ \text{ où } \ c_n = \frac{1}{T}\int_{-T/2}^{T/2}f(x)e^{-2\pi inx/T}dx
 \end{equation}
 
-Soit $k_n = \frac{2\pi n}{T}$. Alors, la différence entre deux $k_n$ successifs est $\Delta k_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$ puisque l'écart entre deux $n$ successifs est évidemment de 1. Dans la limite où $T \rightarrow \infty$, la différence entre deux $k_n$ successifs est infinitésimale et $k_n$ devient essentiellement une variable continue $k$ d'écart $dk$. Sachant cela, on effectue quelques manipulations sur l'équation (3.1). D'abord, 
+Soit $\omega_n = \frac{2\pi n}{T}$. \textcolor{red}{changer k pour omega} Alors, la différence entre deux $k_n$ successifs est $\Delta k_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$ puisque l'écart entre deux $n$ successifs est évidemment de 1. Dans la limite où $T \rightarrow \infty$, la différence entre deux $k_n$ successifs est infinitésimale et $k_n$ devient essentiellement une variable continue $k$ d'écart $dk$. Sachant cela, on effectue quelques manipulations sur l'équation (3.1). D'abord, 
 
 \begin{equation*}
     f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \cdot 1 = \sum_{n = -\infty}^{\infty}c_ne^{ik_nx} \Delta n = \sum_{n = -\infty}^{\infty}\left(c_n\frac{T}{2\pi}\right)e^{ik_nx}\Delta k_n  

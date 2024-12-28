@@ -76,13 +76,13 @@ Une fonction $f(x)$ définie sur l'ensemble des réels est périodique avec une 
     f(x + T) = f(x)
 \end{equation}
 
-Autrement dit, une fonction périodique se répète après une période $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$. 
+Autrement dit, une fonction périodique se répète après une période $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$. On caractérise aussi une fonction périodique par sa fréquence, c'est-à-dire le nombre de répétitions de la fonction par unité de temps (en Hz). On obtient la fréquence grâce à $\frac{1}{T}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps (c'est le principe même d'une division). Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ ont tous les deux une fréquence de $\frac{1}{2\pi}$Hz. Pour quelque chose qui tourne, on peut s'intéresser à sa fréquence angulaire $\omega$, soit le nombre de radians par unité de temps. Puisqu'on peut représenter $\cos(x)$ et $\sin(x)$ dans le cercle trigonométrique (donc ça tourne), ces fonctions ont aussi une fréquence angulaire. Pour la trouver, on peut dire que 
 
-\begin{figure}[h!]
-    \centering
-     \includegraphics[width=1\textwidth]{images/ch1/periodique.png}
-    \caption{La fonction $\cos(x)$}
-    \end{figure}
+\begin{equation*}
+    \omega = \frac{\text{rad}}{\text{s}} = \frac{\text{rad}}{\text{cycle}}\frac{\text{cycle}}{\text{s}} = 2\pi \cdot \frac{1}{T} = \frac{2\pi}{T}
+\end{equation*}
+
+car on fait le tour complet du cercle ($2\pi$ rad) à chaque cycle peu importe le sinus ou cosinus en question. Dans ce cas, les fonctions $\cos(x)$ et $\sin(x)$ ont une fréquence angulaire de 1.
 
 Un résultat important pour l'intégrale d'une fonction périodique est que 
 
