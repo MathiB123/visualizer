@@ -232,6 +232,21 @@ Ainsi, dans tous les cas, on a
     c_n = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
 \end{equation}
 
+\subsubsection{Retour sur la fonction en dents de scie}
+On a calculé à la section 2.2 la série de Fourier trigonométrique de la fonction en dents de scie. Essayons maintenant de calculer la version exponentielle.
+
+\begin{equation*}
+    c_n = \frac{1}{T}\int_{-T/2}^{T/2}Axe^{-2\pi inx/T}dx = \frac{A}{T}\int_{-T/2}^{T/2}xe^{-2\pi inx/T}dx = \underbrace{\dots}_\text{intégration par parties} = (-1)^n\frac{iAT}{2\pi n}
+\end{equation*}
+
+si $n \neq 0$. Pour $n=0$, on trouverait que le coefficient est nul. Donc, dans la forme exponentielle, 
+
+\begin{equation*}
+    f(x) = \sum_{n \neq 0}^{}(-1)^n\frac{iAT}{2\pi n}e^{2\pi inx/T}
+\end{equation*}
+
+En utilisant la formule d'Euler, on retrouverait exactement la même chose qu'à la section 2.2.
+
 \section{Transformée de Fourier}
 Ce qu'on a vu jusqu'à maintenant fonctionne pour des fonctions périodiques, mais qu'arrive-t-il lorsqu'on tente d'étendre cela à des fonctions qui ne le sont pas? En d'autres mots, pour une fonction qui a une période infinie (donc qui n'est pas périodique), comment se comportent nos précédentes trouvailles? Alors, on regarde les précédentes équations dans la limite où $T \rightarrow \infty$. On commence par recopier (2.5) et (2.6) en changeant les bornes d'intégration pour (2.6), ce qu'on peut faire par (1.4).
 
@@ -260,4 +275,6 @@ où on pose
     c(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
 \end{equation}
 
-% De manière analogue à la série de Fourier, $c(k)$ est un coefficient qui nous dit "combien" il y a de $e^{ikx}$ dans $f(x)$. L'équation (3.3) est ce qu'on appelle la transformée de Fourier de $f(x)$ et permet de décrire les fréquences $k$ contenues dans $f(x)$. Grâce à cela, l'équation (3.2) correspond à la transformée de Fourier inverse et permet de recomposer $f(x)$ selon les fréquences qu'elle contient. 
+Comme auparavant, $c(\omega)$ est un coefficient qui nous dit "combien" il y a de $e^{i\omega x}$ dans $f(x)$. En fait, l'équation (3.3) va être ce qu'on appelle la transformée de Fourier (TF) de $f(x)$ et permet de décrire la "quantité" de chaque fréquence $\omega$ dans $f(x)$. Ainsi, la TF permet de décomposer $f(x)$ en ses composants. D'un autre côté, (3.2) correspond à la transformée de Fourier inverse (TFI), parce qu'elle permet depuis les fréquences connues $c(\omega)$ de reconstruire $f(x)$. C'est l'opération inverse de la TF, d'où son nom.
+
+Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques. En effet, on a déjà dit que $4\pi$ ou $6\pi$ (des multiples de la "plus petite période" $2\pi$) peuvent aussi être des périodes de $\sin(x)$. En poussant ce raisonnement à l'extrême, on peut dire que la période de $\sin(x)$ est infinie. Cela peut être dit pour n'importe quelle fonction périodique et il va de soi que (3.2) et (3.3) s'appliquent aussi aux fonctions périodiques.
