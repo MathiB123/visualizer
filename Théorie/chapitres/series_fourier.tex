@@ -233,31 +233,31 @@ Ainsi, dans tous les cas, on a
 \end{equation}
 
 \section{Transformée de Fourier}
-Ce qu'on a vu jusqu'à maintenant fonctionne pour des fonctions périodiques, mais qu'arrive-t-il lorsqu'on tente d'étendre cela à des fonctions qui ne le sont pas? En d'autres mots, pour une fonction qui a une période infinie (qui n'est pas périodique), comment se comportent nos précédentes trouvailles? Donc, on regarde les précédentes équations dans la limite où $T \rightarrow \infty$. On commence par recopier l'équation (2.5) et (2.6) en changeant les bornes d'intégration pour (2.6), ce qu'on peut faire par (1.4).
+Ce qu'on a vu jusqu'à maintenant fonctionne pour des fonctions périodiques, mais qu'arrive-t-il lorsqu'on tente d'étendre cela à des fonctions qui ne le sont pas? En d'autres mots, pour une fonction qui a une période infinie (donc qui n'est pas périodique), comment se comportent nos précédentes trouvailles? Alors, on regarde les précédentes équations dans la limite où $T \rightarrow \infty$. On commence par recopier (2.5) et (2.6) en changeant les bornes d'intégration pour (2.6), ce qu'on peut faire par (1.4).
 
 \begin{equation}
     f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \ \text{ où } \ c_n = \frac{1}{T}\int_{-T/2}^{T/2}f(x)e^{-2\pi inx/T}dx
 \end{equation}
 
-Soit $\omega_n = \frac{2\pi n}{T}$. \textcolor{red}{changer k pour omega} Alors, la différence entre deux $k_n$ successifs est $\Delta k_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$ puisque l'écart entre deux $n$ successifs est évidemment de 1. Dans la limite où $T \rightarrow \infty$, la différence entre deux $k_n$ successifs est infinitésimale et $k_n$ devient essentiellement une variable continue $k$ d'écart $dk$. Sachant cela, on effectue quelques manipulations sur l'équation (3.1). D'abord, 
+Soit $\omega_n = \frac{2\pi n}{T}$ la fréquence angulaire pour un $n$ donné. Alors, la différence entre deux $\omega_n$ successifs est $\Delta \omega_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$ puisque l'écart entre deux $n$ successifs est évidemment de 1. Dans la limite où $T \rightarrow \infty$, $\Delta \omega_n$ est infinitésimale et $\omega_n$ devient essentiellement une variable continue $\omega$. Sachant cela, on effectue quelques manipulations sur l'équation (3.1). D'abord, pour une fonction de période finie,
 
 \begin{equation*}
-    f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \cdot 1 = \sum_{n = -\infty}^{\infty}c_ne^{ik_nx} \Delta n = \sum_{n = -\infty}^{\infty}\left(c_n\frac{T}{2\pi}\right)e^{ik_nx}\Delta k_n  
+    f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \cdot 1 = \sum_{n = -\infty}^{\infty}c_ne^{i\omega_nx} \Delta n = \sum_{n = -\infty}^{\infty}\left(c_n\frac{T}{2\pi}\right)e^{i\omega_nx}\Delta \omega_n  
 \end{equation*}
 
-Puis, dans la limite où la période est infinie, on a 
+Puis, dans la limite où la fonction a en fait une période infinie, on a 
 
 \begin{equation*}
-    f(x) = \lim_{T\rightarrow\infty}\sum_{n = -\infty}^{\infty}\left(c_n\frac{T}{2\pi}\right)e^{ik_nx}\Delta k_n = \lim_{T\rightarrow\infty}\sum_{n = -\infty}^{\infty}\left(\frac{1}{2\pi}\int_{-T/2}^{T/2}f(x)e^{-ik_nx}dx\right) e^{ik_nx}\Delta k_n
+    f(x) = \lim_{T\rightarrow\infty}\sum_{n = -\infty}^{\infty}\left(c_n\frac{T}{2\pi}\right)e^{i\omega_nx}\Delta \omega_n = \lim_{T\rightarrow\infty}\sum_{n = -\infty}^{\infty}\left(\frac{1}{2\pi}\int_{-T/2}^{T/2}f(x)e^{-i\omega_nx}dx\right) e^{i\omega_nx}\Delta \omega_n
 \end{equation*}
 \begin{equation}
-    = \int_{-\infty}^{\infty}\left(\frac{1}{2\pi}\int_{-\infty}^{\infty}f(x)e^{-ikx}dx\right)e^{ikx}dk = \int_{-\infty}^{\infty}c(k)e^{ikx}dk 
+    = \int_{-\infty}^{\infty}\left(\frac{1}{2\pi}\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right)e^{i\omega x}d\omega = \int_{-\infty}^{\infty}c(\omega)e^{i\omega x}d\omega 
 \end{equation}
 
 où on pose 
 
 \begin{equation}
-    c(k) = \frac{1}{2\pi}\int_{-\infty}^{\infty}f(x)e^{-ikx}dx
+    c(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
 \end{equation}
 
 % De manière analogue à la série de Fourier, $c(k)$ est un coefficient qui nous dit "combien" il y a de $e^{ikx}$ dans $f(x)$. L'équation (3.3) est ce qu'on appelle la transformée de Fourier de $f(x)$ et permet de décrire les fréquences $k$ contenues dans $f(x)$. Grâce à cela, l'équation (3.2) correspond à la transformée de Fourier inverse et permet de recomposer $f(x)$ selon les fréquences qu'elle contient. 
