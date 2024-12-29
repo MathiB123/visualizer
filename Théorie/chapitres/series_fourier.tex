@@ -1,5 +1,5 @@
 \section{Série de Fourier}
-Une série de Fourier est l'équivalent d'une série de Taylor pour les fonctions périodiques. Autrement dit, une série de Fourier a comme objectif d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques. Bien qu'on puisse se demander si cela marche tout le temps, il s'agit au moins d'une hypothèse qui a un minimum de sens.
+Une série de Fourier est l'équivalent d'une série de Taylor pour les fonctions périodiques. Autrement dit, une série de Fourier a comme objectif d'écrire une fonction périodique raisonnable par une combinaison linéaire d'autres fonctions périodiques. Bien qu'on puisse se demander si cela fonctionne réellement, il s'agit au moins d'un but qui a un minimum de sens.
 
 \subsection{Série de Fourier trigonométrique}
 Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourier trigonométrique correspond à
@@ -8,7 +8,9 @@ Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourie
     f(x) = \sum_{n=0}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right) = a_0 + \sum_{n=1}^{\infty}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)
 \end{equation}
 
-où les $a_n$ et $b_n$ sont des coefficients. Essayons de faire sens de tout cela. D'abord, la présence de $\sin(x)$ et $\cos(x)$ a du sens puisqu'elles sont les fonctions périodiques les plus simples. Dans un sens, on peut les voir comme des blocs de base pour générer d'autres fonctions périodiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que chaque terme dans la série est une telle période. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus court, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (2.1) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$ et cette dernière ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations, ça ne sera pas la "plus petite période" qui elle ne compte qu'une oscillation complète). Une façon de le voir est en remarquant que $\sin(x)$ a normalement une période de $2\pi$, mais $4\pi$ ou $6\pi$ peuvent aussi être des périodes équivalentes. Tout de même, chaque sinus et cosinus vont avoir une fréquence angulaire différente, soit $\frac{2\pi n}{T}$. Au final, l'équation (2.1) est une combinaison linéaire de fonctions périodiques (cos et sin) ayant tous une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
+où les $a_n$ et $b_n$ sont des coefficients. 
+
+Essayons de faire sens de tout cela. D'abord, la présence des sinus et des cosinus a du sens puisqu'elles sont les fonctions périodiques les plus simples. Dans un sens, on peut les voir comme des blocs de base pour générer d'autres fonctions périodiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que chaque terme dans la série est cette période. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus courte, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (2.1) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$ et cette dernière ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations, ça ne sera pas la "plus petite période" qui elle ne compte qu'une oscillation complète). Une façon de le voir est en remarquant que $\sin(x)$ a normalement une période de $2\pi$, mais $4\pi$ ou $6\pi$ peuvent aussi être des périodes équivalentes. Tout de même, chaque sinus et cosinus vont avoir une fréquence angulaire différente, soit $\frac{2\pi n}{T}$. Au final, l'équation (2.1) est une combinaison linéaire de fonctions périodiques (cos et sin) ayant toutes une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
 
 Évidemment, rien ne garantit à priori que l'équation (2.1) est juste pour décrire $f(x)$. En fait, on verra plus tard qu'il existe des conditions pour que $f(x)$ puisse avoir une série de Fourier. Pour le moment, on assume qu'une telle forme existe.
 
@@ -68,7 +70,7 @@ On revient à l'équation (2.1) et on cherche d'abord à connaître la valeur du
     = \int_{0}^{T}a_0 dx + \sum_{n=1}^{\infty}\int_{0}^{T}\left(a_n\cos(\frac{2\pi n x}{T}) + b_n\sin(\frac{2\pi n x}{T})\right)dx = \int_{0}^{T}a_0 dx + 0 = a_0T \implies a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx
 \end{equation*}
 
-\subsubsection{Calcul des coefficients $a_n$ ($n \geq 1$)}
+\subsubsection{Calcul des coefficients $a_n$}
 Pour trouver ces coefficients, on intègre maintenant $f(x)$ en multipliant par $\cos(\frac{2\pi mx}{T})$ où $m \geq 1$. On a
 
 \begin{equation*}
@@ -87,9 +89,7 @@ Pour trouver ces coefficients, on intègre maintenant $f(x)$ en multipliant par 
     = \sum_{n=1}^{\infty}\int_{0}^{T}\left(a_n\cos(\frac{2\pi n x}{T})\cos(\frac{2\pi m x}{T})\right)dx = a_m\frac{T}{2} \implies a_n = \frac{2}{T}\int_{0}^{T}f(x)\cos(\frac{2\pi n x}{T})dx
 \end{equation*}
 
-où on utilise les identités de la section 2.1.1.
-
-\subsubsection{Calcul des coefficients $b_n$ ($n \geq 1$)}
+\subsubsection{Calcul des coefficients $b_n$}
 Cette fois, on intègre en multipliant par $\sin(\frac{2\pi m x}{T})$ où $m \geq 1$. On obtient 
 
 \begin{equation*}
@@ -108,10 +108,8 @@ Cette fois, on intègre en multipliant par $\sin(\frac{2\pi m x}{T})$ où $m \ge
     = \sum_{n=1}^{\infty}\int_{0}^{T}\left(b_n\sin(\frac{2\pi n x}{T})\sin(\frac{2\pi m x}{T})\right)dx = b_m\frac{T}{2} \implies b_n = \frac{2}{T}\int_{0}^{T}f(x)\sin(\frac{2\pi n x}{T})dx
 \end{equation*}
 
-où on utilise les identités de la section 2.1.1.
-
 \subsubsection{Les coefficients de la série de Fourier trigonométrique}
-Au final, on trouve les coefficients de la manière suivante : 
+En résumé, on trouve les coefficients de la manière suivante : 
 
 \begin{equation}
     a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx
@@ -123,18 +121,18 @@ Au final, on trouve les coefficients de la manière suivante :
     b_n = \frac{2}{T}\int_{0}^{T}f(x)\sin(\frac{2\pi n x}{T})dx
 \end{equation}
 
-Depuis le début, on intègre sur une période de 0 à $T$, ce qui semble être un choix assez arbitraire. En fait, par l'équation (1.4), les bornes d'intégration importent peu tant qu'elles sont séparées d'une période complète (d'une longueur $T$). Par exemple, on aurait eu les mêmes résultats si on avait intégré de $-\frac{T}{4}$ à $\frac{3T}{4}$.
+Depuis le début, on intègre sur une période de 0 à $T$, ce qui semble être un choix assez arbitraire. En fait, par l'équation (1.4), les bornes d'intégration importent peu tant qu'elles sont séparées d'une période. Par exemple, on aurait eu les mêmes résultats si on avait intégré de $-\frac{T}{4}$ à $\frac{3T}{4}$.
 
-De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients seront nuls. Effectivement, une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, leur produit est une fonction impaire. Si ensuite on déplace les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par l'équation (1.4), l'intégrale pour les $b_n$ sera donc celle d'une fonction impaire sur un intervalle symétrique. On sait par la section 1.1 que cette intégrale est nulle. Par un même raisonnement, une fonction impaire n'aura aucun terme $a_0$ et $a_n$ dans sa série de Fourier.
+De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients seront nuls. Effectivement, une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, leur produit est une fonction impaire. Si ensuite on déplace les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par l'équation (1.4), l'intégrale pour les $b_n$ sera donc celle d'une fonction impaire sur un intervalle symétrique. On sait par la section 1.1 que cette intégrale est nulle. Par un même raisonnement, une fonction impaire n'aura pas de termes $a_0$ et $a_n$ dans sa série de Fourier.
 
-Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères (comme la convergence uniforme) qui nous indiqueraient s'il est possible ou non de faire une telle opération. Cependant, il aurait été difficile de les vérifier, car on ne sait même pas la valeur des coefficients à priori. Autrement dit, il manque de l'information et on doit assumer que la manipulation est possible pour pouvoir progresser. Donc, en plus de se demander à la base si l'équation (2.1) fonctionne, il faut aussi s'informer sur la validité d'inversion de la somme et de l'intégrale (à voir plus tard).
+Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères qui nous indiqueraient s'il est possible ou non de faire une telle opération. Cependant, il aurait été difficile de les vérifier, car on ne sait même pas la valeur des coefficients à priori. Autrement dit, il manque de l'information et on doit assumer que la manipulation est possible pour pouvoir progresser. On reviendra sur cela plus tard.
 
 \subsection{Exemple : Fonction en dents de scie}
 Soit $f(x) = Ax$ pour $-\frac{T}{2} < x < \frac{T}{2}$ de période $T$ où $A$ est une constante. 
 
 \begin{figure}[H]
     \centering
-     \includegraphics[width=0.55\textwidth]{images/ch2/exemple_scie.png}
+     \includegraphics[width=0.45\textwidth]{images/ch2/exemple_scie.png}
     \caption{La fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
 
@@ -155,7 +153,7 @@ Ainsi, la série de Fourier pour $f(x)$ est
     f(x) = Ax = \frac{AT}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(\frac{2\pi nx}{T}) = \frac{AT}{\pi}\left[\sin(\frac{2\pi x}{T}) - \frac{1}{2}\sin(\frac{4\pi x}{T}) + ...\right]
 \end{equation*}
 
-Plus on incorpore de termes dans la série, plus elle se rapprochera de la fonction cible. Pour expérimenter avec cet exemple, le notebook \lstinline|exemple_dents_de_scie.ipynb| permet de voir l'évolution de l'approximation à mesure qu'on ajoute des termes dans la série.
+Plus on incorpore de termes dans la série, plus elle se rapprochera de la fonction cible. Pour expérimenter avec cet exemple, le notebook \lstinline|exemple_dents_de_scie.ipynb| permet de voir l'évolution de l'approximation à mesure qu'on ajoute des termes.
 
 \begin{figure}[H]
     \centering
@@ -169,11 +167,11 @@ Plus on incorpore de termes dans la série, plus elle se rapprochera de la fonct
     \caption{Série de Fourier (25  premiers termes) de la fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
 
-
-D'ailleurs, par cet exemple, on voit qu'une fonction discontinue peut avoir une série de Fourier. Par contre, on voit par la figure 6 qu'un drôle de comportement semble se produire aux discontinuités. En effet, on remarque de grandes fluctuations près de ces points, ce qu'on appelle le phénomène de Gibbs (à voir plus tard). De plus, comme ici on utilise des fonctions continues pour approximer une fonction discontinue, on peut s'intéresser à la valeur de la série de Fourier aux discontinuités (c'est la moyenne de chaque côté de la discontinuité, à voir plus tard).
+On voit que la série de Fourier semble très bien converger vers la fonction cible plus il y a de termes. D'ailleurs, par cet exemple, on voit qu'une fonction discontinue peut avoir une série de Fourier. Par contre, la figure 5 montre qu'un comportement étrange semble se produire aux discontinuités. En effet, on remarque de grandes oscillations près de ces points. Il s'agit du phénomène de Gibbs dont on parlera plus tard. De plus, comme ici on utilise des fonctions continues pour approximer une fonction discontinue, on peut s'intéresser à la valeur de la série de Fourier aux discontinuités, ce qu'on discutera plus tard. 
+% (c'est la moyenne de chaque côté de la discontinuité, à voir plus tard).
 
 \subsection{Série de Fourier exponentielle}
-La série de Fourier trigonométrique peut être condensée grâce aux identités suivantes pour la fonction sinus et cosinus : 
+La série de Fourier trigonométrique peut être condensée grâce aux identités suivantes :
 
 \begin{equation*}
     \cos(x) = \frac{e^{ix} + e^{-ix}}{2}, \ \ \sin(x) = \frac{e^{ix} - e^{-ix}}{2i}
@@ -204,7 +202,7 @@ où on définit
     \end{cases}
 \end{equation*}
 
-Comme une exponentielle complexe tourne dans le cercle complexe à la même fréquence angulaire que le sinus et le cosinus qui la composent, on retrouve naturellement la fréquence angulaire $\frac{2\pi n}{T}$ dans l'exponentielle complexe.
+Comme une exponentielle complexe tourne dans le cercle complexe, on retrouve naturellement la fréquence angulaire $\frac{2\pi n}{T}$ d'auparavant.
 
 \subsubsection{Calcul des coefficients $c_n$}
 On regarde chacun des cas possibles pour la valeur des $c_n$. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par l'équation (2.2) : 
