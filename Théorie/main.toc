@@ -14,3 +14,7 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Calcul des coefficients $c_n$}{8}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Retour sur la fonction en dents de scie}{9}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Transformée de Fourier}{9}{section.3}%
+\contentsline {section}{\numberline {4}TF/TFI de quelques fonctions}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Pulse rectangulaire}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Exponentielle décroissante symétrique}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}}{12}{subsection.4.3}%
