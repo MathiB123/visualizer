@@ -38,39 +38,39 @@ Par (3.2),
     \text{Rect}(x) = \int_{-\infty}^{\infty}\frac{\sin(\frac{\tau\omega}{2})}{\pi \omega}e^{i\omega x}d\omega
 \end{equation*}
 
-Pour vérifier que cela tient, il faudrait évaluer l'intégrale, ce qui à priori ne semble pas simple du tout. Si on approximait l'intégrale (en prenant par exemple des bornes d'intégration qui tendent progressivement vers $-\infty/\infty$), on verrait graphiquement qu'on retomberait bien sur la figure 6.
+Pour vérifier que cela tient, il faudrait évaluer l'intégrale, ce qui à priori ne semble pas simple du tout. Si on approximait l'intégrale (en prenant par exemple des bornes d'intégration qui tendent progressivement vers $-\infty/\infty$), on verrait graphiquement qu'on retombe bien sur la figure 6.
 
-\subsection{Exponentielle décroissante symétrique}
-Soit la fonction exponentielle décroissante symétrique $f(x) = Ae^{-B\abs{x}}$ où $A \in \mathbb{R}$ et $B \in \mathbb{R}_{> 0}$ sont des constantes.
+% \subsection{Exponentielle décroissante symétrique}
+% Soit la fonction exponentielle décroissante symétrique $f(x) = Ae^{-B\abs{x}}$ où $A \in \mathbb{R}$ et $B \in \mathbb{R}_{> 0}$ sont des constantes.
 
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=0.45\textwidth]{images/ch4/expo_decroissante_sym.png}
-    \caption{La fonction exponentielle décroissante symétrique ($A=1, B=1$)}
-    \end{figure}
+% \begin{figure}[H]
+%     \centering
+%         \includegraphics[width=0.45\textwidth]{images/ch4/expo_decroissante_sym.png}
+%     \caption{La fonction exponentielle décroissante symétrique ($A=1, B=1$)}
+%     \end{figure}
 
-Par (3.3), on trouve 
+% Par (3.3), on trouve 
 
-\begin{equation*}
-    c(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}Ae^{-B\abs{x}}e^{-i\omega x}dx = \frac{A}{2\pi}\left[\int_{-\infty}^{0}e^{Bx}e^{-i\omega x}dx + \int_{0}^{\infty}e^{-Bx}e^{-i\omega x}dx\right]
-\end{equation*}
-\begin{equation*}
-    = \frac{A}{2\pi}\left[\frac{e^{(B-i\omega)x}}{B - i\omega}\eval{}_{-\infty}^{0} - \frac{e^{-(B+i\omega)x}}{B + i\omega}\eval{}_{0}^{\infty}\right] = \frac{A}{2\pi}\left[\frac{1}{B-i\omega} + \frac{1}{B+i\omega}\right] = \frac{A}{2\pi}\frac{(B+i\omega) + (B-i\omega)}{(B-i\omega)(B+i\omega)} = \frac{AB}{\pi(B^2+\omega^2)}
-\end{equation*}
+% \begin{equation*}
+%     c(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}Ae^{-B\abs{x}}e^{-i\omega x}dx = \frac{A}{2\pi}\left[\int_{-\infty}^{0}e^{Bx}e^{-i\omega x}dx + \int_{0}^{\infty}e^{-Bx}e^{-i\omega x}dx\right]
+% \end{equation*}
+% \begin{equation*}
+%     = \frac{A}{2\pi}\left[\frac{e^{(B-i\omega)x}}{B - i\omega}\eval{}_{-\infty}^{0} - \frac{e^{-(B+i\omega)x}}{B + i\omega}\eval{}_{0}^{\infty}\right] = \frac{A}{2\pi}\left[\frac{1}{B-i\omega} + \frac{1}{B+i\omega}\right] = \frac{A}{2\pi}\frac{(B+i\omega) + (B-i\omega)}{(B-i\omega)(B+i\omega)} = \frac{AB}{\pi(B^2+\omega^2)}
+% \end{equation*}
 
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=0.35\textwidth]{images/ch4/coeff_expo.png}
-    \caption{$c(\omega)$ pour la fonction exponentielle décroissante symétrique ($A=1, B=1$)}
-    \end{figure}
+% \begin{figure}[H]
+%     \centering
+%         \includegraphics[width=0.35\textwidth]{images/ch4/coeff_expo.png}
+%     \caption{$c(\omega)$ pour la fonction exponentielle décroissante symétrique ($A=1, B=1$)}
+%     \end{figure}
 
-Par (3.2), on a
+% Par (3.2), on a
 
-\begin{equation*}
-    f(x) = Ae^{-B\abs{x}} = \int_{-\infty}^{\infty}\frac{AB}{\pi(B^2+\omega^2)}e^{i\omega x}d\omega
-\end{equation*}
+% \begin{equation*}
+%     f(x) = Ae^{-B\abs{x}} = \int_{-\infty}^{\infty}\frac{AB}{\pi(B^2+\omega^2)}e^{i\omega x}d\omega
+% \end{equation*}
 
-dont on peut montrer que l'intégrale redonne bien l'exponentielle décroissante symétrique.
+% dont on peut montrer que l'intégrale redonne bien l'exponentielle décroissante symétrique.
 
 \subsection{Fonction boîte}
 Similaire au pulse rectangulaire, on définit la fonction boîte comme 
@@ -100,14 +100,19 @@ et
     B_k(x) = \int_{-\infty}^{\infty}\frac{1}{\pi k \omega}\sin(\frac{k\omega}{2})e^{i\omega x}d\omega
 \end{equation*}
 
-qui tiennent pour les mêmes raisons que dans le cas du pulse rectangulaire.
+dont on peut montrer que l'intégrale redonne bien la fonction boîte.
 
 \subsection{Delta de Dirac}
-% Le delta de Dirac $\delta(x)$ est une fonction nulle partout sauf à l'origine et dont $\int_{-\infty}^{\infty}\delta(x)dx = 1$. Avec ce qu'on vient de voir à la précédente sous-section, on peut dire que 
+Le delta de Dirac $\delta(x)$ est une fonction nulle partout sauf à l'origine et dont $\int_{-\infty}^{\infty}\delta(x)dx = 1$. Avec ce qu'on vient de voir à la précédente sous-section, on peut dire que 
 
-% \begin{equation*}
-%     \delta(x) = \lim_{k \rightarrow 0} B_k(x)
-% \end{equation*}
+\begin{equation*}
+    \delta(x) = \lim_{k \rightarrow 0} B_k(x)
+\end{equation*}
 
-% Alors, on a simplement à réutiliser nos trouvailles pour la fonction boîte et regarder cela dans la limite où $k \rightarrow 0$. Ainsi,
+Alors, on a simplement à réutiliser nos trouvailles pour la fonction boîte et regarder cela dans la limite où $k \rightarrow 0$. Ainsi,
 
+\begin{equation*}
+    c(\omega) = \lim_{k\rightarrow 0}\frac{1}{\pi k \omega}\sin(\frac{k\omega}{2}) = \frac{1}{2\pi} \lim_{k\rightarrow 0}\frac{2}{k\omega}\sin(\frac{k\omega}{2}) = \frac{1}{2\pi}\underbrace{\lim_{z\rightarrow 0}\frac{\sin(z)}{z}}_\text{1} = \frac{1}{2\pi}
+\end{equation*}
+
+où on utilise la substitution $z = \frac{k\omega}{2}$. Avec un différent choix de convention pour le facteur $\frac{1}{2\pi}$ dans l'équation de la TF/TFI (le mettre sur la TFI au lieu de la TF), le résultat donnerait 1, ce qui est plaisant.
