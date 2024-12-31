@@ -503,6 +503,10 @@ INPUT .\images\ch4\fct_boite.jpg
 INPUT .\images\ch4\fct_boite.jpg
 INPUT .\images\ch4\fct_boite.jpg
 INPUT .\images\ch4\fct_boite.jpg
+INPUT .\chapitres\propriétés_tf.tex
+INPUT chapitres\propriétés_tf.tex
+INPUT .\chapitres\propriétés_tf.tex
+INPUT chapitres\propriétés_tf.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

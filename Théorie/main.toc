@@ -18,3 +18,4 @@
 \contentsline {subsection}{\numberline {4.1}Pulse rectangulaire}{10}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Fonction boîte}{11}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Delta de Dirac}{12}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Transformée de Fourier discrète}{13}{section.5}%

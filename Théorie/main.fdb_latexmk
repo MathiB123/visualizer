@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1735672669.46755 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1735672671.0772 0
+["pdflatex"] 1735677548.31751 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1735677549.99351 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731251578 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732411151 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -233,11 +233,12 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729261622 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693732032 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1735576569 2386 e04d4db12ad042ba3fd905d5fc1757d1 ""
+  "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1735673900 2430 082b07fd961b73331d88f7803ab82478 ""
   "chapitres/exemples_tf.tex" 1735672669 5624 3a8f341e312e7ab2499dee256c8a355c ""
   "chapitres/fonctions.tex" 1735487304 7755 d8333de6bd2009951cf227797ddaae56 ""
+  "chapitres/propriétés_tf.tex" 1735677546 43 58106f6ae837e337284cf139484b5314 ""
   "chapitres/series_fourier.tex" 1735573004 15617 ee1633a5689b97ba15db283f1a09e317 ""
-  "chapitres/transfo_fourier.tex" 1735671894 3795 52df5f1aa50a0d7b178cafe45ade6804 ""
+  "chapitres/transfo_fourier.tex" 1735674509 3819 85609676bff8ab0ea76923105b03056b ""
   "images/ch1/cos.png" 1734623232 19688 f19cbde4b176eef0ce6d1f5de93b1777 ""
   "images/ch1/integrale_periode.jpg" 1734625194 104152 8279802930523d4ae1ffc66da80974d5 ""
   "images/ch1/sin.png" 1734623166 20903 b1305c844a26260f7b2046c21907e03d ""
@@ -247,10 +248,10 @@
   "images/ch4/coeff_pulse_rectangulaire.png" 1735573878 53328 462fc31cf3fd3d2130c2074068cfa42b ""
   "images/ch4/fct_boite.jpg" 1735586708 46691 3a2a7ba8be24a1e41e85779a90b1c7e0 ""
   "images/ch4/pulse_rectangulaire.jpg" 1735572773 43169 2f12dfb48f0b00fdc67ea212244deb74 ""
-  "main.aux" 1735672670 4328 c2a699331ed2af21c87209138a62935d "pdflatex"
-  "main.out" 1735672670 3664 c27fcaf60ec834c2c5a31956676d749c "pdflatex"
-  "main.tex" 1735576569 2386 e04d4db12ad042ba3fd905d5fc1757d1 ""
-  "main.toc" 1735672670 1813 fc93cb66eb709098c585a72daa508d6c "pdflatex"
+  "main.aux" 1735677549 4459 81f62fc8f2a73aee8dc10e987954ff70 "pdflatex"
+  "main.out" 1735677549 3878 3a4990cdcd51f9af169c6759d8dbca8c "pdflatex"
+  "main.tex" 1735673900 2430 082b07fd961b73331d88f7803ab82478 ""
+  "main.toc" 1735677549 1903 401c740dc3c15079439277009f728d04 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
