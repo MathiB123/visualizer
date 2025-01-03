@@ -1,1 +1,22 @@
 \section{Transformée de Fourier discrète}
+Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte ($f(x) = ...$) de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, la prise de données ne peut se faire que de manière discrète. Encore pire, il peut être virtuellement impossible de trouver une forme exacte depuis les données. Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise les données discrètes qu'on a.
+
+\subsection{Delta de Dirac et propriété d'échantillonnage}
+Au sens très large, un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point $x^*$ et dont $\int_{-\infty}^{\infty}\delta(x-x^*)dx = 1$. Par exemple, $\delta(x)$ est nulle partout sauf en $x^*=0$. Naturellement, pour une fonction $f(x)$ quelconque, $f(x)\delta(x-x^*) = f(x^*)\delta(x-x^*)$ où $f(x^*)$ est évidemment un certain nombre. En intégrant, on trouve que 
+
+\begin{equation*}
+    \int_{-\infty}^{\infty}f(x)\delta(x-x^*)dx = \int_{-\infty}^{\infty}f(x^*)\delta(x-x^*)dx = f(x^*)\int_{-\infty}^{\infty}\delta(x-x^*)dx = f(x^*)  
+\end{equation*}
+
+Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner une valeur de $f(x)$ au point $x^*$. On peut répéter le processus pour différents points du domaine afin d'avoir un échantillonnage $\left\{f(x_k)\right\}_{k=0}^{N-1}$ de la fonction $f(x)$. Alors, on peut dire que
+
+\begin{equation*}
+    f_{\text{éch.}}(x) = \sum_{k=0}^{N-1}f(x)\delta(x-x_k) = \sum_{k=0}^{N-1}f(x_k)\delta(x-x_k)
+\end{equation*}
+
+Lors d'une prise de mesure, c'est évidemment $f_{\text{éch.}}(x)$ qu'on obtiendrait. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
+
+\subsection{Passage de la TF à la TFD}
+%Utiliser le temps (mesure au temps 0, ...). Regarder notes dans cahier.
+
+On retourne maintenant à la vraie vie où on enregistre une suite de $N$ points $\left\{f(x_k)\right\}_{k=0}^{N-1}$ lors d'une expérience quelconque. Derrière l'échantillonnage des données, on sait tout de même qu'il y a une certaine courbe $f(x)$ dont on a seulement pu stocker une certaine partie. Par la section 4.1, on sait comment faire le passage de la courbe à l'ensemble fini de valeurs. En effet,   

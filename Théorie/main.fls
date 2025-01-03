@@ -520,6 +520,10 @@ INPUT .\images\ch3\bornes_500.png
 INPUT .\images\ch3\bornes_500.png
 INPUT .\images\ch3\bornes_500.png
 INPUT .\images\ch3\bornes_500.png
+INPUT .\chapitres\dft.tex
+INPUT chapitres\dft.tex
+INPUT .\chapitres\dft.tex
+INPUT chapitres\dft.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
