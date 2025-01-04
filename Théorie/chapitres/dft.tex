@@ -1,8 +1,8 @@
 \section{Transformée de Fourier discrète}
-Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte ($f(x) = ...$) de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, la prise de données ne peut se faire que de manière discrète. Encore pire, il peut être virtuellement impossible de trouver une forme exacte depuis les données. Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise les données discrètes qu'on a.
+Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, la prise de données ne peut se faire que de manière discrète. Encore pire, il peut être virtuellement impossible de trouver une forme exacte depuis les données. Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise les données discrètes qu'on a.
 
 \subsection{Delta de Dirac et propriété d'échantillonnage}
-Au sens très large, un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point $x^*$ et dont $\int_{-\infty}^{\infty}\delta(x-x^*)dx = 1$. Par exemple, $\delta(x)$ est nulle partout sauf en $x^*=0$. Naturellement, pour une fonction $f(x)$ quelconque, $f(x)\delta(x-x^*) = f(x^*)\delta(x-x^*)$ où $f(x^*)$ est évidemment un certain nombre. En intégrant, on trouve que 
+Un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point $x^*$ et dont $\int_{-\infty}^{\infty}\delta(x-x^*)dx = 1$. Par exemple, $\delta(x)$ est nulle partout sauf à l'origine. Naturellement, pour une fonction $f(x)$ quelconque, $f(x)\delta(x-x^*) = f(x^*)\delta(x-x^*)$. En intégrant, on trouve que 
 
 \begin{equation*}
     \int_{-\infty}^{\infty}f(x)\delta(x-x^*)dx = \int_{-\infty}^{\infty}f(x^*)\delta(x-x^*)dx = f(x^*)\int_{-\infty}^{\infty}\delta(x-x^*)dx = f(x^*)  
@@ -10,13 +10,43 @@ Au sens très large, un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle 
 
 Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner une valeur de $f(x)$ au point $x^*$. On peut répéter le processus pour différents points du domaine afin d'avoir un échantillonnage $\left\{f(x_k)\right\}_{k=0}^{N-1}$ de la fonction $f(x)$. Alors, on peut dire que
 
-\begin{equation*}
+\begin{equation}
     f_{\text{éch.}}(x) = \sum_{k=0}^{N-1}f(x)\delta(x-x_k) = \sum_{k=0}^{N-1}f(x_k)\delta(x-x_k)
-\end{equation*}
+\end{equation}
 
-Lors d'une prise de mesure, c'est évidemment $f_{\text{éch.}}(x)$ qu'on obtiendrait. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
+où $f_{\text{éch.}}(x)$ est nulle sauf aux points échantillonnés. Lors d'une prise de mesure, c'est évidemment $f_{\text{éch.}}(x)$ qu'on obtiendrait. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
 
 \subsection{Passage de la TF à la TFD}
-%Utiliser le temps (mesure au temps 0, ...). Regarder notes dans cahier.
+Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Derrière l'échantillonnage des données, on sait tout de même qu'il y a une certaine courbe $f(t)$ dont on a seulement pu stocker une certaine partie. Par (4.1), on sait comment écrire la fonction d'échantillonnage (nulle partout sauf aux points échantillonnés) et en fait elle correspond à une fonction qu'on aurait pu mettre dans la TF de base. En la mettant dans (3.3), on calcule 
 
-On retourne maintenant à la vraie vie où on enregistre une suite de $N$ points $\left\{f(x_k)\right\}_{k=0}^{N-1}$ lors d'une expérience quelconque. Derrière l'échantillonnage des données, on sait tout de même qu'il y a une certaine courbe $f(x)$ dont on a seulement pu stocker une certaine partie. Par la section 4.1, on sait comment faire le passage de la courbe à l'ensemble fini de valeurs. En effet,   
+\begin{equation*}
+    c(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}f_{\text{éch.}}(t)e^{-i\omega t}dt = \frac{1}{2\pi}\int_{-\infty}^{\infty}\left(\sum_{k=0}^{N-1}f(t_k)\delta(t-t_k)\right)e^{-i\omega t}dt 
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{2\pi}\int_{-\infty}^{\infty}f(t_0)\delta(t-t_0)e^{-i\omega t_0}dt + \dots + \frac{1}{2\pi}\int_{-\infty}^{\infty}f(t_{N-1})\delta(t-t_{N-1})e^{-i\omega t_{N-1}}dt 
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{2\pi}f(t_0)e^{-i\omega t_0}\int_{-\infty}^{\infty}\delta(t-t_0)dt + \dots + \frac{1}{2\pi}f(t_{N-1})e^{-i\omega t_{N-1}}\int_{-\infty}^{\infty}\delta(t-t_{N-1})dt
+\end{equation*}
+\begin{equation*}
+    = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k}
+\end{equation*}
+
+Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au temps $t_0 = 0$ et que les points $f(t_k)$ sont pris à intervalles réguliers (disons après un temps $L$). Donc, on a une série de points $\left\{f(kL)\right\}_{k=0}^{N-1}$ et le calcul précédent devient
+
+\begin{equation*}
+    c(\omega) = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\omega kL}
+\end{equation*}
+
+Sachant qu'on a un nombre fini de données, on considère que la suite de mesures est périodique (comme s'il s'agissait d'une période d'une fonction périodique). Comme conséquence, cela revient essentiellement au cas de la série de Fourier où on ne regarde pas toutes les fréquences possibles $\omega$ mais seulement les multiples d'une fréquence de base ($\frac{2\pi n}{T}$). Ici, $T = NL$ et si on insère $\frac{2\pi n}{NL}$ dans la dernière équation, on discrétise $\omega$ et on trouve 
+
+\begin{equation*}
+    c\left(\frac{2\pi n}{N}\right) = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi n}{NL}kL} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi}{N}nk} 
+\end{equation*}
+
+où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on dit que $f(kL) = f_k$ et on multiplie par $\frac{2\pi}{N}$ pour ainsi obtenir la forme finale de la TFD : 
+
+\begin{equation}
+    c(n) = \frac{1}{N}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
+\end{equation}
+
