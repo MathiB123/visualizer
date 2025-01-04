@@ -38,15 +38,28 @@ Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au
     c(\omega) = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\omega kL}
 \end{equation*}
 
-Sachant qu'on a un nombre fini de données, on considère que la suite de mesures est périodique (comme s'il s'agissait d'une période d'une fonction périodique). Comme conséquence, cela revient essentiellement au cas de la série de Fourier où on ne regarde pas toutes les fréquences possibles $\omega$ mais seulement les multiples d'une fréquence de base ($\frac{2\pi n}{T}$). Ici, $T = NL$ et si on insère $\frac{2\pi n}{NL}$ dans la dernière équation, on discrétise $\omega$ et on trouve 
+Sachant qu'on a un nombre fini de données, on considère que la suite de mesures est périodique (comme s'il s'agissait d'une période d'une fonction périodique). Comme conséquence, cela revient essentiellement au cas de la série de Fourier où on ne regarde pas toutes les fréquences possibles $\omega$ mais seulement les multiples d'une fréquence de base ($\frac{2\pi n}{T}$ dans le cas d'une série de Fourier). Ici, $T = NL$ et donc si on insère $\frac{2\pi n}{NL}$ dans la dernière équation, on trouve 
 
 \begin{equation*}
-    c\left(\frac{2\pi n}{N}\right) = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi n}{NL}kL} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi}{N}nk} 
+    c_n = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi n}{NL}kL} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
 \end{equation*}
 
-où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on dit que $f(kL) = f_k$ et on multiplie par $\frac{2\pi}{N}$ pour ainsi obtenir la forme finale de la TFD : 
+où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on écrit que $f(kL) = f_k$ (le $k$ième point). Si on considère ces $c_n$ comme étant la TFD, il est possible de les incorporer dans la transformée de Fourier inverse discrète (TFID) et de vérifier si tout coïncide. Par habitude, on sait que la TFID sera 
 
 \begin{equation}
-    c(n) = \frac{1}{N}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
+    f_k = \sum_{n=0}^{N-1}c_ne^{i\frac{2\pi}{N}nk}   
 \end{equation}
 
+et on calcule que
+
+\begin{equation*}
+    f_k = \sum_{n=0}^{N-1}c_ne^{i\frac{2\pi}{N}nk} = \sum_{n=0}^{N-1}\left(\frac{1}{2\pi}\sum_{k'=0}^{N-1}f_{k'}e^{-i\frac{2\pi}{N}nk'}\right)e^{i\frac{2\pi}{N}nk} = \frac{1}{2\pi}\sum_{k'=0}^{N-1}f_{k'}\sum_{n=0}^{N-1}e^{i\frac{2\pi}{N}n(k-k')} = \frac{N}{2\pi}f_k
+\end{equation*}
+
+On voit alors qu'on est à un facteur près de ce qu'on aimerait avoir et on multiplie donc le tout par $\frac{2\pi}{N}$. Tant qu'à faire, on peut absorber $\frac{2\pi}{N}$ dans l'équation pour les $c_n$ et on trouve finalement l'équation de la TFD :
+
+\begin{equation}
+    c_n = \frac{1}{N}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
+\end{equation}
+
+Encore une fois, le facteur $\frac{1}{N}$ peut aller avec (4.2) ou (4.3), ça ne change rien.

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1736011514.81069 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1736011516.53314 0
+["pdflatex"] 1736024184.90369 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1736024186.63403 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731251578 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732411151 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -234,7 +234,7 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693732032 123 a302f2c651a95033260db60e51527ae8 ""
   "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1735844987 2420 84b45688ecd7433058eaeb1869329aa2 ""
-  "chapitres/dft.tex" 1736011514 4826 1b7c83de4da0a7c6c36c8dd847992bbd ""
+  "chapitres/dft.tex" 1736024184 5730 efd50c16cde2d5a91066362cdac6aa4b ""
   "chapitres/fonctions.tex" 1735487304 7755 d8333de6bd2009951cf227797ddaae56 ""
   "chapitres/series_fourier.tex" 1735573004 15617 ee1633a5689b97ba15db283f1a09e317 ""
   "chapitres/transfo_fourier.tex" 1735843575 7390 f664ef7b92267e2508e6c08fc84839ce ""
@@ -250,10 +250,10 @@
   "images/ch3/bornes_500.png" 1735837240 21716 643e04133a350cb6eb1007f16687bf56 ""
   "images/ch3/coeff_pulse_rectangulaire.png" 1735573878 53328 462fc31cf3fd3d2130c2074068cfa42b ""
   "images/ch3/pulse_rectangulaire.jpg" 1735572773 43169 2f12dfb48f0b00fdc67ea212244deb74 ""
-  "main.aux" 1736011516 4668 e1f89d74d1d17b1dba5b094471cbaa26 "pdflatex"
-  "main.out" 1736011516 3984 43b2433225b434809ce58fdcb7571322 "pdflatex"
+  "main.aux" 1736024186 4668 e1f89d74d1d17b1dba5b094471cbaa26 "pdflatex"
+  "main.out" 1736024186 3984 43b2433225b434809ce58fdcb7571322 "pdflatex"
   "main.tex" 1735844987 2420 84b45688ecd7433058eaeb1869329aa2 ""
-  "main.toc" 1736011516 1873 a025257c84094cfc03afca2644a31584 "pdflatex"
+  "main.toc" 1736024186 1873 a025257c84094cfc03afca2644a31584 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
