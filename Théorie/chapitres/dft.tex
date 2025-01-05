@@ -62,4 +62,50 @@ On voit alors qu'on est à un facteur près de ce qu'on aimerait avoir et on mul
     c_n = \frac{1}{N}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
 \end{equation}
 
-Encore une fois, le facteur $\frac{1}{N}$ peut aller avec (4.2) ou (4.3), ça ne change rien.
+Encore une fois, le facteur $\frac{1}{N}$ peut aller avec (4.2) ou (4.3), ça ne change rien. 
+
+\subsection{Représentation matricielle}
+Communément, il est pratique de compiler les $f_k$ et les $c_n$ dans des vecteurs.
+
+\begin{equation*}
+    \vec{f} = 
+    \begin{bmatrix}
+        f_0 \\
+        \vdots \\
+        f_{N-1} \\
+    \end{bmatrix}, \ \
+    \vec{c} = 
+    \begin{bmatrix}
+        c_0 \\
+        \vdots \\
+        c_{N-1} \\
+    \end{bmatrix}
+\end{equation*}
+
+Avec cela, il est facile de déduire que le côté droit de l'égalité dans (4.3) correspond simplement à un produit matricielle entre une certaine matrice et le vecteur $\vec{f}$. En posant $W = e^{-i\frac{2\pi}{N}}$, il est facile de vérifier que 
+
+\begin{equation*} 
+    \begin{bmatrix}
+        c_0 \\
+        c_1 \\
+        \vdots \\
+        c_{N-1} \\
+    \end{bmatrix}
+    = \frac{1}{N}
+    \begin{bmatrix}
+        1 & 1 & \dots & 1 & 1\\
+        1 & W & \dots & W^{N-2} & W^{N-1}\\
+        \vdots & \vdots & \ddots & \vdots & \vdots\\
+        1 & W^{N-1} & \dots & W^{(N-1)(N-2)} & W^{(N-1)(N-1)}
+    \end{bmatrix}
+    \begin{bmatrix}
+        f_0 \\
+        f_1 \\
+        \vdots \\
+        f_{N-1} \\
+    \end{bmatrix}
+\end{equation*}
+
+où on définit $U = \left[W^{lm}\right]_{l,m=0}^{N-1}$ la matrice symétrique (et unitaire et de changement de base) permettant de calculer le vecteur $\vec{c}$. En supposant que le calcul d'une exponentielle complexe et que l'addition ont une complexité constante, on voit clairement avec la représentation matricielle que la TFD possède une complexité $\mathcal{O}(N^2)$, car il y a $N$ coefficients à calculer demandant chacun $N$ multiplications. En tant que tel, il y a bien pire comme complexité, mais en général il faut tout de même un grand $N$ pour que la TFD (qui, on rappelle, est une approximation discrète de la TF) fonctionne avec une précision suffisante. Ainsi, le prochain objectif est de voir s'il y a un moyen d'abaisser la complexité.
+
+%Revérifier le document pour être sûr que tout est beau et cohérent avant de passer à FFT.
