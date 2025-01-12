@@ -2,22 +2,22 @@
 Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, la prise de données ne peut se faire que de manière discrète. Encore pire, il peut être virtuellement impossible de trouver une forme exacte depuis les données. Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise les données discrètes qu'on a.
 
 \subsection{Delta de Dirac et propriété d'échantillonnage}
-Un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point $x^*$ et dont $\int_{-\infty}^{\infty}\delta(x-x^*)dx = 1$. Par exemple, $\delta(x)$ est nulle partout sauf à l'origine. Naturellement, pour une fonction $f(x)$ quelconque, $f(x)\delta(x-x^*) = f(x^*)\delta(x-x^*)$. En intégrant, on trouve que 
+Un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point $x^*$ et dont $\int_{-\infty}^{\infty}\delta(x-x^*)dx = 1$. Par exemple, $\delta(x)$ est nulle partout sauf à l'origine. Naturellement, pour une fonction $f(x)$ quelconque, $f(x)\delta(x-x^*) = f(x^*)\delta(x-x^*)$. On remarque que 
 
 \begin{equation*}
     \int_{-\infty}^{\infty}f(x)\delta(x-x^*)dx = \int_{-\infty}^{\infty}f(x^*)\delta(x-x^*)dx = f(x^*)\int_{-\infty}^{\infty}\delta(x-x^*)dx = f(x^*)  
 \end{equation*}
 
-Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner une valeur de $f(x)$ au point $x^*$. On peut répéter le processus pour différents points du domaine afin d'avoir un échantillonnage $\left\{f(x_k)\right\}_{k=0}^{N-1}$ de la fonction $f(x)$. Alors, on peut dire que
+Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner une valeur de $f(x)$, ici au point $x^*$. On peut répéter le processus pour différents points du domaine afin d'avoir un échantillonnage $\left\{f(x_k)\right\}_{k=0}^{N-1}$ de la fonction $f(x)$. Alors, on peut dire que
 
 \begin{equation}
     f_{\text{éch.}}(x) = \sum_{k=0}^{N-1}f(x)\delta(x-x_k) = \sum_{k=0}^{N-1}f(x_k)\delta(x-x_k)
 \end{equation}
 
-où $f_{\text{éch.}}(x)$ est nulle sauf aux points échantillonnés. Lors d'une prise de mesure, c'est évidemment $f_{\text{éch.}}(x)$ qu'on obtiendrait. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
+où $f_{\text{éch.}}(x)$ est nulle sauf aux points échantillonnés. (4.1) permet de modéliser avec une fonction ce qu'on aurait lors d'une prise de mesure. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
 
 \subsection{Passage de la TF à la TFD}
-Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Derrière l'échantillonnage des données, on sait tout de même qu'il y a une certaine courbe $f(t)$ dont on a seulement pu stocker une certaine partie. Par (4.1), on sait comment écrire la fonction d'échantillonnage (nulle partout sauf aux points échantillonnés) et en fait elle correspond à une fonction qu'on aurait pu mettre dans la TF de base. En la mettant dans (3.3), on calcule 
+Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Derrière l'échantillonnage des données, on sait tout de même qu'il y a une certaine courbe $f(t)$ dont on a seulement pu stocker une certaine partie (une approximation). Par (4.1), on sait comment écrire la fonction d'échantillonnage qui correspond à une fonction comme n'importe laquelle qu'on aurait pu mettre dans la TF de base. En la mettant dans (3.3), on calcule 
 
 \begin{equation*}
     c(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}f_{\text{éch.}}(t)e^{-i\omega t}dt = \frac{1}{2\pi}\int_{-\infty}^{\infty}\left(\sum_{k=0}^{N-1}f(t_k)\delta(t-t_k)\right)e^{-i\omega t}dt 
@@ -44,19 +44,19 @@ Sachant qu'on a un nombre fini de données, on considère que la suite de mesure
     c_n = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi n}{NL}kL} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
 \end{equation*}
 
-où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on écrit que $f(kL) = f_k$ (le $k$ième point). Si on considère ces $c_n$ comme étant la TFD, il est possible de les incorporer dans la transformée de Fourier inverse discrète (TFID) et de vérifier si tout coïncide. Par habitude, on sait que la TFID sera 
+où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on écrit que $f(kL) = f_k$ (le $k$ième point). Si on considère ces $c_n$ comme étant la TFD, il est possible de les incorporer dans la transformée de Fourier inverse discrète (TFID) et de vérifier si tout coïncide. Si pour le moment on suppose que la TFID est
 
 \begin{equation}
     f_k = \sum_{n=0}^{N-1}c_ne^{i\frac{2\pi}{N}nk}   
 \end{equation}
 
-et on calcule que
+alors on calcule que
 
 \begin{equation*}
     f_k = \sum_{n=0}^{N-1}c_ne^{i\frac{2\pi}{N}nk} = \sum_{n=0}^{N-1}\left(\frac{1}{2\pi}\sum_{k'=0}^{N-1}f_{k'}e^{-i\frac{2\pi}{N}nk'}\right)e^{i\frac{2\pi}{N}nk} = \frac{1}{2\pi}\sum_{k'=0}^{N-1}f_{k'}\sum_{n=0}^{N-1}e^{i\frac{2\pi}{N}n(k-k')} = \frac{N}{2\pi}f_k
 \end{equation*}
 
-On voit alors qu'on est à un facteur près de ce qu'on aimerait avoir et on multiplie donc le tout par $\frac{2\pi}{N}$. Tant qu'à faire, on peut absorber $\frac{2\pi}{N}$ dans l'équation pour les $c_n$ et on trouve finalement l'équation de la TFD :
+On voit alors qu'on est à un facteur près de ce qu'on aimerait avoir pour la TFID et on multiplie donc le tout par $\frac{2\pi}{N}$. Tant qu'à faire, on peut absorber $\frac{2\pi}{N}$ dans l'équation pour les $c_n$ et on trouve finalement l'équation de la TFD :
 
 \begin{equation}
     c_n = \frac{1}{N}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
