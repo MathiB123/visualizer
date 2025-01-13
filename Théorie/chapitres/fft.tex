@@ -1,0 +1,18 @@
+\section{Transformée de Fourier rapide}
+*Faire intro sur fft... 
+
+\subsection{Redondance des $W^{nk}$}
+On s'attarde aux éléments $W^{nk} = e^{-i\frac{2\pi}{N}nk}$ de la matrice $U$ où on rappelle que $N,n,k \in \mathbb{N}$ avec $0 \leq n,k \leq N-1$. Forcément, $\frac{nk}{N}$ donne un certain quotient $q \in \mathbb{N}$ et un certain reste $r$ où $0 \leq r \leq N-1$ de manière à ce qu'on puisse écrire $nk = qN + r$. Alors,
+
+\begin{equation*}
+    W^{nk} = W^{qN + r} = W^{qN}W^r = \left(W^N\right)^q W^r = \left(e^{-i2\pi}\right)^q W^r = 1^q W^r = W^r
+\end{equation*}
+
+Ainsi, on voit que peut importe la valeur du produit $nk$, $W^{nk}$ retombe toujours sur une valeur $W^r$ où $0 \leq r \leq N-1$. Plus proprement, on vient de montrer que $W^{nk} = W^{nk \text{ mod } N}$, ce qui réduit le nombre potentiel d'exponentielles complexes qu'on aurait à calculer normalement dans la TFD. 
+
+Pour la suite, on suppose que $N$ est une puissance de 2. Dans ce cas, puisque $N$ sera tout le temps pair, il existe une symétrie entre les valeurs $W^{nk}$.
+
+
+Par ailleurs, comme $U$ est symétrique, on n'a pas à calculer les $W^{nk}$ pour l'ensemble de la matrice, ce qui sauve du temps de calcul.
+
+\subsection{}

@@ -82,7 +82,7 @@ Communément, il est pratique de compiler les $f_k$ et les $c_n$ dans des vecteu
     \end{bmatrix}
 \end{equation*}
 
-Avec cela, il est facile de déduire que le côté droit de l'égalité dans (4.3) correspond simplement à un produit matricielle entre une certaine matrice et le vecteur $\vec{f}$. En posant $W = e^{-i\frac{2\pi}{N}}$, il est facile de vérifier que 
+Avec cela, il est facile de déduire que le côté droit de l'égalité dans (4.3) correspond simplement à un produit matricielle entre une certaine matrice $U$ et le vecteur $\vec{f}$. En posant $W = e^{-i\frac{2\pi}{N}}$, il est facile de vérifier que 
 
 \begin{equation*} 
     \begin{bmatrix}
@@ -106,6 +106,4 @@ Avec cela, il est facile de déduire que le côté droit de l'égalité dans (4.
     \end{bmatrix}
 \end{equation*}
 
-où on définit $U = \left[W^{lm}\right]_{l,m=0}^{N-1}$ la matrice symétrique (et unitaire et de changement de base) permettant de calculer le vecteur $\vec{c}$. En supposant que le calcul d'une exponentielle complexe et que l'addition ont une complexité constante, on voit clairement avec la représentation matricielle que la TFD possède une complexité $\mathcal{O}(N^2)$, car il y a $N$ coefficients à calculer demandant chacun $N$ multiplications. En tant que tel, il y a bien pire comme complexité, mais en général il faut tout de même un grand $N$ pour que la TFD (qui, on rappelle, est une approximation discrète de la TF) fonctionne avec une précision suffisante. Ainsi, le prochain objectif est de voir s'il y a un moyen d'abaisser la complexité.
-
-%Revérifier le document (surtout ch.4) pour être sûr que tout est beau et cohérent avant de passer à FFT.
+où on définit maintenant $U = \frac{1}{N} \left[W^{nk}\right]_{n,k=0}^{N-1}$. Grâce à la représentation matricielle de la TFD, on voit qu'il y a un total de $N (N-1)$ additions/soustractions complexes à faire ainsi que $N^2$ multiplications complexes à réaliser pour calculer le vecteur des coefficients. En effet, il y a $N$ coefficients à calculer demandant chacun $N$ multiplications et $N-1$ additions/soustractions. En tant que tel, il y a bien pire comme complexité, mais en général il faut un grand $N$ pour que la TFD (qui, on rappelle, est une approximation discrète de la TF) fonctionne avec une précision suffisante. Ainsi, le prochain objectif est de voir s'il y a un moyen d'abaisser la complexité.
