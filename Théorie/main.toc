@@ -14,7 +14,8 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Calcul des coefficients $c_n$}{8}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Retour sur la fonction en dents de scie}{9}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Transformée de Fourier}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Exemple : Pulse rectangulaire}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Dérivation}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Exemple : Pulse rectangulaire}{10}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Transformée de Fourier discrète}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Delta de Dirac et propriété d'échantillonnage}{12}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Passage de la TF à la TFD}{13}{subsection.4.2}%
