@@ -177,7 +177,7 @@ La série de Fourier trigonométrique peut être condensée grâce aux identité
     \cos(x) = \frac{e^{ix} + e^{-ix}}{2}, \ \ \sin(x) = \frac{e^{ix} - e^{-ix}}{2i}
 \end{equation*}
 
-Donc, en remplaçant dans l'équation (2.1), on a
+En remplaçant dans l'équation (2.1), on a
 
 \begin{equation*}
     f(x) = a_0 + \sum_{n=1}^{\infty}\left(a_n \frac{e^{2\pi inx/T} + e^{-2\pi inx/T}}{2} + b_n \frac{e^{2\pi inx/T} - e^{-2\pi inx/T}}{2i}\right)
@@ -208,7 +208,7 @@ Comme une exponentielle complexe tourne dans le cercle complexe, on retrouve nat
 On regarde chacun des cas possibles pour la valeur des $c_n$. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par l'équation (2.2) : 
 
 \begin{equation*}
-    a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx
+    a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi i x \cdot 0/T}dx
 \end{equation*}
 
 Pour $n\geq 1$, les équations (2.3) et (2.4) indiquent que 
