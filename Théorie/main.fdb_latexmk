@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737301760.74354 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1737301762.47079 0
+["pdflatex"] 1737302556.44187 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1737302558.16587 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731251578 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732411151 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -239,7 +239,7 @@
   "chapitres/dft.tex" 1736699246 7631 c2c46d42315a707bed5df2b940b7ca01 ""
   "chapitres/fft.tex" 1736710498 1237 55555c468d7720c33c4970720398c573 ""
   "chapitres/fonctions.tex" 1737301760 7685 ea3fcb5570a3b368559fbf2b048bd87d ""
-  "chapitres/series_fourier.tex" 1736172147 15592 b0e432bba15c8837a1664ba9258c551f ""
+  "chapitres/series_fourier.tex" 1737302555 15589 95d4a27e993c9c79c012c63c91964ec0 ""
   "chapitres/transfo_fourier.tex" 1736694980 7359 9f1c155bb1828c9fab3d8e50ce09f472 ""
   "images/ch1/cos.png" 1734623232 19688 f19cbde4b176eef0ce6d1f5de93b1777 ""
   "images/ch1/integrale_periode.jpg" 1734625194 104152 8279802930523d4ae1ffc66da80974d5 ""
@@ -253,10 +253,10 @@
   "images/ch3/bornes_500.png" 1735837240 21716 643e04133a350cb6eb1007f16687bf56 ""
   "images/ch3/coeff_pulse_rectangulaire.png" 1735573878 53328 462fc31cf3fd3d2130c2074068cfa42b ""
   "images/ch3/pulse_rectangulaire.jpg" 1735572773 43169 2f12dfb48f0b00fdc67ea212244deb74 ""
-  "main.aux" 1737301762 5170 9131925f2b433ae213747acc81b4de23 "pdflatex"
-  "main.out" 1737301762 4583 d13a0ecdd51072c6cfd452ddbf189230 "pdflatex"
+  "main.aux" 1737302557 5170 9131925f2b433ae213747acc81b4de23 "pdflatex"
+  "main.out" 1737302557 4583 d13a0ecdd51072c6cfd452ddbf189230 "pdflatex"
   "main.tex" 1736705959 2452 2dd24fa254ac0a4972e133f8aa237d75 ""
-  "main.toc" 1737301762 2211 af446be3bf6440224d6994d8ebbe410d "pdflatex"
+  "main.toc" 1737302557 2211 af446be3bf6440224d6994d8ebbe410d "pdflatex"
   (generated)
   "main.aux"
   "main.log"
