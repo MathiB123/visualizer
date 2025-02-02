@@ -82,7 +82,7 @@ Communément, il est pratique de compiler les $f_k$ et les $c_n$ dans des vecteu
     \end{bmatrix}
 \end{equation*}
 
-Avec cela, il est facile de déduire que le côté droit de l'égalité dans (4.3) correspond simplement à un produit matricielle entre une certaine matrice $U$ et le vecteur $\vec{f}$. En posant $W = e^{-i\frac{2\pi}{N}}$, il est facile de vérifier que 
+Avec cela, il est facile de déduire que (4.3) correspond simplement à un produit matricielle entre une certaine matrice $U$ et le vecteur $\vec{f}$. En posant $W = e^{-i\frac{2\pi}{N}}$, il est facile de vérifier que 
 
 \begin{equation*} 
     \begin{bmatrix}
@@ -106,4 +106,28 @@ Avec cela, il est facile de déduire que le côté droit de l'égalité dans (4.
     \end{bmatrix}
 \end{equation*}
 
-où on définit maintenant $U = \frac{1}{N} \left[W^{nk}\right]_{n,k=0}^{N-1}$. Grâce à la représentation matricielle de la TFD, on voit qu'il y a un total de $N (N-1)$ additions/soustractions complexes à faire ainsi que $N^2$ multiplications complexes à réaliser pour calculer le vecteur des coefficients. En effet, il y a $N$ coefficients à calculer demandant chacun $N$ multiplications et $N-1$ additions/soustractions. En tant que tel, il y a bien pire comme complexité, mais en général il faut un grand $N$ pour que la TFD (qui, on rappelle, est une approximation discrète de la TF) fonctionne avec une précision suffisante. Ainsi, le prochain objectif est de voir s'il y a un moyen d'abaisser la complexité.
+où $U = \frac{1}{N} \left[W^{nk}\right]_{n,k=0}^{N-1}$. Pour faire la TFID, on a simplement à faire le produit entre $N U^*$ et $\vec{c}$. Cela aide que la matrice soit symétrique.
+
+\begin{equation*} 
+    \begin{bmatrix}
+        f_0 \\
+        f_1 \\
+        \vdots \\
+        f_{N-1} \\
+    \end{bmatrix}
+    = N\frac{1}{N}
+    \begin{bmatrix}
+        1 & 1 & \dots & 1 & 1\\
+        1 & W & \dots & W^{N-2} & W^{N-1}\\
+        \vdots & \vdots & \ddots & \vdots & \vdots\\
+        1 & W^{N-1} & \dots & W^{(N-1)(N-2)} & W^{(N-1)(N-1)}
+    \end{bmatrix}^*
+    \begin{bmatrix}
+        c_0 \\
+        c_1 \\
+        \vdots \\
+        c_{N-1} \\
+    \end{bmatrix}
+\end{equation*}
+
+Grâce à la représentation matricielle, on voit qu'il y a un total de $N (N-1)$ additions/soustractions complexes à faire ainsi que $N^2$ multiplications complexes à réaliser autaut pour calculer la TFD que la TFIQ. En effet, il y a $N$ éléments à calculer demandant chacun $N$ multiplications et $N-1$ additions/soustractions. 

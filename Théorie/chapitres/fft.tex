@@ -1,5 +1,4 @@
 \section{Transformée de Fourier rapide}
-*Faire intro sur fft... 
 
 \subsection{Redondance des $W^{nk}$}
 On s'attarde aux éléments $W^{nk} = e^{-i\frac{2\pi}{N}nk}$ de la matrice $U$ où on rappelle que $N,n,k \in \mathbb{N}$ avec $0 \leq n,k \leq N-1$. Forcément, $\frac{nk}{N}$ donne un certain quotient $q \in \mathbb{N}$ et un certain reste $r$ où $0 \leq r \leq N-1$ de manière à ce qu'on puisse écrire $nk = qN + r$. Alors,
@@ -8,11 +7,15 @@ On s'attarde aux éléments $W^{nk} = e^{-i\frac{2\pi}{N}nk}$ de la matrice $U$ 
     W^{nk} = W^{qN + r} = W^{qN}W^r = \left(W^N\right)^q W^r = \left(e^{-i2\pi}\right)^q W^r = 1^q W^r = W^r
 \end{equation*}
 
-Ainsi, on voit que peut importe la valeur du produit $nk$, $W^{nk}$ retombe toujours sur une valeur $W^r$ où $0 \leq r \leq N-1$. Plus proprement, on vient de montrer que $W^{nk} = W^{nk \text{ mod } N}$, ce qui réduit le nombre potentiel d'exponentielles complexes qu'on aurait à calculer normalement dans la TFD. 
+Ainsi, on voit que peut importe la valeur du produit $nk$, $W^{nk}$ retombe toujours sur une valeur $W^r$ où $0 \leq r \leq N-1$. Plus proprement, on vient de montrer que $W^{nk} = W^{nk \text{ mod } N}$, ce qui réduit le nombre potentiel d'exponentielles complexes qu'on aurait à calculer normalement dans la TFD. De plus, si $N$ est un nombre pair, il existera une symétrie entre les valeurs $W^{nk}$. En effet, chaque $W^{nk}$ sera le négatif de celui qui lui est opposé et il y a là du calcul en moins à faire. Plus précisément, si $\frac{N}{2} \leq r \leq N-1$, 
 
-Pour la suite, on suppose que $N$ est une puissance de 2. Dans ce cas, puisque $N$ sera tout le temps pair, il existe une symétrie entre les valeurs $W^{nk}$.
+\begin{equation*}
+    W^r = W^{l + \frac{N}{2}} = W^lW^{\frac{N}{2}} = W^l e^{-i\pi} = -W^l
+\end{equation*}
 
+où $0 \leq l \leq \frac{N}{2} - 1$ et $l = r - \frac{N}{2}$.
 
 Par ailleurs, comme $U$ est symétrique, on n'a pas à calculer les $W^{nk}$ pour l'ensemble de la matrice, ce qui sauve du temps de calcul.
 
-\subsection{}
+\subsection{Diviser pour régner}
+Pour la suite, on suppose que $N$ est une puissance de 2, ce qui implique que tout ce qui vient d'être vu à la section 5.1 est valide. On utilise une approche "diviser pour régner" afin de calculer (4.3) avec moins de calculs.
