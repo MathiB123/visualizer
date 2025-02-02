@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738515080.15848 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1738515081.91275 0
+["pdflatex"] 1738534825.82688 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1738534827.59027 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731251578 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732411151 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -25,6 +25,7 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
+  "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmtt9.tfm" 1136765053 764 c98a2af25c99b73a368cf7336e255190 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247593066 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247593066 32080 340ef9bf63678554ee606688e7b5339d ""
@@ -42,6 +43,7 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247593067 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247593066 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247593066 32716 08e384dc442464e7285e891af9f45947 ""
+  "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247593067 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1247593067 29078 718ea4567ceff944262b0f5b0800e1d9 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247593073 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -236,8 +238,8 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693732032 123 a302f2c651a95033260db60e51527ae8 ""
   "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1736705959 2452 2dd24fa254ac0a4972e133f8aa237d75 ""
-  "chapitres/dft.tex" 1738515079 7890 58ea7305e3579f14473d217adb15dd75 ""
-  "chapitres/fft.tex" 1737907814 1732 b5d7d9b7eec9e7ad65cf6dea202058c4 ""
+  "chapitres/dft.tex" 1738515087 7890 58ea7305e3579f14473d217adb15dd75 ""
+  "chapitres/fft.tex" 1738534825 6245 7449b6eb42cdcbefeaea700fa6797597 ""
   "chapitres/fonctions.tex" 1737301760 7685 ea3fcb5570a3b368559fbf2b048bd87d ""
   "chapitres/series_fourier.tex" 1737303673 15704 d014834e2baca564adbf67ff4ffb30cf ""
   "chapitres/transfo_fourier.tex" 1737303705 7471 fc4e0134c25e38295caefc9b25b0fa68 ""
@@ -253,10 +255,10 @@
   "images/ch3/bornes_500.png" 1735837240 21716 643e04133a350cb6eb1007f16687bf56 ""
   "images/ch3/coeff_pulse_rectangulaire.png" 1735573878 53328 462fc31cf3fd3d2130c2074068cfa42b ""
   "images/ch3/pulse_rectangulaire.jpg" 1735572773 43169 2f12dfb48f0b00fdc67ea212244deb74 ""
-  "main.aux" 1738515081 5308 25507ab6f10052947156f2f0baaa76d1 "pdflatex"
-  "main.out" 1738515081 4806 dfc772ae2c56aae1e9b52bfe6dc16f0a "pdflatex"
+  "main.aux" 1738534827 5308 f27e87d2e63fd36ca6cdb981c4f673a9 "pdflatex"
+  "main.out" 1738534827 4806 dfc772ae2c56aae1e9b52bfe6dc16f0a "pdflatex"
   "main.tex" 1736705959 2452 2dd24fa254ac0a4972e133f8aa237d75 ""
-  "main.toc" 1738515081 2308 066285e166a16f07482012ada6fcc5be "pdflatex"
+  "main.toc" 1738534827 2308 066285e166a16f07482012ada6fcc5be "pdflatex"
   (generated)
   "main.aux"
   "main.log"

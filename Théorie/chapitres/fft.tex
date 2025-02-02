@@ -1,21 +1,78 @@
 \section{Transformée de Fourier rapide}
+On présente la transformée de Fourier rapide (FFT), un algorithme effectuant la TFD plus efficacement grâce à différentes propriétés. La vidéo \href{https://youtu.be/nmgFG7PUHfo?si=nyxxrVy1AVMsRO4g}{\textit{The Most Important Algorithm Of All Time}} par Veritasium donne une magnifique exposition à cet algorithme utilisé dans de nombreux contextes.
 
 \subsection{Redondance des $W^{nk}$}
-On s'attarde aux éléments $W^{nk} = e^{-i\frac{2\pi}{N}nk}$ de la matrice $U$ où on rappelle que $N,n,k \in \mathbb{N}$ avec $0 \leq n,k \leq N-1$. Forcément, $\frac{nk}{N}$ donne un certain quotient $q \in \mathbb{N}$ et un certain reste $r$ où $0 \leq r \leq N-1$ de manière à ce qu'on puisse écrire $nk = qN + r$. Alors,
+On s'attarde aux éléments $W^{nk} = e^{-i\frac{2\pi}{N}nk}$ de la matrice $U$ où on rappelle que $N,n,k$ sont des entiers tels que $0 \leq n,k \leq N-1$. Forcément, la division $\frac{nk}{N}$ donne un certain quotient $q \in \mathbb{N}$ et un certain reste $r$ où $0 \leq r \leq N-1$. De ce fait, on peut écrire $nk = qN + r$. Alors,
 
 \begin{equation*}
     W^{nk} = W^{qN + r} = W^{qN}W^r = \left(W^N\right)^q W^r = \left(e^{-i2\pi}\right)^q W^r = 1^q W^r = W^r
 \end{equation*}
 
-Ainsi, on voit que peut importe la valeur du produit $nk$, $W^{nk}$ retombe toujours sur une valeur $W^r$ où $0 \leq r \leq N-1$. Plus proprement, on vient de montrer que $W^{nk} = W^{nk \text{ mod } N}$, ce qui réduit le nombre potentiel d'exponentielles complexes qu'on aurait à calculer normalement dans la TFD. De plus, si $N$ est un nombre pair, il existera une symétrie entre les valeurs $W^{nk}$. En effet, chaque $W^{nk}$ sera le négatif de celui qui lui est opposé et il y a là du calcul en moins à faire. Plus précisément, si $\frac{N}{2} \leq r \leq N-1$, 
+Ainsi, on voit que peut importe la valeur du produit $nk$, $W^{nk}$ retombe toujours sur une valeur $W^r$ où $0 \leq r \leq N-1$. Plus proprement, on vient de montrer que $W^{nk} = W^{nk \text{ mod } N}$. Dès lors, le nombre potentiel d'exponentielles complexes qu'on aurait à calculer normalement dans la TFD est réduit. 
+
+De plus, si $N$ est un nombre pair, il existera une symétrie entre les valeurs $W^{nk}$. En effet, chaque $W^{nk}$ sera le négatif de celui qui lui est opposé dans le cercle complexe. Plus précisément, si $\frac{N}{2} \leq r \leq N-1$, 
 
 \begin{equation*}
     W^r = W^{l + \frac{N}{2}} = W^lW^{\frac{N}{2}} = W^l e^{-i\pi} = -W^l
 \end{equation*}
 
-où $0 \leq l \leq \frac{N}{2} - 1$ et $l = r - \frac{N}{2}$.
-
-Par ailleurs, comme $U$ est symétrique, on n'a pas à calculer les $W^{nk}$ pour l'ensemble de la matrice, ce qui sauve du temps de calcul.
+où $0 \leq l \leq \frac{N}{2} - 1$.
 
 \subsection{Diviser pour régner}
-Pour la suite, on suppose que $N$ est une puissance de 2, ce qui implique que tout ce qui vient d'être vu à la section 5.1 est valide. On utilise une approche "diviser pour régner" afin de calculer (4.3) avec moins de calculs.
+Pour accélérer les calculs, la FFT utilise une approche "diviser pour régner". Ainsi, on sépare le problème en plusieurs sous-problèmes dont leur résolution permet de résoudre le problème global. 
+
+Dans la version la plus simple, on suppose que $N = 2^m$ est une puissance de 2. Dans ce cas, on peut séparer (4.3) en deux sommes sur les $k$ pairs et impairs.
+
+\begin{equation*}
+    c_n = \frac{1}{N}\sum_{k=0}^{\frac{N}{2}-1}f_{2k}W^{2nk} + \frac{1}{N}\sum_{k=0}^{\frac{N}{2}-1}f_{2k + 1}W^{2nk + n} 
+\end{equation*}
+
+On peut ensuite simplifier l'expression en remarquant que 
+
+\begin{equation*}
+    W^{2nk} = e^{-i\frac{2\pi}{N}2nk} = e^{-i\frac{2\pi}{\frac{N}{2}}nk} = W^{nk}_{\frac{N}{2}}, \ W^{2nk+n} = W^n_N W^{2nk}_N = W^n_N W^{nk}_{\frac{N}{2}}
+\end{equation*}
+
+où on spécifie en dessous la valeur qui divise $2\pi$ dans l'exponentielle. Sachant cela,
+
+\begin{equation*}
+    c_n = \frac{1}{N}\sum_{k=0}^{\frac{N}{2}-1}f_{2k}W^{nk}_{\frac{N}{2}} + \frac{1}{N}W^n_N\sum_{k=0}^{\frac{N}{2}-1}f_{2k + 1}W^{nk}_{\frac{N}{2}} = G(n) + W^n_N H(n)
+\end{equation*}
+
+avec $G(n)$ et $H(n)$ qui sont, par définition, deux TFD à $\frac{N}{2}$ entrées. Par ailleurs, si $0 \leq n \leq \frac{N}{2} - 1$,
+
+\begin{equation*}
+    c_{n+\frac{N}{2}} = \frac{1}{N}\sum_{k=0}^{\frac{N}{2}-1}f_{2k}W^{(n + \frac{N}{2})k}_{\frac{N}{2}} + \frac{1}{N}W^{n + \frac{N}{2}}_N\sum_{k=0}^{\frac{N}{2}-1}f_{2k + 1}W^{(n+\frac{N}{2})k}_{\frac{N}{2}} = \frac{1}{N}\sum_{k=0}^{\frac{N}{2}-1}f_{2k}W^{nk}_{\frac{N}{2}} - \frac{1}{N}W^n_N\sum_{k=0}^{\frac{N}{2}-1}f_{2k + 1}W^{nk}_{\frac{N}{2}}
+\end{equation*}
+\begin{equation*}
+    = G(n) - W^n_N H(n)
+\end{equation*}
+
+Donc, pour un tel $n$, le calcul de $G(n)$, $H(n)$ et $W^n_N$ permet de calculer facilement à la fois $c_n$ et $c_{n+\frac{N}{2}}$ (pour le premier on additionne et pour le deuxième on soustrait). Donc, on a besoin d'itérer seulement $\frac{N}{2}$ fois pour trouver tous les $c_n$. Par la suite, comme $G(n)$ et $H(n)$ sont aussi des DFT (à $\frac{N}{2}$ points), on peut les rediviser chacune en deux comme on l'a fait initialement afin d'avoir maintenant 4 sommes. Sans décrire tout le calcul, on trouverait 
+
+\begin{equation*}
+    c_n = \underbrace{\frac{1}{N}\sum_{k=0}^{\frac{N}{4}-1}f_{4k}W^{nk}_{\frac{N}{4}} + \frac{1}{N}W^{2n}_N \sum_{k=0}^{\frac{N}{4}-1}f_{4k+2}W^{nk}_{\frac{N}{4}}}_{G(n)} + W^n_N\underbrace{ \left(\frac{1}{N}\sum_{k=0}^{\frac{N}{4}-1}f_{4k+1}W^{nk}_{\frac{N}{4}} + \frac{1}{N}W^{2n}_N \sum_{k=0}^{\frac{N}{4}-1}f_{4k+3}W^{nk}_{\frac{N}{4}}\right)}_{H(n)}
+\end{equation*}
+\begin{equation*}
+    = \underbrace{A(n) + W^{2n}_N B(n)}_{G(n)} + W^n_N \underbrace{\left(C(n) + W^{2n}_N D(n)\right)}_{H(n)}
+\end{equation*}
+
+Encore une fois, sans détailler le calcul, si $0 \leq n \leq \frac{N}{4} - 1$, on verrait que
+
+\begin{equation*}
+    G(n + N/4) = A(n) - W^{2n}_N B(n), \ H(n + N/4) = C(n) - W^{2n}_N D(n) 
+\end{equation*}
+
+Alors, pour un tel $n$, le calcul de $A(n)$, $B(n)$ et $W^{2n}_N$ permet de calculer à la fois $G(n)$ et $G(n+\frac{N}{4})$. Pareillement, le calcul de $C(n)$, $D(n)$ et $W^{2n}_N$ permet de calculer $H(n)$ et $H(n+\frac{N}{4})$. Ainsi, il faut en faire $\frac{N}{4}$ itérations pour calculer les $G(n)$ nécessaires et $\frac{N}{4}$ itérations pour calculer les $H(n)$ nécessaires, soit $\frac{N}{2}$ au total. On voit qu'à chaque étape, un seul calcul donne deux résultats, dont chacun permet aussi d'avoir deux autres résultats etc... 
+
+Comme $N$ est une puissance de 2, éventuellement on aura tout découpé en $\log_2(N)$ TFD différentes à 2 points. À ce stade, où $0 \leq n \leq 1$, on aura à calculer pour l'une des ces DFT à 2 points (pour $n=0$ et $n=1$ respectivement) :
+
+\begin{equation*}
+    \frac{1}{N}\left(f_x + W^0_N f_y\right) \text{ et } \frac{1}{N}\left(f_x -W^0_N f_y\right)
+\end{equation*}
+
+Puisqu'il s'agit d'un couple de données, on doit répéter cela $\frac{N}{2}$ fois, soit pour chacun des couples.
+
+Avec cette nouvelle façon de faire, est-ce que la complexité a diminué? Oui! Effectivement, il y a $\log_2(N)$ sous-divisions demandant chacune $\frac{N}{2}$ itérations. Pour chaque itération, il faut faire 1 addition, 1 soustraction et 1 multiplication. Ainsi, globalement, la FFT demande $\frac{N}{2}\log_2(N)$ multiplications complexes et $N\log_2(N)$ additions/soustractions complexes. Pour rappel, la TFD de base demandait $N^2$ multiplications complexes et $N(N-1)$ additions/soustractions.
+
+*Faire un exemple + bit reversal
