@@ -8,7 +8,7 @@ Un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point
     \int_{-\infty}^{\infty}f(x)\delta(x-x^*)dx = \int_{-\infty}^{\infty}f(x^*)\delta(x-x^*)dx = f(x^*)\int_{-\infty}^{\infty}\delta(x-x^*)dx = f(x^*)  
 \end{equation*}
 
-Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner une valeur de $f(x)$, ici au point $x^*$. On peut répéter le processus pour différents points du domaine afin d'avoir un échantillonnage $\left\{f(x_k)\right\}_{k=0}^{N-1}$ de la fonction $f(x)$. Alors, on peut dire que
+Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner une valeur de $f(x)$ au point $x^*$. On peut répéter le processus pour différents points afin d'avoir un échantillonnage $\left\{f(x_k)\right\}_{k=0}^{N-1}$ de la fonction $f(x)$. Alors, on peut dire que
 
 \begin{equation}
     f_{\text{éch.}}(x) = \sum_{k=0}^{N-1}f(x)\delta(x-x_k) = \sum_{k=0}^{N-1}f(x_k)\delta(x-x_k)
@@ -17,7 +17,7 @@ Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner un
 où $f_{\text{éch.}}(x)$ est nulle sauf aux points échantillonnés. (4.1) permet de modéliser ce qu'on aurait lors d'une prise de mesures. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
 
 \subsection{Passage de la TF à la TFD}
-Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Derrière l'échantillonnage des données, on sait tout de même qu'il y a une certaine courbe $f(t)$ dont on a seulement pu stocker une certaine partie (une approximation). Par (4.1), on sait comment écrire la fonction d'échantillonnage qui correspond à une fonction comme n'importe laquelle qu'on aurait pu mettre dans la TF. En la mettant dans (3.3), on calcule 
+Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Par (4.1), on sait comment écrire la fonction échantillonnée, une fonction comme n'importe laquelle qu'on aurait pu mettre dans la TF. En la mettant dans (3.3), on calcule 
 
 \begin{equation*}
     c(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}f_{\text{éch.}}(t)e^{-i\omega t}dt = \frac{1}{2\pi}\int_{-\infty}^{\infty}\left(\sum_{k=0}^{N-1}f(t_k)\delta(t-t_k)\right)e^{-i\omega t}dt 
@@ -38,31 +38,23 @@ Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au
     c(\omega) = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\omega kL}
 \end{equation*}
 
-Sachant qu'on a un nombre fini de données, on considère que la suite de mesures est périodique (comme s'il s'agissait d'une période d'une fonction périodique). Comme conséquence, cela revient essentiellement au cas de la série de Fourier où on ne regarde pas toutes les fréquences possibles $\omega$ mais seulement les multiples d'une fréquence de base ($\frac{2\pi n}{T}$ dans le cas d'une série de Fourier). Ici, $T = NL$ et donc si on insère $\frac{2\pi n}{NL}$ dans la dernière équation, on trouve 
+Sachant qu'on a un nombre fini de données, il n'est pas nécessaire de regarder tous les $\omega$ mais seulement ceux dont la période concorde avec la durée totale de la prise de mesures. Essentiellement, on considère que la suite de mesures est périodique. Ici, la période vaut $T = NL$ et donc si on insère $\frac{2\pi n}{NL}$ dans la dernière équation pour discrétiser la fréquence, on trouve 
 
 \begin{equation*}
     c_n = \frac{1}{2\pi}\sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi n}{NL}kL} = \frac{1}{2\pi}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
 \end{equation*}
 
-où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on écrit que $f(kL) = f_k$ (le $k$ième point). Si on considère ces $c_n$ comme étant la TFD, il est possible de les incorporer dans la transformée de Fourier inverse discrète (TFID) et de vérifier si tout coïncide. Si pour le moment on suppose que la TFID est
-
-\begin{equation}
-    f_k = \sum_{n=0}^{N-1}c_ne^{i\frac{2\pi}{N}nk}   
-\end{equation}
-
-on calcule alors que
+où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on écrit que $f(kL) = f_k$ (le $k$ième point). À priori, il s'agit de la TFD et on isole un des $f_k$ pour obtenir la transformée de Fourier inverse discrète (TFID).
 
 \begin{equation*}
-    f_k = \sum_{n=0}^{N-1}c_ne^{i\frac{2\pi}{N}nk} = \sum_{n=0}^{N-1}\left(\frac{1}{2\pi}\sum_{k'=0}^{N-1}f_{k'}e^{-i\frac{2\pi}{N}nk'}\right)e^{i\frac{2\pi}{N}nk} = \frac{1}{2\pi}\sum_{k'=0}^{N-1}f_{k'}\sum_{n=0}^{N-1}e^{i\frac{2\pi}{N}n(k-k')} = \frac{N}{2\pi}f_k
+    2\pi \sum_{n=0}^{N-1}c_n e^{i\frac{2\pi}{N}nk^{'}} = \sum_{k=0}^{N-1}\sum_{n=0}^{N-1}f_k e^{-i\frac{2\pi}{N}n(k-k^{'})} = \sum_{n=0}^{N-1}f_{k^{'}}e^{-i\frac{2\pi}{N}n(k^{'}-k^{'})} = Nf_{k^{'}} \implies f_k = \frac{2\pi}{N}\sum_{n=0}^{N-1}c_n e^{i\frac{2\pi}{N}nk}
 \end{equation*}
 
-On voit qu'on est à un facteur près de ce qu'on aimerait avoir pour la TFID et on multiplie donc le tout par $\frac{2\pi}{N}$. Tant qu'à faire, on peut absorber $\frac{2\pi}{N}$ dans l'équation pour les $c_n$ et on trouve finalement l'équation de la TFD :
+On décide de mettre la constante dans les $c_n$. Finalement, on a la forme finale de la TFID et de la TFD.
 
 \begin{equation}
-    c_n = \frac{1}{N}\sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
+    f_k = \sum_{n=0}^{N-1}c_n e^{i\frac{2\pi}{N}nk} \text{ où } c_n = \frac{1}{N}\sum_{k=0}^{N-1}f_k e^{-i\frac{2\pi}{N}nk}
 \end{equation}
-
-Encore une fois, le facteur $\frac{1}{N}$ peut aller avec (4.2) ou (4.3), ça ne change rien. 
 
 \subsection{Représentation matricielle}
 Communément, il est pratique de compiler les $f_k$ et les $c_n$ dans des vecteurs.
@@ -82,7 +74,7 @@ Communément, il est pratique de compiler les $f_k$ et les $c_n$ dans des vecteu
     \end{bmatrix}
 \end{equation*}
 
-Avec cela, il est facile de déduire que (4.3) correspond simplement à un produit matricielle entre une certaine matrice $U$ et le vecteur $\vec{f}$. En posant $W = e^{-i\frac{2\pi}{N}}$, il est facile de vérifier que 
+Avec cela, il est facile de déduire que la TFD correspond simplement à un produit matricielle entre une certaine matrice $U$ et le vecteur $\vec{f}$. En posant $W = e^{-i\frac{2\pi}{N}}$, il est facile de vérifier que 
 
 \begin{equation*} 
     \begin{bmatrix}
@@ -106,7 +98,7 @@ Avec cela, il est facile de déduire que (4.3) correspond simplement à un produ
     \end{bmatrix}
 \end{equation*}
 
-où $U = \frac{1}{N} \left[W^{nk}\right]_{n,k=0}^{N-1}$. Pour faire la TFID, on a simplement à faire le produit entre $N U^*$ et $\vec{c}$. Cela aide que la matrice soit symétrique.
+où $U = \frac{1}{N} \left[W^{nk}\right]_{n,k=0}^{N-1}$. Pour faire la TFID, on a simplement à faire le produit entre $N$ fois le conjugué complexe de $U$ et le vecteur $\vec{c}$.
 
 \begin{equation*} 
     \begin{bmatrix}
@@ -130,4 +122,4 @@ où $U = \frac{1}{N} \left[W^{nk}\right]_{n,k=0}^{N-1}$. Pour faire la TFID, on 
     \end{bmatrix}
 \end{equation*}
 
-Grâce à la représentation matricielle, on voit qu'il y a un total de $N (N-1)$ additions/soustractions complexes à faire ainsi que $N^2$ multiplications complexes à réaliser autaut pour calculer la TFD que la TFIQ. En effet, il y a $N$ éléments à calculer demandant chacun $N$ multiplications et $N-1$ additions/soustractions. 
+Grâce à la représentation matricielle, on voit qu'il y a un total de $N (N-1)$ additions/soustractions complexes à faire ainsi que $N^2$ multiplications complexes à réaliser autaut pour calculer la TFD que la TFID. En effet, il y a $N$ éléments à calculer demandant chacun $N$ multiplications et $N-1$ additions/soustractions. 

@@ -4,22 +4,22 @@
 \contentsline {subsection}{\numberline {1.2}Fonction périodique}{2}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Série de Fourier}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Série de Fourier trigonométrique}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Quelques identités}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Calcul du coefficient $a_0$}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.1}Quelques identités}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Calcul du coefficient $a_0$}{4}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}Calcul des coefficients $a_n$}{5}{subsubsection.2.1.3}%
 \contentsline {subsubsection}{\numberline {2.1.4}Calcul des coefficients $b_n$}{5}{subsubsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.5}Les coefficients de la série de Fourier trigonométrique}{6}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.5}Les coefficients de la série de Fourier trigonométrique}{5}{subsubsection.2.1.5}%
 \contentsline {subsection}{\numberline {2.2}Exemple : Fonction en dents de scie}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Série de Fourier exponentielle}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Série de Fourier exponentielle}{7}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Calcul des coefficients $c_n$}{8}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Retour sur la fonction en dents de scie}{9}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}Retour sur la fonction en dents de scie}{8}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Transformée de Fourier}{9}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Dérivation}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Exemple : Pulse rectangulaire}{10}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Transformée de Fourier discrète}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Delta de Dirac et propriété d'échantillonnage}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Passage de la TF à la TFD}{13}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Représentation matricielle}{14}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Transformée de Fourier rapide}{15}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Redondance des $W^{nk}$}{15}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Diviser pour régner}{15}{subsection.5.2}%
+\contentsline {subsection}{\numberline {4.2}Passage de la TF à la TFD}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Représentation matricielle}{13}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Transformée de Fourier rapide}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Redondance des $W^{nk}$}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Diviser pour régner}{14}{subsection.5.2}%

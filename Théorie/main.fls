@@ -425,13 +425,6 @@ INPUT chapitres\fonctions.tex
 INPUT .\chapitres\fonctions.tex
 INPUT chapitres\fonctions.tex
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\images\ch1\sin.png
-INPUT .\images\ch1\sin.png
-INPUT images\ch1\sin.png
-INPUT .\images\ch1\sin.png
-INPUT .\images\ch1\sin.png
-INPUT .\images\ch1\sin.png
-INPUT .\images\ch1\sin.png
 INPUT .\images\ch1\cos.png
 INPUT .\images\ch1\cos.png
 INPUT images\ch1\cos.png
@@ -439,6 +432,13 @@ INPUT .\images\ch1\cos.png
 INPUT .\images\ch1\cos.png
 INPUT .\images\ch1\cos.png
 INPUT .\images\ch1\cos.png
+INPUT .\images\ch1\sin.png
+INPUT .\images\ch1\sin.png
+INPUT images\ch1\sin.png
+INPUT .\images\ch1\sin.png
+INPUT .\images\ch1\sin.png
+INPUT .\images\ch1\sin.png
+INPUT .\images\ch1\sin.png
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT .\images\ch1\integrale_periode.jpg
 INPUT .\images\ch1\integrale_periode.jpg

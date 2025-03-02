@@ -16,10 +16,10 @@ En d'autres mots, une fonction paire est symétrique par rapport à l'axe des $y
 
 \begin{figure}[h!]
     \centering
-     \includegraphics[width=0.48\textwidth]{images/ch1/sin.png}
-     \ \
      \includegraphics[width=0.48\textwidth]{images/ch1/cos.png}
-    \caption{La fonction impaire $\sin(x)$ (à gauche) et la fonction paire $\cos(x)$ (à droite)}
+     \ \
+     \includegraphics[width=0.48\textwidth]{images/ch1/sin.png}
+    \caption{La fonction $\cos(x)$ (à gauche) et la fonction $\sin(x)$ (à droite)}
     \end{figure}
 
 Le produit de deux fonctions paires $f(x)$ et $g(x)$ donne aussi une fonction paire. En effet, si on note $h(x) = f(x)g(x)$, alors
@@ -52,22 +52,23 @@ où on utilise la substitution $t = -x$. Bien qu'on intègre sur $t$ et sur $x$,
     = -\int_{0}^{a}f(t)dt + \int_{0}^{a}f(x)dx = 0
 \end{equation*}
 
-Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégrales s'annule du fait qu'elles sont équivalentes. Finalement, on peut montrer que toute fonction $f(x)$ s'écrit comme la somme d'une fonction paire $g(x)$ et d'une fonction impaire $h(x)$. On pose
+Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégrales s'annule du fait qu'elles sont équivalentes. 
+% Finalement, on peut montrer que toute fonction $f(x)$ s'écrit comme la somme d'une fonction paire $g(x)$ et d'une fonction impaire $h(x)$. On pose
 
-\begin{equation*}
-    f(x) = \frac{1}{2}f(x) + \frac{1}{2}f(x) + \frac{1}{2}f(-x) - \frac{1}{2}f(-x) = \left(\frac{1}{2}f(x) + \frac{1}{2}f(-x)\right) + \left(\frac{1}{2}f(x) - \frac{1}{2}f(-x)\right) = g(x) + h(x)
-\end{equation*}
+% \begin{equation*}
+%     f(x) = \frac{1}{2}f(x) + \frac{1}{2}f(x) + \frac{1}{2}f(-x) - \frac{1}{2}f(-x) = \left(\frac{1}{2}f(x) + \frac{1}{2}f(-x)\right) + \left(\frac{1}{2}f(x) - \frac{1}{2}f(-x)\right) = g(x) + h(x)
+% \end{equation*}
 
-Puis, on vérifie que $g(x)$ est paire et que $h(x)$ est impaire.
+% Puis, on vérifie que $g(x)$ est paire et que $h(x)$ est impaire.
 
-\begin{equation*}
-    g(-x) = \frac{1}{2}f(-x) + \frac{1}{2}f(-(-x)) = \frac{1}{2}f(-x) + \frac{1}{2}f(x) = g(x)
-\end{equation*}
-\begin{equation*}
-    h(-x) = \frac{1}{2}f(-x) - \frac{1}{2}f(-(-x)) = \frac{1}{2}f(-x) - \frac{1}{2}f(x) = -\left(-\frac{1}{2}f(-x) + \frac{1}{2}f(x)\right) = -h(x)
-\end{equation*}
+% \begin{equation*}
+%     g(-x) = \frac{1}{2}f(-x) + \frac{1}{2}f(-(-x)) = \frac{1}{2}f(-x) + \frac{1}{2}f(x) = g(x)
+% \end{equation*}
+% \begin{equation*}
+%     h(-x) = \frac{1}{2}f(-x) - \frac{1}{2}f(-(-x)) = \frac{1}{2}f(-x) - \frac{1}{2}f(x) = -\left(-\frac{1}{2}f(-x) + \frac{1}{2}f(x)\right) = -h(x)
+% \end{equation*}
 
-Ainsi, $f(x)$ s'écrit comme la somme d'une fonction paire et d'une fonction impaire. Par ailleurs, cette décomposition est unique.
+% Ainsi, $f(x)$ s'écrit comme la somme d'une fonction paire et d'une fonction impaire. Par ailleurs, cette décomposition est unique.
 
 \subsection{Fonction périodique}
 Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si
@@ -78,15 +79,15 @@ Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si
 
 où $T$ est ce qu'on appelle la période. Autrement dit, une fonction périodique se répète après un temps $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$. 
 
-Une fonction périodique se caractérise aussi par sa fréquence $\mathcal{F}$, c'est-à-dire le nombre de répétitions de la fonction par unité de temps (en Hz). On obtient la fréquence grâce à $\mathcal{F} = \frac{1}{T}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps (c'est le principe même d'une division). Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ ont toutes les deux une fréquence de $\frac{1}{2\pi}$Hz. 
+Une fonction périodique se caractérise aussi par sa fréquence $\mathcal{F}$, c'est-à-dire le nombre de répétitions de la fonction par unité de temps (en Hz). On obtient la fréquence par $\mathcal{F} = \frac{1}{T}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ ont toutes les deux une fréquence de $\frac{1}{2\pi}$Hz. 
 
-Pour quelque chose qui tourne, on peut s'intéresser à sa fréquence angulaire $\omega$, soit le nombre de radians parcourus par unité de temps. Puisqu'on peut représenter $\cos(x)$ et $\sin(x)$ dans le cercle trigonométrique (donc que ça tourne), ces fonctions ont aussi une fréquence angulaire. Pour la trouver, on peut dire que 
+Un autre type de fréquence pertinent pour les objets qui tournent est la fréquence angulaire $\omega$, soit le nombre de radians parcourus par unité de temps. Puisqu'on peut représenter $\cos(x)$ et $\sin(x)$ dans le cercle trigonométrique, ces fonctions ont aussi une fréquence angulaire. Pour la trouver, on peut dire que 
 
 \begin{equation*}
     \omega = \frac{\text{rad}}{\text{s}} = \frac{\text{rad}}{\text{nb rép.}}\frac{\text{nb rép.}}{\text{s}} = 2\pi \cdot \mathcal{F} = \frac{2\pi}{T}
 \end{equation*}
 
-car on fait le tour complet du cercle ($2\pi$ rad) à chaque cycle. Dans ce cas, les fonctions $\cos(x)$ et $\sin(x)$ ont une fréquence angulaire de 1 rad/s.
+car on fait le tour complet du cercle ($2\pi$ rad) à chaque cycle. Dès lors, les fonctions $\cos(x)$ et $\sin(x)$ ont une fréquence angulaire de 1 rad/s.
 
 Un résultat important pour l'intégrale d'une fonction périodique est que 
 
@@ -107,7 +108,7 @@ Alors, l'intégrale qui vient d'être dérivée vaut la même chose peu importe 
 
 \begin{figure}[h!]
     \centering
-     \includegraphics[width=0.43\textwidth]{images/ch1/integrale_periode.jpg}
+     \includegraphics[width=0.4\textwidth]{images/ch1/integrale_periode.jpg}
     \caption{Représentation graphique de l'équation (1.4)}
     \end{figure}
 
