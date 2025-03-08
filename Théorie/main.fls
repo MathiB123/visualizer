@@ -529,6 +529,13 @@ INPUT chapitres\fft.tex
 INPUT .\chapitres\fft.tex
 INPUT chapitres\fft.tex
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT .\images\ch5\fft_graphique.jpg
+INPUT .\images\ch5\fft_graphique.jpg
+INPUT images\ch5\fft_graphique.jpg
+INPUT .\images\ch5\fft_graphique.jpg
+INPUT .\images\ch5\fft_graphique.jpg
+INPUT .\images\ch5\fft_graphique.jpg
+INPUT .\images\ch5\fft_graphique.jpg
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
