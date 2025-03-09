@@ -1,22 +1,10 @@
 \section{Fonctions}
 \subsection{Parité d'une fonction}
-Dans plusieurs contextes, connaître la parité d'une fonction peut être très utile afin de simplifier les calculs. On dit qu'une fonction $f(x)$ est paire si
-
-\begin{equation}
-    f(-x) = f(x)
-\end{equation}
-
-et on dit qu'elle est impaire dans le cas où
-
-\begin{equation}
-    f(-x) = -f(x)    
-\end{equation}
-  
-En d'autres mots, une fonction paire est symétrique par rapport à l'axe des $y$ et une fonction impaire est antisymétrique par rapport à l'axe des $y$. Par exemple, la fonction $\cos(x)$ est paire et la fonction $\sin(x)$ est impaire. 
+Dans plusieurs contextes, connaître la parité d'une fonction peut être très utile afin de simplifier les calculs. On dit qu'une fonction $f(x)$ est paire si $f(-x) = f(x)$ et on dit qu'elle est impaire dans le cas où $f(-x) = -f(x)$. En d'autres mots, une fonction paire est symétrique par rapport à l'axe des $y$ et une fonction impaire est antisymétrique par rapport à l'axe des $y$. Par exemple, $\cos(x)$ est paire et $\sin(x)$ est impaire. 
 
 \begin{figure}[h!]
     \centering
-     \includegraphics[width=0.48\textwidth]{images/ch1/cos.png}
+     \includegraphics[width=0.45\textwidth]{images/ch1/cos.png}
      \ \
      \includegraphics[width=0.48\textwidth]{images/ch1/sin.png}
     \caption{La fonction $\cos(x)$ (à gauche) et la fonction $\sin(x)$ (à droite)}
@@ -43,7 +31,7 @@ La parité d'une fonction est utile lorsqu'on calcule une intégrale sur un inte
     = \int_{0}^{a}f(t)dt + \int_{0}^{a}f(x)dx = 2\int_{0}^{a}f(x)dx
 \end{equation*}
 
-où on utilise la substitution $t = -x$. Bien qu'on intègre sur $t$ et sur $x$, les deux intégrales sont complètement équivalentes, car $t$ et $x$ sont des variables bidon. Ainsi, on se retrouve avec la même intégrale en double. Cependant, si $f(x)$ est impaire, on a 
+où on utilise la substitution $t = -x$. Bien qu'on intègre sur $t$ et sur $x$, les deux intégrales sont complètement équivalentes, car $t$ et $x$ sont des variables bidon. Cependant, si $f(x)$ est impaire, on a 
 
 \begin{equation*}
     \int_{-a}^{a}f(x)dx = \int_{-a}^{0}f(x)dx + \int_{0}^{a}f(x)dx = -\int_{-a}^{0}f(-x)dx + \int_{0}^{a}f(x)dx = \int_{a}^{0}f(t)dt + \int_{0}^{a}f(x)dx
@@ -71,15 +59,9 @@ Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégra
 % Ainsi, $f(x)$ s'écrit comme la somme d'une fonction paire et d'une fonction impaire. Par ailleurs, cette décomposition est unique.
 
 \subsection{Fonction périodique}
-Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si
+Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si $f(x + T) = f(x)$ où $T$ est la période. Autrement dit, une fonction périodique se répète après un temps $T$. Par exemple, $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques de période de $2\pi$. 
 
-\begin{equation}
-    f(x + T) = f(x)
-\end{equation}
-
-où $T$ est ce qu'on appelle la période. Autrement dit, une fonction périodique se répète après un temps $T$. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques ayant une période de $2\pi$. 
-
-Une fonction périodique se caractérise aussi par sa fréquence $\mathcal{F}$, c'est-à-dire le nombre de répétitions de la fonction par unité de temps (en Hz). On obtient la fréquence par $\mathcal{F} = \frac{1}{T}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps. Par exemple, les fonctions $\cos(x)$ et $\sin(x)$ ont toutes les deux une fréquence de $\frac{1}{2\pi}$Hz. 
+Une fonction périodique se caractérise aussi par sa fréquence $\mathcal{F}$, c'est-à-dire le nombre de répétitions de la fonction par unité de temps (en Hz). On obtient la fréquence par $\mathcal{F} = \frac{1}{T}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps. Par exemple, $\cos(x)$ et $\sin(x)$ ont les deux une fréquence de $\frac{1}{2\pi}$Hz. 
 
 Un autre type de fréquence pertinent pour les objets qui tournent est la fréquence angulaire $\omega$, soit le nombre de radians parcourus par unité de temps. Puisqu'on peut représenter $\cos(x)$ et $\sin(x)$ dans le cercle trigonométrique, ces fonctions ont aussi une fréquence angulaire. Pour la trouver, on peut dire que 
 
@@ -104,12 +86,12 @@ En effet,
     = f(a) - f(a) = 0
 \end{equation*}
 
-Alors, l'intégrale qui vient d'être dérivée vaut la même chose peu importe la valeur de $a$, ce qui donne (1.4). Essentiellement, ce résultat nous dit que l'intégrale d'une fonction périodique est la même peu importe les bornes d'intégration tant que celles-ci sont séparées d'une période. Graphiquement, cela se voit en "déplaçant" un bout de l'intégrale (en vert à la figure 2).
+Alors, l'intégrale qui vient d'être dérivée vaut la même chose peu importe la valeur de $a$, ce qui donne (1.1). Essentiellement, ce résultat nous dit que l'intégrale d'une fonction périodique est la même peu importe les bornes d'intégration tant que celles-ci sont séparées d'une période. Graphiquement, cela se voit en "déplaçant" un bout de l'intégrale (en vert à la figure 2).
 
 \begin{figure}[h!]
     \centering
-     \includegraphics[width=0.4\textwidth]{images/ch1/integrale_periode.jpg}
-    \caption{Représentation graphique de l'équation (1.4)}
+     \includegraphics[width=0.45\textwidth]{images/ch1/integrale_periode.jpg}
+    \caption{Représentation graphique de l'équation (1.1)}
     \end{figure}
 
 % \subsection{Fonctions orthogonales}

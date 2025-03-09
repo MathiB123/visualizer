@@ -458,8 +458,6 @@ INPUT .\images\ch2\exemple_scie.png
 INPUT .\images\ch2\exemple_scie.png
 INPUT .\images\ch2\exemple_scie.png
 INPUT .\images\ch2\exemple_scie.png
-INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
-INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt9.tfm
 INPUT .\images\ch2\scie_fourier.png
 INPUT .\images\ch2\scie_fourier.png
 INPUT images\ch2\scie_fourier.png
@@ -573,7 +571,5 @@ INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
-INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt9.pfb
-INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt9.pfb
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\mathi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
