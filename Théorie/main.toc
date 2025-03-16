@@ -21,6 +21,8 @@
 \contentsline {subsection}{\numberline {4.2}Passage de la TF à la TFD}{12}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Représentation matricielle}{13}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Transformée de Fourier rapide}{13}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Redondance des $W^{nk}$}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.1}Propriétés des $W^{nk}$}{13}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Diviser pour régner}{14}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Exemple $N=4$}{15}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Organigramme et \textit {bit reversal}}{16}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Exemple $N=8$}{17}{subsection.5.5}%
