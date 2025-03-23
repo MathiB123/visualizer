@@ -10,9 +10,9 @@ Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourie
 
 où les $a_n$ et $b_n$ sont des coefficients. 
 
-Essayons de faire sens de tout cela. D'abord, la présence des sinus et des cosinus a du sens, car on peut les voir comme des fonctions périodiques de base pour générer d'autres fonctions périodiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que cela soit le cas pour chaque terme dans la série. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus courte, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (2.1) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$, ce qui ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations). Une façon de le voir est en remarquant que $\sin(x)$ a normalement une période de $2\pi$, mais la fonction se répètent aussi après $4\pi$ ou $6\pi$. Au final, l'équation (2.1) est une combinaison de fonctions périodiques ayant une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
+Essayons de faire sens de tout cela. D'abord, la présence des sinus et des cosinus a du sens, car on peut les voir comme les fonctions périodiques de base pour générer d'autres fonctions périodiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que cela soit le cas pour chaque terme dans la série. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus courte, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (2.1) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$, ce qui ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations). Une façon de le voir est en remarquant que $\sin(x)$ a normalement une période de $2\pi$, mais la fonction se répètent aussi après $4\pi$ ou $6\pi$. Au final, l'équation (2.1) est une combinaison de fonctions périodiques ayant une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
 
-Évidemment, rien ne garantit à priori que l'équation (2.1) est juste pour décrire $f(x)$. En fait, il existe des conditions pour que $f(x)$ puisse avoir une série de Fourier. Pour la suite, on assume que cela fonctionne.
+Évidemment, rien ne garantit à priori que l'équation (2.1) est juste pour décrire $f(x)$. En fait, il existe des conditions pour que $f(x)$ puisse avoir une série de Fourier. Pour la suite, on assume que ces critères sont remplies.
 
 \subsubsection{Quelques identités}
 Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer l'intégrale suivante :
@@ -128,15 +128,15 @@ De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coe
 Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères qui nous indiqueraient s'il est possible ou non de faire une telle opération. Pour l'instant, on assume que la manipulation est possible afin de progresser.
 
 \subsection{Fonction en dents de scie}
-Soit $f(x) = Ax$ pour $-\frac{T}{2} < x < \frac{T}{2}$ de période $T$ où $A$ est une constante. 
+Soit $f(x) = Ax$ pour $-\frac{T}{2} < x < \frac{T}{2}$ de période $T$ où $A$ est une constante. On cherche à calculer sa série de Fourier.
 
 \begin{figure}[H]
     \centering
      \includegraphics[width=0.4\textwidth]{images/ch2/exemple_scie.png}
     \caption{La fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
-
-On cherche à calculer sa série de Fourier. Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il n'y a que les termes en $b_n$ à trouver. Selon (2.4), on a 
+ 
+Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il n'y a que les termes en $b_n$ à trouver. Selon (2.4), on a 
 
 
 
