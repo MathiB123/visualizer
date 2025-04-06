@@ -1,6 +1,6 @@
 \newpage
 \section{Transformée de Fourier rapide}
-On présente la transformée de Fourier rapide (FFT en anglais), un algorithme effectuant la TFD plus efficacement grâce à différentes propriétés. La vidéo \href{https://youtu.be/nmgFG7PUHfo?si=nyxxrVy1AVMsRO4g}{\textit{The Most Important Algorithm Of All Time}} par Veritasium donne une magnifique exposition à cet algorithme utilisé dans de nombreux contextes.
+On présente la transformée de Fourier rapide (FFT en anglais), un algorithme effectuant la TFD plus efficacement.
 
 \subsection{Propriétés des $W^{nk}$}
 On s'attarde aux éléments $W^{nk} = e^{-i\frac{2\pi}{N}nk}$ de la matrice $U$ où on rappelle que $N,n$ et $k$ sont des entiers tels que $0 \leq n,k \leq N-1$. Dans l'exponentielle complexe, $\frac{nk}{N}$ donne un certain quotient $q \in \mathbb{N}$ et un certain reste $r$ où $0 \leq r \leq N-1$. De ce fait, on peut écrire $nk = qN + r$. Alors,
@@ -78,7 +78,7 @@ Ces valeurs seront réutilisées pour calculer celles de l'étage supérieur, qu
 
 Avec cette nouvelle façon de faire, est-ce que la complexité a diminué? Oui! Effectivement, il y a $\log_2(N)$ étages demandant chacun $\frac{N}{2}$ calculs à faire. Pour chaque calcul, il faut faire 1 addition complexe, 1 soustraction complexe et 1 multiplication complexe (on considère que cela se fait efficacement). Ainsi, globalement, la FFT demande $\frac{N}{2}\log_2(N)$ multiplications complexes et $N\log_2(N)$ additions/soustractions complexes. Pour rappel, la TFD de base demandait $N^2$ multiplications complexes et $N(N-1)$ additions/soustractions complexes.
 
-\subsection{Exemple $N=4$}
+\subsection{FFT quand $N=4$}
 On montre ici la FFT pour $N=4$ avec les points $\vec{f} = \left[f_0, f_1, f_2, f_3\right]$. D'abord, calculons les $c_n$.
 
 \begin{equation*}
@@ -120,9 +120,9 @@ On remarque que les points à gauche sont ordonnés différemment de $\vec{f} = 
     \vec{f} = \left[f_0, f_1, f_2, f_3\right] = \left[f_{0 \underline{0}}, f_{0 \underline{1}}, f_{1 \underline{0}}, f_{1 \underline{1}}\right] \rightarrow \left[f_{\underline{0}0}, f_{\underline{1}0}\right], \left[f_{\underline{0}1}, f_{\underline{1}1}\right] \rightarrow [f_{00}], [f_{10}], [f_{01}], [f_{11}] \rightarrow \left[f_0, f_2, f_1, f_3\right] 
 \end{equation*}
 
-On voit qu'il s'agit bien de l'ordre qu'on trouve dans l'organigramme. Essentiellement, l'opération qui s'effectue est d'ordonner les points selon la valeur binaire de leur indice mais depuis la gauche (comme si le MSB était à droite). La façon de faire est de simplement positionner dans $\vec{f}$ les points selon leur indice binaire reversé, ce qu'on appelle le \textit{bit reversal}. Il s'agit d'une étape importante pour calculer correctement les $c_n$.
+On voit qu'il s'agit bien de l'ordre qu'on trouve dans l'organigramme. Essentiellement, l'opération qui s'effectue est d'ordonner les points selon la valeur binaire de leur indice mais depuis la gauche (comme si le bit de poids fort était à droite). Concrètement, la façon de faire est de positionner les points dans $\vec{f}$ selon leur indice en binaire reversé, ce qu'on appelle le \textit{bit reversal}. Il s'agit d'une étape importante pour calculer correctement les $c_n$ et qui doit être efficace si on veut convserver l'avantage de la FFT.
 
-\subsection{Exemple $N=8$}
+\subsection{FFT quand $N=8$}
 On a $\vec{f} = \left[f_0, f_1, f_2, f_3, f_4, f_5, f_6, f_7\right]$. Par le \textit{bit reversal}, cela devient $\vec{f} = \left[f_0, f_4, f_2, f_6, f_1, f_5, f_3, f_7\right]$. On dessine l'organigramme. On peut vérifier avec (4.2) que le calcul des $c_n$ est correct.
 
 \begin{figure}[H]
@@ -131,4 +131,4 @@ On a $\vec{f} = \left[f_0, f_1, f_2, f_3, f_4, f_5, f_6, f_7\right]$. Par le \te
         \caption{Organigramme pour $N=8$}
     \end{figure}
 
-
+*Algo bit reversal, comment trouver puissance de w pour chaque papillon

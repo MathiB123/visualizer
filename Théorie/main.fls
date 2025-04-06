@@ -553,6 +553,9 @@ INPUT .\chapitres\sampling.tex
 INPUT chapitres\sampling.tex
 INPUT .\chapitres\sampling.tex
 INPUT chapitres\sampling.tex
+INPUT .\main.bbl
+INPUT .\main.bbl
+INPUT main.bbl
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

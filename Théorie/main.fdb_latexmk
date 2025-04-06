@@ -1,5 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1743952728.80363 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1743952730.62531 0
+["bibtex main"] 1743964719.48294 "main.aux" "main.bbl" "main" 1743964954.46199 0
+  "./refs.bib" 1743953687 956 984b664e053945d0727523bfd0676488 ""
+  "C:/Users/mathi/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291868336 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "main.aux" 1743964953 6129 68d7cf9ccc412ba6e41abf5c066e64ed "pdflatex"
+  (generated)
+  "main.bbl"
+  "main.blg"
+  (rewritten before read)
+["pdflatex"] 1743964952.33218 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1743964954.46249 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731255178 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732414751 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -236,11 +244,11 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1743946773 2471 eda98e05c3063ff297dc0f974515fc8b ""
+  "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1743953708 2532 a4fe86e387662622a72fc4200781fcd8 ""
   "chapitres/dft.tex" 1743952728 6499 09be2d6a170df0daafcbc0ba03f71b7c ""
-  "chapitres/fft.tex" 1743952714 10596 64697d7e62afa7b2a9fde76c77918daa ""
+  "chapitres/fft.tex" 1743964951 10507 c330a167c60329498c9232d9159995fa ""
   "chapitres/fonctions.tex" 1743950418 7196 ac15c99fb26170192be2835cdb9bb565 ""
-  "chapitres/sampling.tex" 1743946769 43 5d7ba20a6c99465e929e2779ca012e7d ""
+  "chapitres/sampling.tex" 1743952857 53 34d75d484673b54845830656cf0b192d ""
   "chapitres/series_fourier.tex" 1743951444 14530 ca50c4c38da1a0eb2a037fd0c970da45 ""
   "chapitres/transfo_fourier.tex" 1743952153 6876 922e52addf50cada846c32619c02a1aa ""
   "images/ch1/cos.png" 1734626832 19688 f19cbde4b176eef0ce6d1f5de93b1777 ""
@@ -258,10 +266,11 @@
   "images/ch5/organigramme_8.jpg" 1742139289 191051 770ff512a7228516ac852b4fd982486b ""
   "images/ch5/papillon.jpg" 1741973788 37974 b8da28e6a1aed4b9fb5ef5a3e756513d ""
   "images/ch5/papillons_4.jpg" 1741974684 100419 5fff1a6eb311a68e95da503e9c402670 ""
-  "main.aux" 1743952730 5994 3ec0481ce85ad1d344597a5571af4e1a "pdflatex"
-  "main.out" 1743952730 5281 6f3f05adef923a561912867b2f746291 "pdflatex"
-  "main.tex" 1743946773 2471 eda98e05c3063ff297dc0f974515fc8b ""
-  "main.toc" 1743952730 2624 d358d8f2adec816c9ff31ff7c52e7981 "pdflatex"
+  "main.aux" 1743964953 6129 68d7cf9ccc412ba6e41abf5c066e64ed "pdflatex"
+  "main.bbl" 1743964719 52 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.out" 1743964953 5409 5fdbd83b0b3e7cacff31a5b90712f720 "pdflatex"
+  "main.tex" 1743953708 2532 a4fe86e387662622a72fc4200781fcd8 ""
+  "main.toc" 1743964953 2686 9fce00d377a3fcbb0c9767c0e445e565 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
