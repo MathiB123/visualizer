@@ -452,13 +452,6 @@ INPUT .\chapitres\series_fourier.tex
 INPUT chapitres\series_fourier.tex
 INPUT .\chapitres\series_fourier.tex
 INPUT chapitres\series_fourier.tex
-INPUT .\images\ch2\exemple_scie.png
-INPUT .\images\ch2\exemple_scie.png
-INPUT images\ch2\exemple_scie.png
-INPUT .\images\ch2\exemple_scie.png
-INPUT .\images\ch2\exemple_scie.png
-INPUT .\images\ch2\exemple_scie.png
-INPUT .\images\ch2\exemple_scie.png
 INPUT .\images\ch2\scie_fourier.png
 INPUT .\images\ch2\scie_fourier.png
 INPUT images\ch2\scie_fourier.png
@@ -556,6 +549,10 @@ INPUT .\images\ch5\organigramme_8.jpg
 INPUT .\images\ch5\organigramme_8.jpg
 INPUT .\images\ch5\organigramme_8.jpg
 INPUT .\images\ch5\organigramme_8.jpg
+INPUT .\chapitres\sampling.tex
+INPUT chapitres\sampling.tex
+INPUT .\chapitres\sampling.tex
+INPUT chapitres\sampling.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

@@ -1,5 +1,6 @@
+\newpage
 \section{Transformée de Fourier discrète}
-Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, la prise de données ne peut se faire que de manière discrète. Encore pire, il peut être virtuellement impossible de trouver une forme exacte depuis les données. Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise des données discrètes.
+Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, la prise de données ne peut se faire que de manière discrète.  Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise des données discrètes.
 
 \subsection{Delta de Dirac et propriété d'échantillonnage}
 Un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point $x^*$ et dont $\int_{-\infty}^{\infty}\delta(x-x^*)dx = 1$. Par exemple, $\delta(x)$ est nulle partout sauf à l'origine. Naturellement, pour une fonction $f(x)$ quelconque, $f(x)\delta(x-x^*) = f(x^*)\delta(x-x^*)$. Dès lors, on remarque que 
@@ -14,10 +15,10 @@ Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner un
     f_{\text{éch.}}(x) = \sum_{k=0}^{N-1}f(x)\delta(x-x_k) = \sum_{k=0}^{N-1}f(x_k)\delta(x-x_k)
 \end{equation}
 
-où $f_{\text{éch.}}(x)$ est nulle sauf aux points échantillonnés. (4.1) permet de modéliser ce qu'on aurait lors d'une prise de mesures. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
+où $f_{\text{éch.}}(x)$ est nulle sauf aux points échantillonnés. Autrement dit, (4.1) permet de modéliser ce qu'on aurait lors d'une prise de mesures. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
 
 \subsection{Passage de la TF à la TFD}
-Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Par (4.1), on sait comment écrire la fonction échantillonnée, une fonction comme n'importe laquelle qu'on aurait pu mettre dans la TF. En la mettant dans (3.3), on calcule 
+Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Par (4.1), on sait comment écrire la fonction échantillonnée. En la mettant dans (3.3), on calcule 
 
 \begin{equation*}
     c(\omega) = \int_{-\infty}^{\infty}f_{\text{éch.}}(t)e^{-i\omega t}dt = \int_{-\infty}^{\infty}\left(\sum_{k=0}^{N-1}f(t_k)\delta(t-t_k)\right)e^{-i\omega t}dt 

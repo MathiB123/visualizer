@@ -1,3 +1,4 @@
+\newpage
 \section{Transformée de Fourier}
 Ce qu'on a vu jusqu'à maintenant fonctionne pour des fonctions périodiques, mais qu'arrive-t-il lorsqu'on tente d'étendre cela à des fonctions qui ne le sont pas? En d'autres mots, pour une fonction qui a une période infinie, comment se comportent nos précédentes trouvailles? Pour cela, il faut regarder dans la limite où $T \rightarrow \infty$. 
 
@@ -29,9 +30,9 @@ où on pose
     c(\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
 \end{equation}
 
-Comme auparavant, $c(\omega)$ est un coefficient (en général complexe) qui nous dit "combien" il y a de $e^{i\omega x}$ dans $f(x)$. En fait, (3.3) va être ce qu'on appelle la transformée de Fourier (TF) de $f(x)$ et permet de décrire la "quantité" de chaque fréquence $\omega$ dans $f(x)$. Ainsi, la TF permet de décomposer $f(x)$ en ses fréquences. D'un autre côté, (3.2) correspond à la transformée de Fourier inverse (TFI), parce qu'elle permet depuis les fréquences connues $c(\omega)$ de reconstruire $f(x)$. C'est l'opération inverse de la TF, d'où son nom.
+Comme auparavant, on trouve un coefficient $c(\omega)$ qui nous dit "combien" il y a de la fréquence $\omega$ dans $f(x)$. En fait, (3.3) va être ce qu'on appelle la transformée de Fourier (TF) de $f(x)$. Ainsi, la TF permet de décomposer $f(x)$ en ses fréquences. D'un autre côté, (3.2) correspond à la transformée de Fourier inverse (TFI), parce qu'elle permet depuis les fréquences de reconstruire $f(x)$. C'est l'opération inverse de la TF, d'où son nom.
 
-Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques. En effet, on a déjà dit que $4\pi$ ou $6\pi$ peuvent aussi être des périodes de $\sin(x)$. En poussant ce raisonnement à l'extrême, on peut dire que la période de $\sin(x)$ est infinie et donc la TF peut s'appliquer.
+Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques. En effet, on peut dire, par exemple, que $\sin(x)$ a une période de $4\pi$ ou $6\pi$. En poussant ce raisonnement à l'extrême, on peut dire que la période de $\sin(x)$ est infinie et donc la TF peut s'appliquer.
 
 Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. Dans ce cas, on aurait ce facteur devant (3.3) et il n'y aurait plus rien devant (3.2). En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
 
@@ -47,7 +48,7 @@ Soit un pulse rectangulaire de hauteur 1.
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.4\textwidth]{images/ch3/pulse_rectangulaire.jpg}
+        \includegraphics[width=0.45\textwidth]{images/ch3/pulse_rectangulaire.jpg}
     \caption{Pulse rectangulaire de hauteur 1}
     \end{figure}
 
@@ -64,7 +65,7 @@ Si on pose $\tau = 1$ à des fins de représentation, on peut voir de quoi à l'
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.45\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
+        \includegraphics[width=0.55\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
     \caption{$c(\omega)$ pour le pulse rectangulaire ($\tau = 1$)}
     \end{figure}
 
@@ -91,14 +92,14 @@ Malgré les simplifications, calculer analytiquement cette dernière intégrale 
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.35\textwidth]{images/ch3/bornes_10.png}
-        \includegraphics[width=0.35\textwidth]{images/ch3/bornes_50.png}
+        \includegraphics[width=0.40\textwidth]{images/ch3/bornes_10.png}
+        \includegraphics[width=0.40\textwidth]{images/ch3/bornes_50.png}
     \caption{TFI de Rect$(x)$ ($\tau=1$) avec bornes $[-10, 10]$ (à gauche) et $[-50, 50]$ (à droite)}
     \end{figure}
 
     \begin{figure}[H]
         \centering
-            \includegraphics[width=0.35\textwidth]{images/ch3/bornes_100.png}
-            \includegraphics[width=0.35\textwidth]{images/ch3/bornes_500.png}
+            \includegraphics[width=0.40\textwidth]{images/ch3/bornes_100.png}
+            \includegraphics[width=0.40\textwidth]{images/ch3/bornes_500.png}
         \caption{TFI de Rect$(x)$ ($\tau=1$) avec bornes $[-100, 100]$ (à gauche) et $[-500, 500]$ (à droite)}
         \end{figure}
