@@ -148,6 +148,12 @@ Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il 
     = \frac{2A}{T}\left[\frac{-Tx}{2\pi n}\cos(\frac{2\pi nx}{T})\eval{}_{-T/2}^{T/2} - 0\right] = -\frac{AT}{\pi n}\cos(\pi n) = \frac{AT}{\pi n}(-1)^{n+1}
 \end{equation*}
 
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=0.5\textwidth]{images/ch2/bn.png}
+    \caption{Les premiers $b_n$ de la fonction en dents de scie ($A=2, T=2$)}
+    \end{figure}
+
 Ainsi, la série de Fourier pour la fonction en dents de scie est 
 
 \begin{equation*}
@@ -164,7 +170,7 @@ Plus on incorpore de termes dans la série, plus elle se rapproche de la fonctio
     \caption{Série de Fourier à 5 termes et à 25 termes de la fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
 
-On voit que la série de Fourier converge très bien vers la fonction cible. D'ailleurs, par cet exemple, on voit qu'une fonction discontinue peut avoir une série de Fourier. Par contre, la figure 3 montre qu'un comportement étrange semble se produire aux discontinuités. En effet, on remarque de grandes oscillations près de ces points. Il s'agit du phénomène de Gibbs. De plus, comme ici on utilise des fonctions continues pour approximer une fonction discontinue, on peut s'intéresser à la valeur de la série de Fourier aux discontinuités. 
+On voit que la série de Fourier converge très bien vers la fonction cible. D'ailleurs, par cet exemple, on voit qu'une fonction discontinue peut avoir une série de Fourier. Par contre, la figure 4 montre qu'un comportement étrange semble se produire aux discontinuités. En effet, on remarque de grandes oscillations près de ces points. Il s'agit du phénomène de Gibbs. De plus, comme ici on utilise des fonctions continues pour approximer une fonction discontinue, on peut s'intéresser à la valeur de la série de Fourier aux discontinuités. 
 % (c'est la moyenne de chaque côté de la discontinuité, à voir plus tard).
 
 \subsection{Série de Fourier exponentielle}
@@ -199,8 +205,7 @@ où on définit
     \end{cases}
 \end{equation*}
 
-\subsubsection{Calcul des coefficients $c_n$}
-On regarde chacun des cas possibles pour la valeur des $c_n$. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par (2.2). 
+On regarde chacun des cas possibles. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par (2.2). 
 
 \begin{equation*}
     a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi i x \cdot 0/T}dx

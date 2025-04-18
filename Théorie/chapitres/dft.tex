@@ -36,7 +36,9 @@ Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au
     c(\omega) = \sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \sum_{k=0}^{N-1}f(kL)e^{-i\omega kL}
 \end{equation*}
 
-Sachant qu'on a un nombre fini de données, il n'est pas nécessaire de regarder toutes les fréquences $\omega$, mais seulement celles dont la période concorde avec la durée totale de la prise de mesures. Essentiellement, on considère que la suite de mesures est périodique. Ici, la période vaut $T = NL$ et donc si on insère $\omega = \frac{2\pi n}{NL}$ dans la dernière équation pour discrétiser la fréquence, on trouve 
+Ensuite, on se rend compte qu'il n'est pas vraiment nécessaire de regarder toutes les fréquences $\omega$. Si on revient sur les séries de Fourier, on avait simplement besoin d'analyser une période pour avoir une bonne description des fréquences discrètes présentes dans la période en elle-même, donc aussi dans la fonction au complet de par sa nature périodique. Alors, pour la suite finie de mesures qu'on échantillonne, des fréquences discrètes comme celles d'une série de Fourier sont amplement suffisantes. Par contre, les séries de Fourier s'appliquent aux fonctions périodiques, ce que la fonction qu'on mesure n'est pas nécessairement. En fait, ce n'est pas très grave, car on s'intéresse seulement au contenu fréquentiel des données et non à la fonction sous-jacente dans sa globalité. Donc, en discrétisant les fréquences, on aura la bonne description fréquentielle dans l'intervalle des mesures, mais sous le tapis la conséquence directe est qu'on fait comme si la suite de mesures était périodique. 
+
+Ici, la période vaut $T = NL$. En s'inspirant des fréquences discrètes d'une série de Fourier, on remplace $\omega$ par $\frac{2\pi n}{T} = \frac{2\pi n}{NL}$ dans la dernière équation pour discrétiser la fréquence. On trouve 
 
 \begin{equation}
     c_n = \sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi n}{NL}kL} = \sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
