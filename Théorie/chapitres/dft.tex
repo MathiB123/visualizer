@@ -30,21 +30,21 @@ Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $
     = f(t_0)e^{-i\omega t_0}\int_{-\infty}^{\infty}\delta(t-t_0)dt + \dots + f(t_{N-1})e^{-i\omega t_{N-1}}\int_{-\infty}^{\infty}\delta(t-t_{N-1})dt = \sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k}
 \end{equation*}
 
-Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au temps $t_0 = 0$ et que les points $f(t_k)$ sont pris à intervalles réguliers (disons après un temps $L$). Donc, on a une série de points $\left\{f(kL)\right\}_{k=0}^{N-1}$ et le calcul précédent devient
+Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au temps $t_0 = 0$ et que les points $f(t_k)$ sont pris à intervalles réguliers (disons après un temps $\tau$). Donc, on a une série de points $\left\{f(k\tau)\right\}_{k=0}^{N-1}$ et le calcul précédent devient
 
 \begin{equation*}
-    c(\omega) = \sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \sum_{k=0}^{N-1}f(kL)e^{-i\omega kL}
+    c(\omega) = \sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \sum_{k=0}^{N-1}f(k\tau)e^{-i\omega k\tau}
 \end{equation*}
 
-Ensuite, on se rend compte qu'il n'est pas vraiment nécessaire de regarder toutes les fréquences $\omega$. Si on revient sur les séries de Fourier, on avait simplement besoin d'analyser une période pour avoir une bonne description des fréquences discrètes présentes dans la période en elle-même, donc aussi dans la fonction au complet de par sa nature périodique. Alors, pour la suite finie de mesures qu'on échantillonne, des fréquences discrètes comme celles d'une série de Fourier sont amplement suffisantes. Par contre, les séries de Fourier s'appliquent aux fonctions périodiques, ce que la fonction qu'on mesure n'est pas nécessairement. En fait, ce n'est pas très grave, car on s'intéresse seulement au contenu fréquentiel des données et non à la fonction sous-jacente dans sa globalité. Donc, en discrétisant les fréquences, on aura la bonne description fréquentielle dans l'intervalle des mesures, mais sous le tapis la conséquence directe est qu'on fait comme si la suite de mesures était périodique. 
+Puis, il n'est pas vraiment nécessaire de regarder toutes les fréquences $\omega$. Si on revient sur les séries de Fourier, on avait simplement besoin d'analyser une période pour avoir une bonne description des fréquences discrètes présentes dans la période en elle-même, donc aussi dans la fonction au complet de par sa nature périodique. Alors, pour la suite finie de mesures qu'on échantillonne, des fréquences discrètes comme celles d'une série de Fourier sont amplement suffisantes. Par contre, les séries de Fourier s'appliquent aux fonctions périodiques, ce que la fonction qu'on mesure n'est pas nécessairement. En fait, ce n'est pas très grave, car on s'intéresse seulement au contenu fréquentiel des données et non à la fonction sous-jacente dans sa globalité. Donc, en discrétisant les fréquences, on aura la bonne description fréquentielle dans l'intervalle des mesures, mais sous le tapis la conséquence directe est qu'on fait comme si la suite de mesures était périodique.
 
-Ici, la période vaut $T = NL$. En s'inspirant des fréquences discrètes d'une série de Fourier, on remplace $\omega$ par $\frac{2\pi n}{T} = \frac{2\pi n}{NL}$ dans la dernière équation pour discrétiser la fréquence. On trouve 
+Ici, la période vaut $T = N\tau$. En s'inspirant des fréquences discrètes d'une série de Fourier, on remplace $\omega$ par $\frac{2\pi n}{T} = \frac{2\pi n}{N\tau}$ dans la dernière équation pour discrétiser la fréquence. On trouve 
 
 \begin{equation}
-    c_n = \sum_{k=0}^{N-1}f(kL)e^{-i\frac{2\pi n}{NL}kL} = \sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
+    c_n = \sum_{k=0}^{N-1}f(k\tau)e^{-i\frac{2\pi n}{N\tau}k\tau} = \sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
 \end{equation}
 
-où $n \in \left\{0, ..., N-1\right\}$ par la périodicité de l'exponentielle complexe. Afin d'alléger l'écriture, on écrit que $f(kL) = f_k$ (le $k$ième point). (4.2) correspond la TFD et on isole un des $f_k$ pour obtenir la transformée de Fourier inverse discrète (TFID).
+Afin d'alléger l'écriture, on écrit que $f(k\tau) = f_k$ pour désigner le $k$ième point. Il reste à savoir les valeurs que peut prendre $n$. Comme hypothèse raisonnable supplémentaire, on peut dire que la fonction sous-jacente ne peut que contenir des fréquences à l'intérieur d'une certaine plage allant de 0 à $f_{\text{max}}$. Pour des raisons qu'on expliquera plus tard, si on pose $\tau = \frac{1}{f_x}$ où $f_x \geq f_{\text{max}}$, alors, dans la plage 0 à $f_x$, il y aura $\frac{f_x}{T} = N$ différentes fréquences qui sera suffisant pour représenter les fréquences présentes. Donc, $0 \leq n \leq N-1$. (4.2) correspond la TFD et on isole un des $f_k$ pour obtenir la transformée de Fourier inverse discrète (TFID).
 
 \begin{equation}
     \sum_{n=0}^{N-1}c_n e^{i\frac{2\pi}{N}nk^{'}} = \sum_{k=0}^{N-1}f_k\sum_{n=0}^{N-1} e^{-i\frac{2\pi}{N}n(k-k^{'})} = Nf_{k^{'}} \implies f_k = \frac{1}{N}\sum_{n=0}^{N-1}c_n e^{i\frac{2\pi}{N}nk}

@@ -1,9 +1,9 @@
 \newpage
 \section{Numérisation}
-Beaucoup de phénomènes physiques sont continus (analogues) et nécessitent d'être numérisés afin de pouvoir être manipulés par ordinateur. Cette numérisation demande l'échantillonnage et la quantification du phénomène analogue.
+Beaucoup de phénomènes physiques sont continus (analogues) et nécessitent d'être numérisés afin de pouvoir être manipulés par ordinateur. Cette numérisation demande l'échantillonnage et la quantification du phénomène analogue. Comme on veut faire un visualiseur audio, on utilisera pour la suite des termes liés aux phénomènes sonores.
 
 \subsection{Échantillonnage}
-Dans la vraie vie, il est impossible de pouvoir enregistrer les données d'une expérience à chaque instant. Autrement, il faudrait une quantité infinie de mémoire et, par la suite, faire l'analyse de cette quantité astronomique de données serait un enfer. Alors, on prend des mesures à intervalles réguliers, ce qu'on nomme l'échantillonage. 
+Dans la vraie vie, il est impossible d'enregistrer un son à chaque instant précis. Autrement, il faudrait une quantité infinie de mémoire et faire l'analyse de toutes ces données serait un enfer. Alors, on prend des mesures à intervalles réguliers, ce qu'on nomme l'échantillonage. 
 
 \begin{figure}[H]
     \centering
@@ -11,6 +11,7 @@ Dans la vraie vie, il est impossible de pouvoir enregistrer les données d'une e
         \caption{Échantillonnage (en bleu) d'une fonction $f(t)$}
     \end{figure}
 
-Le rythme auquel on décide de prendre les mesures se nomme la fréquence d'échantillonage $f_s$. Évidemment, plus la fréquence d'échantillonage est grande, plus nos mesures "ont l'air" du phénomène analogue qu'elles décrivent. Cependant, une trop grande fréquence d'échantillonage donne beaucoup de données et, dans ce cas, peut-être que les mesures seront redondantes ou bien que leur traitement sera lent vu leur quantité. Par ailleurs, une trop petite fréquence d'échantillonage n'est peut-être pas suffisante pour représenter fidèlement le phénomène qu'on mesure. Ainsi, pour avoir le maximum d'informations avec le moins de données, quelle fréquence d'échantillonage faut-il choisir?
+Le rythme auquel on décide de prendre les mesures se nomme la fréquence d'échantillonage $f_s$. Évidemment, plus la fréquence d'échantillonage est grande, plus nos mesures "ont l'air" du phénomène analogue qu'elles décrivent. Cependant, une trop grande fréquence d'échantillonage donne beaucoup de données et leur traitement risque d'être lent. Par ailleurs, une trop petite fréquence d'échantillonage n'est peut-être pas suffisante pour représenter fidèlement le phénomène qu'on mesure. Ainsi, pour avoir le maximum d'informations avec le moins de données, quelle fréquence d'échantillonage faut-il choisir?
+
 
 

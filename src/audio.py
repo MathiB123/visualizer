@@ -31,3 +31,13 @@ import numpy as np
 # plt.plot(times, data)
 # plt.show()
 
+
+n = np.arange(1, 15)
+r_n = 4/(np.pi * n)
+theta_n = np.pi * (n + 1)
+
+plt.stem(n, theta_n, basefmt="black")
+plt.xlabel("n")
+plt.ylabel("theta_n")
+plt.xticks(n)
+plt.show()
