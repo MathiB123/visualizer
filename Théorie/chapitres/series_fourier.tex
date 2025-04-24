@@ -148,7 +148,7 @@ Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il 
     \caption{Les premiers $b_n$ de la fonction en dents de scie ($A=2, T=2$)}
     \end{figure}
 
-On peut aussi les écrire selon leur spectre de magnitude $r_n$ et leur spectre de phase $\theta_n$ par $b_n = r_n e^{i\theta_n}$. Pour l'exemple avec $A=2$ et $T=2$, on a $r_n = \frac{4}{\pi n}$ et $\theta_n = \pi (n+1) \equiv \begin{cases}
+On peut aussi les écrire selon leur spectre de magnitude $r_n$ et leur spectre de phase $\theta_n$ par $b_n = r_n e^{i\theta_n}$. Pour l'exemple avec $A=2$ et $T=2$, on a $r_n = \frac{4}{\pi n}$ et $\theta_n = \begin{cases}
     \pi \text{ si } n \text{ pair} \\
     0 \text{ si } n \text{ impair} \\
 \end{cases}$.
@@ -244,26 +244,10 @@ On a calculé à la section 2.2 la série de Fourier trigonométrique de la fonc
     c_n = \frac{1}{T}\int_{-T/2}^{T/2}Axe^{-2\pi inx/T}dx = \frac{A}{T}\int_{-T/2}^{T/2}xe^{-2\pi inx/T}dx = \underbrace{\dots}_\text{intégration par parties} = (-1)^n\frac{iAT}{2\pi n}
 \end{equation*}
 
-si $n \neq 0$. Pour $n=0$, on trouverait que le coefficient est nul. On peut les réécrire avec la magnitude et la phase.
-
-\begin{equation*}
-    c_n = \frac{AT}{2\pi n}e^{i\theta_n} \ , \ \theta_n \begin{cases}
-        \frac{\pi}{2} \text{ si } n \text{ pair} \\
-        \frac{3\pi}{2} \text{ si } n \text{ impair} \\
-    \end{cases}
-\end{equation*}
-
-Donc, dans la forme exponentielle, la fonction en dents de scie correspond à 
+si $n \neq 0$. Pour $n=0$, on trouverait que le coefficient est nul. Donc, dans la forme exponentielle, la fonction en dents de scie correspond à 
 
 \begin{equation*}
     f(x) = \sum_{n \neq 0}^{}(-1)^n\frac{iAT}{2\pi n}e^{2\pi inx/T}
 \end{equation*}
 
 Par la formule d'Euler, on retomberait exactement sur la série de Fourier trigonométrique trouvée à la section 2.2.
-
-\begin{figure}[H]
-    \centering
-     \includegraphics[width=0.45\textwidth]{images/ch2/magnitude_cn.png}
-     \includegraphics[width=0.45\textwidth]{images/ch2/phase_cn.png}
-    \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c_n \ (A=2, T=2)$}
-    \end{figure}
