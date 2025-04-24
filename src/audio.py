@@ -31,4 +31,17 @@ import numpy as np
 # plt.plot(times, data)
 # plt.show()
 
+A = T = 2
+n = np.arange(-10, 11)
+c_n = (-1)**abs(n) * (1j*A*T)/(2*np.pi*n)
+c_n[10] = 0
 
+magn = np.abs(c_n)
+phase = np.angle(c_n)
+
+plt.stem(n, phase, basefmt="black")
+plt.xlabel("n")
+plt.ylabel("theta_n")
+plt.xticks(n)
+plt.yticks([-np.pi/2, 0, np.pi/2])
+plt.show()
