@@ -247,7 +247,10 @@ On a calculé à la section 2.2 la série de Fourier trigonométrique de la fonc
 si $n \neq 0$. Pour $n=0$, on trouverait que le coefficient est nul. On peut les réécrire avec la magnitude et la phase.
 
 \begin{equation*}
-    c_n = \frac{AT}{2\pi n}e^{i\pi (n + \frac{1}{2})} \ , \ n \neq 0
+    c_n = \frac{AT}{2\pi n}e^{i\theta_n} \ , \ \theta_n \begin{cases}
+        \frac{\pi}{2} \text{ si } n \text{ pair} \\
+        \frac{3\pi}{2} \text{ si } n \text{ impair} \\
+    \end{cases}
 \end{equation*}
 
 Donc, dans la forme exponentielle, la fonction en dents de scie correspond à 
@@ -257,3 +260,10 @@ Donc, dans la forme exponentielle, la fonction en dents de scie correspond à
 \end{equation*}
 
 Par la formule d'Euler, on retomberait exactement sur la série de Fourier trigonométrique trouvée à la section 2.2.
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[width=0.45\textwidth]{images/ch2/magnitude_cn.png}
+     \includegraphics[width=0.45\textwidth]{images/ch2/phase_cn.png}
+    \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c_n \ (A=2, T=2)$}
+    \end{figure}

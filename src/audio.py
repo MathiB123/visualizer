@@ -32,10 +32,11 @@ import numpy as np
 # plt.show()
 
 
-n = np.arange(1, 15)
-r_n = 4/(np.pi * n)
-theta_n = np.where(n % 2 == 0, np.pi, 0)
+n = np.arange(-10, 11)
+r_n = 4/(2*np.pi * abs(n))
+theta_n = np.where(n % 2 == 0, np.pi/2, 3*np.pi/2)
 
+print(theta_n)
 plt.stem(n, theta_n, basefmt="black")
 plt.xlabel("n")
 plt.ylabel("theta_n")
