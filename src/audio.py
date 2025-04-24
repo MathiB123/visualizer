@@ -34,7 +34,7 @@ import numpy as np
 
 n = np.arange(1, 15)
 r_n = 4/(np.pi * n)
-theta_n = np.pi * (n + 1)
+theta_n = np.where(n % 2 == 0, np.pi, 0)
 
 plt.stem(n, theta_n, basefmt="black")
 plt.xlabel("n")
