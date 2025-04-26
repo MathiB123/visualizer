@@ -31,17 +31,31 @@ import numpy as np
 # plt.plot(times, data)
 # plt.show()
 
-A = T = 2
-n = np.arange(-10, 11)
-c_n = (-1)**abs(n) * (1j*A*T)/(2*np.pi*n)
-c_n[10] = 0
 
-magn = np.abs(c_n)
-phase = np.angle(c_n)
 
-plt.stem(n, phase, basefmt="black")
-plt.xlabel("n")
-plt.ylabel("theta_n")
-plt.xticks(n)
-plt.yticks([-np.pi/2, 0, np.pi/2])
+
+# w = np.linspace(-5, 5, 1000)
+# y = (10/w)*np.sin(3*w/2)
+# plt.plot(w, np.abs(y))
+# plt.xlabel("w")
+# plt.ylabel("r(w)")
+# plt.xticks(np.arange(-5, 6))
+# plt.yticks([0.0, 2.5, 5.0, 7.5, 10.0, 12.5, 15.0])
+# plt.show()
+
+from scipy.integrate import quad
+
+x_s = np.linspace(-5, 5, 1000)
+rect = np.zeros_like(x_s, float)
+b = 100
+factor = 10/np.pi
+
+for i, x in enumerate(x_s):
+    rect[i] = quad(lambda w: factor * np.sin(3*w/2) * np.cos(w*x)/w, 0, b)[0]
+
+
+plt.plot(x_s, rect)
+plt.xlabel("x")
+plt.ylabel("Rect(x)")
+plt.xticks(np.arange(-5, 6))
 plt.show()

@@ -37,71 +37,66 @@ Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas 
 Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. Dans ce cas, on aurait ce facteur devant (3.3) et il n'y aurait plus rien devant (3.2). En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
 
 \subsection{Pulse rectangulaire}
-Soit un pulse rectangulaire de hauteur 1. 
-
-\begin{equation*}
-    \text{Rect}(x) = \begin{cases}
-        1 & \text{si } \abs{x} < \tau/2 \\
-        0 & \text{sinon}
-    \end{cases}
-\end{equation*}
+Soit un pulse rectangulaire qu'on définit par $\text{Rect}(x) = \begin{cases}
+    A & \text{si } \abs{x} < d/2 \\
+    0 & \text{sinon}
+\end{cases}$. 
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.45\textwidth]{images/ch3/pulse_rectangulaire.jpg}
-    \caption{Pulse rectangulaire de hauteur 1}
+        \includegraphics[width=0.55\textwidth]{images/ch3/pulse_rectangulaire.png}
+    \caption{Pulse rectangulaire $(A = 5, d = 3)$}
     \end{figure}
 
 Par (3.3), 
 
 \begin{equation*}
-    c(\omega) = \int_{-\infty}^{\infty}\text{Rect}(x)e^{-i\omega x}dx = \int_{-\tau/2}^{\tau/2}e^{-i\omega x}dx = \int_{-\tau/2}^{\tau/2}\left(\cos(\omega x) - i\sin(\omega x)\right)dx
+    c(\omega) = \int_{-\infty}^{\infty}\text{Rect}(x)e^{-i\omega x}dx = \int_{-d/2}^{d/2}Ae^{-i\omega x}dx = A\int_{-d/2}^{d/2}\left(\cos(\omega x) - i\sin(\omega x)\right)dx
 \end{equation*}
 \begin{equation*}
-    = \int_{-\tau/2}^{\tau/2}\underbrace{\cos(\omega x)}_\text{paire}dx - i\int_{-\tau/2}^{\tau/2}\underbrace{\sin(\omega x)}_\text{impaire}dx = 2\int_{0}^{\tau/2}\cos(\omega x)dx = \frac{2}{\omega}\sin(\frac{\tau\omega}{2})
+    = A\int_{-d/2}^{d/2}\underbrace{\cos(\omega x)}_\text{paire}dx - iA\int_{-d/2}^{d/2}\underbrace{\sin(\omega x)}_\text{impaire}dx = 2A\int_{0}^{d/2}\cos(\omega x)dx = \frac{2A}{\omega}\sin(\frac{d\omega}{2})
 \end{equation*}
-
-Si on pose $\tau = 1$ à des fins de représentation, on peut voir de quoi à l'air $c(\omega)$ dans cet exemple.
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.65\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
-    \caption{$c(\omega)$ pour le pulse rectangulaire ($\tau = 1$)}
+        \includegraphics[width=0.55\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
+    \caption{Les premiers $c(\omega)$ pour le pulse rectangulaire ($A = 5, d = 3$)}
+    \end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.48\textwidth]{images/ch3/magnitude.png}
+        \includegraphics[width=0.48\textwidth]{images/ch3/phase.png}
+    \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c(\omega)$ ($A = 5, d = 3$)}
     \end{figure}
 
 Par (3.2),
 
 \begin{equation*}
-    \text{Rect}(x) = \frac{1}{\pi}\int_{-\infty}^{\infty}\frac{\sin(\frac{\tau\omega}{2})}{ \omega}e^{i\omega x}d\omega
+    \text{Rect}(x) = \frac{A}{\pi}\int_{-\infty}^{\infty}\frac{\sin(\frac{d\omega}{2})}{\omega}e^{i\omega x}d\omega
 \end{equation*}
 
-Pour vérifier que cela tient, il faudrait évaluer l'intégrale, ce qui à priori ne semble pas simple du tout. En utilisant la formule d'Euler, on trouve
+Pour vérifier que cela tient, il faudrait évaluer l'intégrale, ce qui à priori ne semble pas simple du tout. En utilisant la formule d'Euler et la parité des fonctions en jeu, on trouve
 
 \begin{equation*}
-    \text{Rect}(x) = \frac{1}{\pi}\int_{-\infty}^{\infty}\frac{\sin(\frac{\tau\omega}{2})}{\omega}\left(\cos(\omega x) + i\sin(\omega x)\right)d\omega = \int_{-\infty}^{\infty}\frac{\sin(\frac{\tau\omega}{2})}{\pi \omega}\cos(\omega x)d\omega + i\int_{-\infty}^{\infty}\frac{\sin(\frac{\tau\omega}{2})}{\pi \omega}\sin(\omega x)d\omega
+    \text{Rect}(x) = \frac{2A}{\pi}\int_{0}^{\infty}\frac{\sin(\frac{d\omega}{2})\cos(\omega x)}{\omega}d\omega
 \end{equation*}
 
-Par rapport à $\omega$, l'intégrande de la première intégrale est paire alors que celle de la deuxième intégrale est impaire. Ainsi, la deuxième est nulle et on se retrouve avec 
-
-\begin{equation*}
-    \text{Rect}(x) = \int_{-\infty}^{\infty}\frac{\sin(\frac{\tau\omega}{2})}{\pi \omega}\cos(\omega x)d\omega
-\end{equation*}
-
-Malgré les simplifications, calculer analytiquement cette dernière intégrale ne semble pas facile. On peut l'approximer, par exemple, en prenant des bornes d'intégration $\left[a, b\right]$ qui tendent progressivement vers $(-\infty, \infty)$. Les figures ci-dessous présentent cette approximation avec différentes bornes d'intégration pour le pulse rectangulaire où $\tau = 1$. Naturellement, on voit que plus les bornes tendent vers $(-\infty, \infty)$, plus on se rapproche du vrai pulse rectangulaire. 
+Malgré les simplifications, calculer analytiquement cette dernière intégrale ne semble pas facile. On peut l'approximer, par exemple, en prenant des bornes d'intégration $\left[0, b\right]$ qui tendent progressivement vers $[0, \infty)$. Les figures ci-dessous présentent cette approximation avec différentes bornes d'intégration. Naturellement, on voit que plus les bornes tendent vers $[0, \infty)$, plus on se rapproche du vrai pulse rectangulaire. 
 % Le notebook \lstinline|pulse_rectangulaire.ipynb| permet de jouer avec cet exemple. 
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.40\textwidth]{images/ch3/bornes_10.png}
-        \includegraphics[width=0.40\textwidth]{images/ch3/bornes_50.png}
-    \caption{TFI de Rect$(x)$ ($\tau=1$) avec bornes $[-10, 10]$ (à gauche) et $[-50, 50]$ (à droite)}
+        \includegraphics[width=0.48\textwidth]{images/ch3/borne_5.png}
+        \includegraphics[width=0.48\textwidth]{images/ch3/borne_10.png}
+    \caption{TFI de Rect$(x)$ ($A=5, d=3$) avec bornes $[0, 5]$ (à gauche) et $[0, 10]$ (à droite)}
     \end{figure}
 
     \begin{figure}[H]
         \centering
-            \includegraphics[width=0.40\textwidth]{images/ch3/bornes_100.png}
-            \includegraphics[width=0.40\textwidth]{images/ch3/bornes_500.png}
-        \caption{TFI de Rect$(x)$ ($\tau=1$) avec bornes $[-100, 100]$ (à gauche) et $[-500, 500]$ (à droite)}
+            \includegraphics[width=0.48\textwidth]{images/ch3/borne_50.png}
+            \includegraphics[width=0.48\textwidth]{images/ch3/borne_100.png}
+        \caption{TFI de Rect$(x)$ ($A=5, d=3$) avec bornes $[0, 50]$ (à gauche) et $[0, 100]$ (à droite)}
         \end{figure}
 
 
