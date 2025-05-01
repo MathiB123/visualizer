@@ -1,3 +1,44 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{CooleyTukey}
+James Cooley and John Tukey.
+\newblock An algorithm for the machine calculation of complex fourier series.
+\newblock {\em Mathematics of Computation}, 19(90):297--301, 1965.
+
+\bibitem{notes_olivier_godin}
+Olivier Godin.
+\newblock \textit{Calcul différentiel et intégral III}, 2022.
+\newblock Notes de cours, Collégial du Séminaire de Sherbrooke.
+
+\bibitem{10.5555/2656915}
+Ken'iti Kido.
+\newblock {\em Digital Fourier Analysis: Fundamentals}.
+\newblock Springer Publishing Company, Incorporated, 2014.
+
+\bibitem{kreyszig11}
+Erwin Kreyszig, Herbert Kreyszig, and E.~J. Norminton.
+\newblock {\em Advanced Engineering Mathematics}.
+\newblock Wiley, Hoboken, NJ, tenth edition, 2011.
+
+\bibitem{notes_david_morin}
+David Morin.
+\newblock \textit{Fourier analysis}, novembre 2009.
+\newblock Notes de cours, Harvard.
+
+\bibitem{153182}
+Norman. Morrison.
+\newblock {\em Introduction to Fourier analysis}.
+\newblock Wiley, New York, c1994.
+\newblock Includes index.
+
+\bibitem{akash_murthy}
+Akash Murthy.
+\newblock \url{https://www.youtube.com/@akashmurthy}.
+
+\bibitem{veritasium}
+Veritasium.
+\newblock \textit{The Most Important Algorithm Of All Time}.
+\newblock
+  \url{https://www.youtube.com/watch?v=nmgFG7PUHfo&ab_channel=Veritasium}.
 
 \end{thebibliography}
