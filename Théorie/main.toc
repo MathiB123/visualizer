@@ -21,4 +21,4 @@
 \contentsline {subsection}{\numberline {4.3}Représentation matricielle}{15}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Numérisation}{17}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Échantillonnage}{17}{subsection.5.1}%
-\contentsline {section}{R\'ef\'erences}{18}{section*.15}%
+\contentsline {section}{R\'ef\'erences}{18}{section*.16}%

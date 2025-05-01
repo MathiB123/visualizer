@@ -33,29 +33,11 @@ import numpy as np
 
 
 
+t = np.arange(0, 11.5, 0.5)
+sin = np.sin(t)
 
-# w = np.linspace(-5, 5, 1000)
-# y = (10/w)*np.sin(3*w/2)
-# plt.plot(w, np.abs(y))
-# plt.xlabel("w")
-# plt.ylabel("r(w)")
-# plt.xticks(np.arange(-5, 6))
-# plt.yticks([0.0, 2.5, 5.0, 7.5, 10.0, 12.5, 15.0])
-# plt.show()
-
-from scipy.integrate import quad
-
-x_s = np.linspace(-5, 5, 1000)
-rect = np.zeros_like(x_s, float)
-b = 100
-factor = 10/np.pi
-
-for i, x in enumerate(x_s):
-    rect[i] = quad(lambda w: factor * np.sin(3*w/2) * np.cos(w*x)/w, 0, b)[0]
-
-
-plt.plot(x_s, rect)
+plt.stem(t, sin, basefmt="black")
 plt.xlabel("x")
-plt.ylabel("Rect(x)")
-plt.xticks(np.arange(-5, 6))
+plt.xticks(np.arange(0, 12))
+plt.ylabel("sin(x)")
 plt.show()

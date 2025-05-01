@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1746107380.82674 "main.aux" "main.bbl" "main" 1746107627.77159 0
+["bibtex main"] 1746115584.74901 "main.aux" "main.bbl" "main" 1746115603.96427 0
   "./refs.bib" 1746107377 3842 61a14e7911cf40c3ef393de4556ab0f9 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291868336 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1746107627 6071 bcca0dd19b0d8dfec9646cb602d4bd41 "pdflatex"
+  "main.aux" 1746115603 6232 26ebedd8bedf60e0313578cd3482a9d3 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1746107625.3323 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1746107627.77211 0
+["pdflatex"] 1746115601.0598 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1746115603.96502 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731255178 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732414751 11986914 e74f94ceabc268166bf0413908d9c34b ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -243,7 +243,7 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" 1746105809 2546 0e2eda16468ceede58b7f49672dba3e7 ""
-  "chapitres/dft.tex" 1745179861 7811 2f1fa8932af08e0ae08df5fb0209a3ea ""
+  "chapitres/dft.tex" 1746115603 7301 6fefd94e8ed01570e6f3dccefb05c483 ""
   "chapitres/fonctions.tex" 1746107624 7178 438378f0feffe40f1f4a49fe46843453 ""
   "chapitres/sampling.tex" 1746104403 1555 481c3cf305db5b1ff7a9b8f45b507b43 ""
   "chapitres/series_fourier.tex" 1745521416 14548 218b2931e71f434aa7a6bb760a447845 ""
@@ -267,12 +267,13 @@
   "images/ch3/magnitude.png" 1745678924 23472 07fb80b924a9c69093ebed63b9117f44 ""
   "images/ch3/phase.png" 1745678801 10730 29de1f9246452bf35ca8213b661a341d ""
   "images/ch3/pulse_rectangulaire.png" 1745595531 10470 a2e3f8eb2664bbe080d9b9bfdf526d24 ""
+  "images/ch4/echantillonage.png" 1746115600 15185 2e8b49abfda1bce671d56f4353949f94 ""
   "images/ch6/echantillonnage.jpg" 1743967298 51399 2af9af8c47dee85767e2d33a08be4ab6 ""
-  "main.aux" 1746107627 6071 bcca0dd19b0d8dfec9646cb602d4bd41 "pdflatex"
-  "main.bbl" 1746107380 1348 00068e7bad3cc49c93ee74d723ab2832 "bibtex main"
-  "main.out" 1746107627 4244 7abfc753ce931c07de61734671e33525 "pdflatex"
+  "main.aux" 1746115603 6232 26ebedd8bedf60e0313578cd3482a9d3 "pdflatex"
+  "main.bbl" 1746115584 1348 00068e7bad3cc49c93ee74d723ab2832 "bibtex main"
+  "main.out" 1746115603 4244 4620902af5c9a0dfece61d0119f6c8cb "pdflatex"
   "main.tex" 1746105809 2546 0e2eda16468ceede58b7f49672dba3e7 ""
-  "main.toc" 1746107627 2111 5b5f1d947e8ac2cd7fa9a8a5e91f8c3c "pdflatex"
+  "main.toc" 1746115603 2111 b935ea63f324c4c97edc179ae130bafe "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -17,6 +17,12 @@ Ainsi, depuis le delta de Dirac, on voit qu'il est possible d'échantillonner un
 
 où $f_{\text{éch.}}(x)$ est nulle sauf aux points échantillonnés. Autrement dit, (4.1) permet de modéliser ce qu'on aurait lors d'une prise de mesures. Cette propriété d'échantillonnage facilite grandement le passage de la TF à la TFD, bien qu'il y a beaucoup de subtilités en lien avec le delta de Dirac.
 
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.48\textwidth]{images/ch4/echantillonage.png}
+    \caption{Exemple d'échantillonage de $\sin(x)$}
+    \end{figure}
+
 \subsection{Passage de la TF à la TFD}
 Comme on l'a dit précédemment, dans la vraie vie, on enregistre une suite de $N$ points $\left\{f(t_k)\right\}_{k=0}^{N-1}$ à différents instants $t_k$. Par (4.1), on sait comment écrire la fonction échantillonnée. En la mettant dans (3.3), on calcule 
 
@@ -36,15 +42,13 @@ Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au
     c(\omega) = \sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \sum_{k=0}^{N-1}f(k\tau)e^{-i\omega k\tau}
 \end{equation*}
 
-Puis, il n'est pas vraiment nécessaire de regarder toutes les fréquences $\omega$. Si on revient sur les séries de Fourier, on avait simplement besoin d'analyser une période pour avoir une bonne description des fréquences discrètes présentes dans la période en elle-même, donc aussi dans la fonction au complet de par sa nature périodique. Alors, pour la suite finie de mesures qu'on échantillonne, des fréquences discrètes comme celles d'une série de Fourier sont amplement suffisantes. Par contre, les séries de Fourier s'appliquent aux fonctions périodiques, ce que la fonction qu'on mesure n'est pas nécessairement. En fait, ce n'est pas très grave, car on s'intéresse seulement au contenu fréquentiel des données et non à la fonction sous-jacente dans sa globalité. Donc, en discrétisant les fréquences, on aura la bonne description fréquentielle dans l'intervalle des mesures, mais sous le tapis la conséquence directe est qu'on fait comme si la suite de mesures était périodique.
-
-Ici, la période vaut $T = N\tau$. En s'inspirant des fréquences discrètes d'une série de Fourier, on remplace $\omega$ par $\frac{2\pi n}{T} = \frac{2\pi n}{N\tau}$ dans la dernière équation pour discrétiser la fréquence. On trouve 
+Puis, il n'est pas vraiment nécessaire de regarder toutes les fréquences $\omega$. Si on revient sur les séries de Fourier, on avait simplement besoin d'analyser une période pour avoir une bonne description des fréquences discrètes présentes dans la période en elle-même, donc aussi dans la fonction au complet de par sa nature périodique. Alors, pour la suite finie de mesures qu'on échantillonne, si on fait comme s'il s'agissait d'une fonction périodique (ce que la vraie fonction sous-jacente n'est pas nécessairement), des fréquences discrètes comme celles d'une série de Fourier sont amplement suffisantes. Ainsi, on aura la bonne description fréquentielle dans l'intervalle des mesures, mais sous le tapis la fonction sous-jacente est maintenant considérée comme périodique. Ici, la période vaut $T = N\tau$. On remplace $\omega$ par $\frac{2\pi n}{T} = \frac{2\pi n}{N\tau}$ dans la dernière équation pour discrétiser la fréquence. On trouve 
 
 \begin{equation}
     c_n = \sum_{k=0}^{N-1}f(k\tau)e^{-i\frac{2\pi n}{N\tau}k\tau} = \sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk} 
 \end{equation}
 
-Afin d'alléger l'écriture, on écrit que $f(k\tau) = f_k$ pour désigner le $k$ième point. Il reste à savoir les valeurs que peut prendre $n$. Comme hypothèse raisonnable supplémentaire, on peut dire que la fonction sous-jacente ne peut que contenir des fréquences à l'intérieur d'une certaine plage allant de 0 à $f_{\text{max}}$. Pour des raisons qu'on expliquera plus tard, si on pose $\tau = \frac{1}{f_x}$ où $f_x \geq f_{\text{max}}$, alors, dans la plage 0 à $f_x$, il y aura $\frac{f_x}{T} = N$ différentes fréquences qui sera suffisant pour représenter les fréquences présentes. Donc, $0 \leq n \leq N-1$. (4.2) correspond la TFD et on isole un des $f_k$ pour obtenir la transformée de Fourier inverse discrète (TFID).
+Afin d'alléger l'écriture, on écrit que $f(k\tau) = f_k$ pour désigner le $k$ième point. Aussi, on note que $n$ est un entier se promenant entre 0 et $N-1$ par la périodicité de l'exponentielle complexe. Ainsi, (4.2) correspond la TFD et on isole un des $f_k$ pour obtenir la transformée de Fourier inverse discrète (TFID).
 
 \begin{equation}
     \sum_{n=0}^{N-1}c_n e^{i\frac{2\pi}{N}nk^{'}} = \sum_{k=0}^{N-1}f_k\sum_{n=0}^{N-1} e^{-i\frac{2\pi}{N}n(k-k^{'})} = Nf_{k^{'}} \implies f_k = \frac{1}{N}\sum_{n=0}^{N-1}c_n e^{i\frac{2\pi}{N}nk}
