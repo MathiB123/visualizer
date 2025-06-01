@@ -1,6 +1,6 @@
 \section{Fonctions}
 \subsection{Parité d'une fonction}
-Dans plusieurs contextes, connaître la parité d'une fonction peut être utile afin de simplifier les calculs. On dit qu'une fonction $f(x)$ est paire si $f(-x) = f(x)$ et on dit qu'elle est impaire dans le cas où $f(-x) = -f(x)$. En d'autres mots, une fonction paire est symétrique par rapport à l'axe des $y$ et une fonction impaire est antisymétrique par rapport à l'axe des $y$. Par exemple, $\cos(x)$ est paire et $\sin(x)$ est impaire. 
+Dans plusieurs contextes, connaître la parité d'une fonction peut être utile afin de simplifier les calculs. On dit qu'une fonction $f(x)$ est paire si $f(-x) = f(x)$ et on dit qu'elle est impaire dans le cas où $f(-x) = -f(x)$. En d'autres mots, une fonction paire est symétrique par rapport à l'axe des $y$ et une fonction impaire est antisymétrique par rapport à l'axe des $y$. Par exemple, $\cos(x)$ est une fonction paire et $\sin(x)$ est une fonction impaire. 
 
 \begin{figure}[h!]
     \centering
@@ -8,6 +8,7 @@ Dans plusieurs contextes, connaître la parité d'une fonction peut être utile 
      \ \
      \includegraphics[width=0.48\textwidth]{images/ch1/sin.png}
     \caption{$\cos(x)$ (à gauche) et  $\sin(x)$ (à droite)}
+    \label{fig_cos_sin}
     \end{figure}
 
 Le produit de deux fonctions paires $f(x)$ et $g(x)$ donne aussi une fonction paire. En effet, si on note leur produit $h(x)$, alors
@@ -59,11 +60,11 @@ Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégra
 % Ainsi, $f(x)$ s'écrit comme la somme d'une fonction paire et d'une fonction impaire. Par ailleurs, cette décomposition est unique.
 
 \subsection{Fonction périodique}
-Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si $f(x + T) = f(x)$ où $T$ est la période. Autrement dit, une fonction périodique se répète après un temps $T$. Par exemple, $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques de période de $2\pi$. 
+Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si $f(x + T) = f(x)$ où $T$ est la période. Autrement dit, une fonction périodique se répète après un temps $T$. Par exemple, $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques avec une période de $2\pi$. 
 
 Une fonction périodique se caractérise aussi par sa fréquence $\mathcal{F}$, c'est-à-dire le nombre de répétitions de la fonction par unité de temps (en Hz). On obtient la fréquence par $\mathcal{F} = \frac{1}{T}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps. Par exemple, $\cos(x)$ et $\sin(x)$ ont les deux une fréquence de $\frac{1}{2\pi}$Hz. 
 
-Un autre type de fréquence pertinent est la fréquence angulaire $\omega$, soit le nombre de radians parcourus par unité de temps. Pour la trouver, on peut dire que 
+Une autre fréquence pertinente est la fréquence angulaire $\omega$, soit le nombre de radians parcourus par unité de temps. Pour la trouver, on peut dire que 
 
 \begin{equation*}
     \omega = \frac{\text{rad}}{\text{s}} = \frac{\text{rad}}{\text{nb rép.}}\frac{\text{nb rép.}}{\text{s}} = 2\pi \cdot \mathcal{F} = \frac{2\pi}{T}
@@ -75,6 +76,7 @@ Un résultat important pour l'intégrale d'une fonction périodique est que
 
 \begin{equation}
     \int_{0}^{T}f(x)dx = \int_{a}^{a+T}f(x)dx
+    \label{eq_int_sym}
 \end{equation}
 
 En effet,
@@ -86,13 +88,14 @@ En effet,
     = f(a) - f(a) = 0
 \end{equation*}
 
-Alors, l'intégrale qui vient d'être dérivée vaut la même chose peu importe la valeur de $a$, ce qui donne (1.1). Essentiellement, ce résultat nous dit que l'intégrale d'une fonction périodique est la même peu importe les bornes d'intégration tant que celles-ci sont séparées d'une période. Graphiquement, cela se voit en "déplaçant" un bout de l'intégrale (en vert à la figure 2).
+Alors, l'intégrale qui vient d'être dérivée vaut la même chose peu importe la valeur de $a$, ce qui donne (\ref{eq_int_sym}). Essentiellement, ce résultat nous dit que l'intégrale d'une fonction périodique est la même peu importe les bornes d'intégration tant que celles-ci sont séparées d'une période. Graphiquement, cela se voit en "déplaçant" un bout de l'intégrale.
 
 \begin{figure}[h!]
     \centering
      \includegraphics[width=0.5\textwidth]{images/ch1/integrale_periode.jpg}
-    \caption{Représentation graphique de l'équation (1.1)}
-    \end{figure}
+    \caption{Représentation graphique de l'équation (\ref{eq_int_sym})}
+    \label{fig_int_sym}    
+\end{figure}
 
 % \subsection{Fonctions orthogonales}
 % Pour deux vecteurs $\vec{u}$ et $\vec{v}$, ces derniers sont orthogonaux si leur produit scalaire est nul. 

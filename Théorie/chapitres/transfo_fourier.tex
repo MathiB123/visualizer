@@ -3,13 +3,14 @@
 Ce qu'on a vu jusqu'à maintenant fonctionne pour des fonctions périodiques, mais qu'arrive-t-il lorsqu'on tente d'étendre cela à des fonctions qui ne le sont pas? En d'autres mots, pour une fonction qui a une période infinie, comment se comportent nos précédentes trouvailles? Pour cela, il faut regarder dans la limite où $T \rightarrow \infty$. 
 
 \subsection{Dérivation}
-On commence par recopier (2.5) et (2.6) en changeant les bornes d'intégration pour (2.6), ce qu'on peut faire par (1.1).
+On commence par recopier (\ref{eq_serie_fourier_exp}) et (\ref{eq_coeffs_cn}) en changeant les bornes d'intégration pour (\ref{eq_coeffs_cn}), ce qu'on peut faire par (\ref{eq_int_sym}).
 
 \begin{equation}
     f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \ \text{ où } \ c_n = \frac{1}{T}\int_{-T/2}^{T/2}f(x)e^{-2\pi inx/T}dx
+    \label{eq_serie_fourier_exp_v2}
 \end{equation}
 
-Soit $\omega_n = \frac{2\pi n}{T}$ la fréquence angulaire de l'exponentielle complexe pour un $n$ donné. Alors, la différence entre deux $\omega_n$ successifs est $\Delta \omega_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$ puisque l'écart entre deux $n$ successifs est évidemment de 1. Dans la limite où $T \rightarrow \infty$, $\Delta \omega_n$ est infinitésimale et $\omega_n$ devient essentiellement une variable continue $\omega$. Sachant cela, on effectue quelques manipulations sur (3.1). D'abord,
+Soit $\omega_n = \frac{2\pi n}{T}$ la fréquence angulaire de l'exponentielle complexe pour un $n$ donné. Alors, la différence entre deux $\omega_n$ successifs est $\Delta \omega_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$ puisque l'écart entre deux $n$ successifs est évidemment de 1. Dans la limite où $T \rightarrow \infty$, $\Delta \omega_n$ est infinitésimale et $\omega_n$ devient essentiellement une variable continue $\omega$. Sachant cela, on effectue quelques manipulations sur (\ref{eq_serie_fourier_exp_v2}). D'abord,
 
 \begin{equation*}
     f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \cdot 1 = \sum_{n = -\infty}^{\infty}c_ne^{i\omega_nx} \Delta n = \sum_{n = -\infty}^{\infty}\left(c_n\frac{T}{2\pi}\right)e^{i\omega_nx}\Delta \omega_n  
@@ -22,19 +23,21 @@ Puis, dans la limite où la période est infinie, on a
 \end{equation*}
 \begin{equation}
     = \frac{1}{2\pi}\int_{-\infty}^{\infty}\left(\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx\right)e^{i\omega x}d\omega = \frac{1}{2\pi}\int_{-\infty}^{\infty}c(\omega)e^{i\omega x}d\omega 
+    \label{eq_TFI}
 \end{equation}
 
 où on pose 
 
 \begin{equation}
     c(\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+    \label{eq_TF}
 \end{equation}
 
-Comme auparavant, on trouve un coefficient $c(\omega)$ qui nous dit "combien" il y a de la fréquence $\omega$ dans $f(x)$. En fait, (3.3) va être ce qu'on appelle la transformée de Fourier (TF) de $f(x)$. D'un autre côté, (3.2) correspond à la transformée de Fourier inverse (TFI), parce qu'elle permet depuis les fréquences de reconstruire $f(x)$. C'est l'opération inverse de la TF, d'où son nom.
+Comme auparavant, on trouve un coefficient $c(\omega)$ qui nous dit "combien" il y a de la fréquence $\omega$ dans $f(x)$. En fait, (\ref{eq_TF}) va être ce qu'on appelle la transformée de Fourier (TF) de $f(x)$. D'un autre côté, (\ref{eq_TFI}) correspond à la transformée de Fourier inverse (TFI), parce qu'elle permet depuis les fréquences de reconstruire $f(x)$. C'est l'opération inverse de la TF, d'où son nom.
 
 Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques. En effet, on peut dire, par exemple, que $\sin(x)$ a une période de $4\pi$ ou $6\pi$. En poussant ce raisonnement à l'extrême, on peut dire que la période de $\sin(x)$ est infinie et donc la TF peut s'appliquer.
 
-Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. Dans ce cas, on aurait ce facteur devant (3.3) et il n'y aurait plus rien devant (3.2). En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
+Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. Dans ce cas, on aurait ce facteur devant (\ref{eq_TF}) et il n'y aurait plus rien devant (\ref{eq_TFI}). En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
 
 \subsection{Pulse rectangulaire}
 Soit un pulse rectangulaire qu'on définit par $\text{Rect}(x) = \begin{cases}
@@ -46,9 +49,10 @@ Soit un pulse rectangulaire qu'on définit par $\text{Rect}(x) = \begin{cases}
     \centering
         \includegraphics[width=0.55\textwidth]{images/ch3/pulse_rectangulaire.png}
     \caption{Pulse rectangulaire $(A = 5, d = 3)$}
+    \label{fig_pulse_rect}
     \end{figure}
 
-Par (3.3), 
+Par (\ref{eq_TF}), 
 
 \begin{equation*}
     c(\omega) = \int_{-\infty}^{\infty}\text{Rect}(x)e^{-i\omega x}dx = \int_{-d/2}^{d/2}Ae^{-i\omega x}dx = A\int_{-d/2}^{d/2}\left(\cos(\omega x) - i\sin(\omega x)\right)dx
@@ -61,6 +65,7 @@ Par (3.3),
     \centering
         \includegraphics[width=0.55\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
     \caption{Les premiers $c(\omega)$ pour le pulse rectangulaire ($A = 5, d = 3$)}
+    \label{fig_TF_pulse_rect}
     \end{figure}
 
 \begin{figure}[H]
@@ -68,9 +73,10 @@ Par (3.3),
         \includegraphics[width=0.48\textwidth]{images/ch3/magnitude.png}
         \includegraphics[width=0.48\textwidth]{images/ch3/phase.png}
     \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c(\omega)$ ($A = 5, d = 3$)}
+    \label{fig_magn_phase_pulse_rect}
     \end{figure}
 
-Par (3.2),
+Par (\ref{eq_TFI}),
 
 \begin{equation*}
     \text{Rect}(x) = \frac{A}{\pi}\int_{-\infty}^{\infty}\frac{\sin(\frac{d\omega}{2})}{\omega}e^{i\omega x}d\omega
@@ -90,6 +96,7 @@ Malgré les simplifications, calculer analytiquement cette dernière intégrale 
         \includegraphics[width=0.48\textwidth]{images/ch3/borne_5.png}
         \includegraphics[width=0.48\textwidth]{images/ch3/borne_10.png}
     \caption{TFI de Rect$(x)$ ($A=5, d=3$) avec bornes $[0, 5]$ (à gauche) et $[0, 10]$ (à droite)}
+    \label{fig_TFI_pulse_rect_1}
     \end{figure}
 
     \begin{figure}[H]
@@ -97,6 +104,7 @@ Malgré les simplifications, calculer analytiquement cette dernière intégrale 
             \includegraphics[width=0.48\textwidth]{images/ch3/borne_50.png}
             \includegraphics[width=0.48\textwidth]{images/ch3/borne_100.png}
         \caption{TFI de Rect$(x)$ ($A=5, d=3$) avec bornes $[0, 50]$ (à gauche) et $[0, 100]$ (à droite)}
+        \label{fig_TFI_pulse_rect_2}
         \end{figure}
 
 
