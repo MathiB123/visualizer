@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1749400511.44672 "main.aux" "main.bbl" "main" 1749400525.29421 0
+["bibtex main"] 1749410799.54597 "main.aux" "main.bbl" "main" 1749411221.13477 0
   "./refs.bib" 1749312074 4148 a3403025598d2e9e032e0efb0b6ef198 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1749400524 9197 13f129112b9cfb59b7e8225e765b3c82 "pdflatex"
+  "main.aux" 1749411220 9197 13f129112b9cfb59b7e8225e765b3c82 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1749400522.99249 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1749400525.29463 0
+["pdflatex"] 1749411218.84958 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Théorie/main.tex" "main.pdf" "main" 1749411221.13523 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1748619475 122748 1a7e4f5c810613044ecead90561e41bb ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1748619526 13159325 59431430e07c045ef70607460fe5d9ea ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -246,7 +246,7 @@
   "chapitres/dft.tex" 1748791680 7433 a05d96f2ec6740c01ce8c628af870c54 ""
   "chapitres/fonctions.tex" 1749392101 7637 03180f8b695a51f4b365a541689750d3 ""
   "chapitres/sampling.tex" 1748791738 1588 fc68437d04c76b601ff576e93c0334e6 ""
-  "chapitres/series_fourier.tex" 1749400522 15587 aa3fd06817209c58e8705ebb4fed91fd ""
+  "chapitres/series_fourier.tex" 1749411218 16580 6aa4ca626fbbdb5d8bfe9f4b067e0ed0 ""
   "chapitres/transfo_fourier.tex" 1748791045 6751 d06a1491002d9e48146b9c9251a41da9 ""
   "images/ch1/cos.png" 1734623232 19688 f19cbde4b176eef0ce6d1f5de93b1777 ""
   "images/ch1/integrale_periode.jpg" 1734625194 104152 8279802930523d4ae1ffc66da80974d5 ""
@@ -269,11 +269,11 @@
   "images/ch3/pulse_rectangulaire.png" 1745595531 10470 a2e3f8eb2664bbe080d9b9bfdf526d24 ""
   "images/ch4/echantillonage.png" 1746115600 15185 2e8b49abfda1bce671d56f4353949f94 ""
   "images/ch6/echantillonnage.jpg" 1743967298 51399 2af9af8c47dee85767e2d33a08be4ab6 ""
-  "main.aux" 1749400524 9197 13f129112b9cfb59b7e8225e765b3c82 "pdflatex"
-  "main.bbl" 1749400511 1537 8ac26dccdb78180d7a543b0c2f79c498 "bibtex main"
-  "main.out" 1749400524 4244 4620902af5c9a0dfece61d0119f6c8cb "pdflatex"
+  "main.aux" 1749411220 9197 13f129112b9cfb59b7e8225e765b3c82 "pdflatex"
+  "main.bbl" 1749410799 1537 8ac26dccdb78180d7a543b0c2f79c498 "bibtex main"
+  "main.out" 1749411220 4244 4620902af5c9a0dfece61d0119f6c8cb "pdflatex"
   "main.tex" 1748790612 2546 0e2eda16468ceede58b7f49672dba3e7 ""
-  "main.toc" 1749400524 2111 64435c2c5d8972beae7cd54c8d5ac071 "pdflatex"
+  "main.toc" 1749411220 2111 64435c2c5d8972beae7cd54c8d5ac071 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

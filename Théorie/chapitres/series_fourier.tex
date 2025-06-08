@@ -203,7 +203,7 @@ En remplaçant dans (\ref{eq_serie_fourier_trig}), on a la série de Fourier exp
     \label{eq_serie_fourier_exp}
 \end{equation}
 
-On définit 
+Ainsi, chaque fréquence survient en paire $\left(e^{2\pi inx/T}, e^{-2\pi inx/T}\right)$. Pour le moment, on définit 
 
 \begin{equation*}
     c_n = \begin{cases}
@@ -213,7 +213,7 @@ On définit
     \end{cases}
 \end{equation*}
 
-et on regarde chacun des cas possibles. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par (\ref{eq_coeff_a0}). 
+et on regarde chacun des cas possibles. Pour $n=0$, $c_0 = a_0$ dont on connaît la valeur par (\ref{eq_coeff_a0}). 
 
 \begin{equation*}
     a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi i x \cdot 0/T}dx
@@ -225,7 +225,7 @@ Pour $n\geq 1$, (\ref{eq_coeffs_an}) et (\ref{eq_coeffs_bn}) indiquent que
     \frac{a_n - ib_n}{2} = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{2\pi nx}{T}) - i\sin(\frac{2\pi nx}{T})\right)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
 \end{equation*}
 
-Dans le dernier cas, on trouve 
+Dans le dernier cas, on trouve avec (\ref{eq_coeffs_an}) et (\ref{eq_coeffs_bn}) que 
 
 \begin{equation*}
     \frac{a_{-n} + ib_{-n}}{2} = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{-2\pi nx}{T}) + i\sin(\frac{-2\pi nx}{T})\right)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
@@ -259,6 +259,15 @@ Donc, dans la forme exponentielle, la fonction en dents de scie correspond à
     f(x) = \sum_{n \neq 0}^{}(-1)^n\frac{iAT}{2\pi n}e^{2\pi inx/T}
 \end{equation*}
 
-Par la formule d'Euler, on retomberait exactement sur la série de Fourier trigonométrique trouvée auparavant.
+Par la formule d'Euler, on retomberait exactement sur la série de Fourier trigonométrique trouvée auparavant. Par ailleurs, on remarque que le spectre de magnitude est symétrique par rapport à l'origine tandis que le spectre de phase est antisymétrique par rapport à l'origine. Cela est dû au fait que, pour une fonction réelle comme la fonction en dents de scie,
 
+\begin{equation*}
+    f^*(x) = f(x) \iff \sum_{n=-\infty}^{\infty}c_n^*e^{-2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T} \iff \sum_{-n=-\infty}^{\infty}c_{-n}^*e^{2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T}
+\end{equation*}
+\begin{equation*}
+    \iff \sum_{n=-\infty}^{\infty}c_{-n}^*e^{2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T} \iff c_{-n}^* = c_n \iff c_{-n} = c_n^* \iff r_{-n}e^{i\theta_{-n}} = r_n e^{-i\theta_n}
+\end{equation*}
+\begin{equation*}
+    \iff r_{-n} = r_n \ \text{ et } \ \theta_{-n} = -\theta_n
+\end{equation*}
 
