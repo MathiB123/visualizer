@@ -122,14 +122,14 @@ Depuis le début, on intègre sur une période de 0 à $T$, ce qui semble être 
 
 De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients seront nuls. Effectivement, une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, leur produit est une fonction impaire. Si ensuite on déplace les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par (\ref{eq_int_sym}), l'intégrale pour les $b_n$ sera donc celle d'une fonction impaire sur un intervalle symétrique. On sait que cette intégrale sera nulle. Par un même raisonnement, une fonction impaire n'aura pas de termes $a_0$ et $a_n$ dans sa série de Fourier.
 
-Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères qui nous indiqueraient s'il est possible ou non de faire une telle opération. Pour l'instant, on assume que la manipulation est possible afin de progresser.
+Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères qui nous indiqueraient s'il est possible ou non de faire une telle opération. Comme on assume que les conditions de Dirichlet sont respectées, donc que les coefficients sont finis, il est possible de faire une telle manipulation.
 
 \subsection{Fonction en dents de scie}
 Soit $f(x) = Ax$ pour $-\frac{T}{2} \leq x < \frac{T}{2}$ de période $T$ où $A$ est une constante. On cherche à calculer sa série de Fourier.
 
 \begin{figure}[H]
     \centering
-     \includegraphics[width=0.4\textwidth]{images/ch2/exemple_scie.png}
+     \includegraphics[width=0.5\textwidth]{images/ch2/exemple_scie.png}
     \caption{La fonction en dents de scie ($A=2, T=2$)}
     \label{fig_scie}
     \end{figure}
@@ -147,7 +147,7 @@ Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il 
 
 \begin{figure}[H]
     \centering
-     \includegraphics[width=0.48\textwidth]{images/ch2/bn.png}
+     \includegraphics[width=0.6\textwidth]{images/ch2/bn.png}
     \caption{Les premiers $b_n$ de la fonction en dents de scie ($A=2, T=2$)}
     \label{fig_bn_scie}
     \end{figure}
@@ -172,14 +172,13 @@ Plus on incorpore de termes dans la série, plus elle se rapproche de la fonctio
 
 \begin{figure}[H]
     \centering
-     \includegraphics[width=0.44\textwidth]{images/ch2/scie_fourier.png}
-     \includegraphics[width=0.44\textwidth]{images/ch2/scie_fourier_2.png}
+     \includegraphics[width=0.48\textwidth]{images/ch2/scie_fourier.png}
+     \includegraphics[width=0.48\textwidth]{images/ch2/scie_fourier_2.png}
     \caption{Série de Fourier à 5 termes et à 25 termes de la fonction en dents de scie ($A=2, T=2$)}
     \label{fig_serie_fourier_scie}
     \end{figure}
 
-On voit que la série de Fourier converge très bien vers la fonction cible. D'ailleurs, par cet exemple, on voit qu'une fonction discontinue peut avoir une série de Fourier. Par contre, la figure \ref{fig_serie_fourier_scie} montre qu'un comportement étrange semble se produire aux discontinuités. En effet, on remarque de grandes oscillations près de ces points. Il s'agit du phénomène de Gibbs. De plus, comme ici on utilise des fonctions continues pour approximer une fonction discontinue, on peut s'intéresser à la valeur de la série de Fourier aux discontinuités. 
-% (c'est la moyenne de chaque côté de la discontinuité, à voir plus tard).
+On voit que la série de Fourier converge très bien vers la fonction cible sauf aux discontinuités, ce qui est normal sachant qu'on essaye ici de décrire une fonction discontinue par des fonctions continues. Près de ces discontinuités, on remarque de grandes oscillations correspondant au phénomène de Gibbs. De plus, on peut s'intéresser dans un tel cas à la valeur de la série de Fourier pour chaque discontinuité, qui est simplement la valeur moyenne de la fonction de part et d'autre de la discontinuité. 
 
 \subsection{Série de Fourier exponentielle}
 La série de Fourier trigonométrique peut être condensée grâce aux identités suivantes :
@@ -214,7 +213,7 @@ On définit
     \end{cases}
 \end{equation*}
 
-On regarde chacun des cas possibles. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par (\ref{eq_coeff_a0}). 
+et on regarde chacun des cas possibles. Pour $n=0$, cela reste $a_0$ dont on connaît la valeur par (\ref{eq_coeff_a0}). 
 
 \begin{equation*}
     a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi i x \cdot 0/T}dx
@@ -229,10 +228,7 @@ Pour $n\geq 1$, (\ref{eq_coeffs_an}) et (\ref{eq_coeffs_bn}) indiquent que
 Dans le dernier cas, on trouve 
 
 \begin{equation*}
-    \frac{a_{-n} + ib_{-n}}{2} = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{-2\pi nx}{T}) + i\sin(\frac{-2\pi nx}{T})\right)dx = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{2\pi nx}{T}) - i\sin(\frac{2\pi nx}{T})\right)dx
-\end{equation*}
-\begin{equation*}
-    = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
+    \frac{a_{-n} + ib_{-n}}{2} = \frac{1}{T}\int_{0}^{T}f(x)\left(\cos(\frac{-2\pi nx}{T}) + i\sin(\frac{-2\pi nx}{T})\right)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi inx/T}dx
 \end{equation*}
 
 Ainsi, dans tous les cas,
