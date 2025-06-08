@@ -12,9 +12,17 @@ Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourie
 
 où les $a_n$ et $b_n$ sont des coefficients.
 
-Essayons de faire sens de tout cela. D'abord, la présence des sinus et des cosinus a du sens, car on peut les voir comme les fonctions périodiques de base. Cependant, comme $f(x)$ a une période $T$, il faut aussi que cela soit le cas pour chaque terme dans la série. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, alors $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite. Ainsi, leur période est $\frac{2\pi}{T}$ fois plus courte, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (\ref{eq_serie_fourier_trig}) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$, ce qui ne concorde plus avec la période de $f(x)$. En fait, cela ne change rien, car une fonction de période $\frac{T}{n}$ va aussi se répéter après $T$ (on aura simplement plus d'oscillations). Au final, l'équation (\ref{eq_serie_fourier_trig}) est une combinaison de fonctions périodiques ayant une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
+Essayons de faire sens de tout cela. D'abord, la présence des sinus et des cosinus a du sens, car on peut les voir comme les fonctions périodiques de base. Cependant, comme $f(x)$ a une période $T$, il faut aussi que cela soit le cas pour chaque terme dans la série. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, alors $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (\ref{eq_serie_fourier_trig}) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$, ce qui ne concorde plus avec la période de $f(x)$. En fait, $\frac{T}{n}$ est la période fondamentale, mais, comme on le sait, ces sinus et cosinus se répètent aussi après $T$ qui est un multiple entier de la période fondamentale $\frac{T}{n}$. Au final, l'équation (\ref{eq_serie_fourier_trig}) est une combinaison de fonctions périodiques ayant une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
 
-Évidemment, rien ne garantit à priori que l'équation (\ref{eq_serie_fourier_trig}) est juste pour décrire $f(x)$. En fait, il existe des conditions pour que $f(x)$ puisse avoir une série de Fourier. Pour la suite, on assume que ces critères sont remplis.
+Évidemment, rien ne garantit à priori que l'équation (\ref{eq_serie_fourier_trig}) est juste pour décrire toute fonction périodique $f(x)$. En fait, il existe des conditions suffisantes, se nommant les conditions de Dirichlet, qui doivent être satisfaites en même temps afin que $f(x)$ puisse avoir une série de Fourier. 
+
+\begin{enumerate}
+    \item L'intégrale sur une période de $\abs{f(x)}$ converge. Cela permet aux coefficients $a_n$ et $b_n$ d'avoir une valeur finie.
+    \item Sur une période, il y a un nombre fini de maxima et de minima.
+    \item Sur une période, il y a un nombre fini de discontinuités et elles ont une amplitude finie.
+\end{enumerate}
+
+Physiquement, la très grande majorité des fonctions périodiques qu'on peut produire dans la vraie vie respectent ces conditions. Pour la suite, on assume que les conditions de Dirichlet sont satisfaites.
 
 \subsubsection{Quelques identités}
 Pour des entiers $n$ et $m$ dans $\mathbb{N}$, on souhaite calculer l'intégrale suivante :
@@ -49,6 +57,8 @@ Ainsi, dans tous les cas, l'intégrale de base est nulle. Avec des calculs simil
         \frac{T}{2} & \text{si $n = m$}
       \end{cases}     
 \end{equation*}
+
+On voit alors apparaître l'orthogonalité entre ces fonctions.
 
 \subsubsection{Calcul du coefficient $a_0$}
 On revient à l'équation (\ref{eq_serie_fourier_trig}) et on cherche d'abord à connaître la valeur du coefficient $a_0$. Pour y arriver, on peut simplement intégrer la fonction $f(x)$ sur une période. En effet,

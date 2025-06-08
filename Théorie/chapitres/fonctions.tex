@@ -60,17 +60,15 @@ Encore une fois, on a utilisé la substitution $t = -x$ et la somme des intégra
 % Ainsi, $f(x)$ s'écrit comme la somme d'une fonction paire et d'une fonction impaire. Par ailleurs, cette décomposition est unique.
 
 \subsection{Fonction périodique}
-Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si $f(x + T) = f(x)$ où $T$ est la période. Autrement dit, une fonction périodique se répète après un temps $T$. Par exemple, $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques avec une période de $2\pi$. 
+Une fonction $f(x)$ définie sur l'ensemble des réels est périodique si $f(x + T) = f(x)$ où $T$ est la période. Autrement dit, une fonction périodique se répète après un temps $T$. Par exemple, $\cos(x)$ et $\sin(x)$ sont des fonctions périodiques avec une période de $2\pi$. Cependant, il est aussi vrai que $f(x+nT) = f(x)$ pour tout entier $n$. C'est pourquoi on distingue $T_o$ comme étant la période fondamentale, c'est-à-dire le plus petit temps nécessaire afin de voir une répétition.
 
-Une fonction périodique se caractérise aussi par sa fréquence $\mathcal{F}$, c'est-à-dire le nombre de répétitions de la fonction par unité de temps (en Hz). On obtient la fréquence par $\mathcal{F} = \frac{1}{T}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps. Par exemple, $\cos(x)$ et $\sin(x)$ ont les deux une fréquence de $\frac{1}{2\pi}$Hz. 
-
-Une autre fréquence pertinente est la fréquence angulaire $\omega$, soit le nombre de radians parcourus par unité de temps. Pour la trouver, on peut dire que 
+Une fonction périodique se caractérise aussi par sa fréquence fondamentale $f_o$, soit le nombre de répétitions de la fonction par unité de temps. L'unité de fréquence est le hertz (Hz) dont 1Hz = 1s$^{-1}$ et les multiples d'une fréquence se nomment les harmoniques. On obtient la fréquence fondamentale par $f_o = \frac{1}{T_o}$, puisque cela permet de calculer le nombre de périodes (donc le nombre de répétitions) dans une unité de temps. Par exemple, $\cos(x)$ et $\sin(x)$ ont les deux une fréquence de $\frac{1}{2\pi}$Hz. D'ailleurs, une autre fréquence pertinente est la fréquence angulaire fondamentale $\omega_o$ qui correspond au nombre de radians parcourus par unité de temps. Pour la trouver, on peut dire que 
 
 \begin{equation*}
-    \omega = \frac{\text{rad}}{\text{s}} = \frac{\text{rad}}{\text{nb rép.}}\frac{\text{nb rép.}}{\text{s}} = 2\pi \cdot \mathcal{F} = \frac{2\pi}{T}
+    \omega_o = \frac{\text{rad}}{\text{s}} = \frac{\text{rad}}{\text{nb rép.}}\frac{\text{nb rép.}}{\text{s}} = 2\pi \cdot f_o = \frac{2\pi}{T_o}
 \end{equation*}
 
-car on fait le tour complet du cercle ($2\pi$ rad) à chaque cycle. Dès lors, les fonctions $\cos(x)$ et $\sin(x)$ ont une fréquence angulaire de 1 rad/s.
+car on fait un tour complet ($2\pi$ rad) à chaque cycle. Dès lors, les fonctions $\cos(x)$ et $\sin(x)$ ont une fréquence angulaire de 1 rad/s.
 
 Un résultat important pour l'intégrale d'une fonction périodique est que 
 

@@ -7,11 +7,11 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Quelques identités}{3}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Calcul du coefficient $a_0$}{4}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}Calcul des coefficients $a_n$}{4}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Calcul des coefficients $b_n$}{4}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.4}Calcul des coefficients $b_n$}{5}{subsubsection.2.1.4}%
 \contentsline {subsubsection}{\numberline {2.1.5}Les coefficients de la série de Fourier trigonométrique}{5}{subsubsection.2.1.5}%
 \contentsline {subsection}{\numberline {2.2}Fonction en dents de scie}{5}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Série de Fourier exponentielle}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Fonction en dents de scie V2}{8}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Fonction en dents de scie V2}{9}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Transformée de Fourier}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Dérivation}{10}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Pulse rectangulaire}{11}{subsection.3.2}%
