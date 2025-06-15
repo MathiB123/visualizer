@@ -33,21 +33,27 @@ où on pose
     \label{eq_TF}
 \end{equation}
 
-Comme auparavant, on trouve un coefficient $c(\omega)$ qui nous dit "combien" il y a de la fréquence $\omega$ dans $f(x)$. En fait, (\ref{eq_TF}) va être ce qu'on appelle la transformée de Fourier (TF) de $f(x)$. D'un autre côté, (\ref{eq_TFI}) correspond à la transformée de Fourier inverse (TFI), parce qu'elle permet depuis les fréquences de reconstruire $f(x)$. C'est l'opération inverse de la TF, d'où son nom.
+Comme auparavant, on trouve un coefficient $c(\omega)$ qui nous dit "combien" il y a de la fréquence $\omega$ dans $f(x)$. En fait, (\ref{eq_TF}) va être ce qu'on appelle la transformée de Fourier (TF) de $f(x)$. D'un autre côté, (\ref{eq_TFI}) correspond à la transformée de Fourier inverse (TFI), parce qu'elle permet depuis les fréquences de reconstruire $f(x)$. 
 
-Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques. En effet, on peut dire, par exemple, que $\sin(x)$ a une période de $4\pi$ ou $6\pi$. En poussant ce raisonnement à l'extrême, on peut dire que la période de $\sin(x)$ est infinie et donc la TF peut s'appliquer.
+Comme pour une série de Fourier, il existe des conditions pour qu'une TF soit juste. Naturellement, comme une TF est une extension d'une série de Fourier, on ne fait qu'étendre les conditions suffisantes vues précédemment.
 
-Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. Dans ce cas, on aurait ce facteur devant (\ref{eq_TF}) et il n'y aurait plus rien devant (\ref{eq_TFI}). En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
+\begin{enumerate}
+    \item $\int_{-\infty}^{\infty}\abs{f(x)}dx < \infty$.
+    \item Sur tout intervalle fini de $f(x)$, il y a un nombre fini d'extremums. 
+    \item Sur tout intervalle fini de $f(x)$, il y a un nombre fini de discontinuités et elles ont une amplitude finie.
+\end{enumerate}
+
+Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques ayant une série de Fourier, car une telle fonction se répète aussi à l'infini. Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. Dans ce cas, on aurait ce facteur devant (\ref{eq_TF}) et il n'y aurait plus rien devant (\ref{eq_TFI}). En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
 
 \subsection{Pulse rectangulaire}
-Soit un pulse rectangulaire qu'on définit par $\text{Rect}(x) = \begin{cases}
+Soit un pulse rectangulaire décrit par $\text{Rect}(x) = \begin{cases}
     A & \text{si } \abs{x} < d/2 \\
     0 & \text{sinon}
 \end{cases}$. 
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.55\textwidth]{images/ch3/pulse_rectangulaire.png}
+        \includegraphics[width=0.45\textwidth]{images/ch3/pulse_rectangulaire.png}
     \caption{Pulse rectangulaire $(A = 5, d = 3)$}
     \label{fig_pulse_rect}
     \end{figure}
@@ -63,7 +69,7 @@ Par (\ref{eq_TF}),
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.55\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
+        \includegraphics[width=0.45\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
     \caption{Les premiers $c(\omega)$ pour le pulse rectangulaire ($A = 5, d = 3$)}
     \label{fig_TF_pulse_rect}
     \end{figure}
@@ -76,20 +82,16 @@ Par (\ref{eq_TF}),
     \label{fig_magn_phase_pulse_rect}
     \end{figure}
 
+Là aussi, on peut montrer que $c(-\omega) = c^*(\omega) \iff r(-\omega)e^{i\theta(-\omega)} = r(\omega)e^{-i\theta(\omega)} \iff r(-\omega) = r(\omega) \ \text{ et } \ \theta(-\omega) = -\theta(\omega)$. Ainsi, le spectre de magnitude est symétrique par rapport à l'origine et le spectre de phase est antisymétrique par rapport à l'origine. À la figure \ref{fig_magn_phase_pulse_rect}, le spectre de phase n'a pas l'air antisymétrique, mais il l'est implicitement sachant que $e^{i\pi} = e^{-i\pi}$.
+
+
 Par (\ref{eq_TFI}),
 
 \begin{equation*}
-    \text{Rect}(x) = \frac{A}{\pi}\int_{-\infty}^{\infty}\frac{\sin(\frac{d\omega}{2})}{\omega}e^{i\omega x}d\omega
+    \text{Rect}(x) = \frac{A}{\pi}\int_{-\infty}^{\infty}\frac{\sin(\frac{d\omega}{2})}{\omega}e^{i\omega x}d\omega = \frac{2A}{\pi}\int_{0}^{\infty}\frac{\sin(\frac{d\omega}{2})\cos(\omega x)}{\omega}d\omega
 \end{equation*}
 
-Pour vérifier que cela tient, il faudrait évaluer l'intégrale, ce qui à priori ne semble pas simple du tout. En utilisant la formule d'Euler et la parité des fonctions en jeu, on trouve
-
-\begin{equation*}
-    \text{Rect}(x) = \frac{2A}{\pi}\int_{0}^{\infty}\frac{\sin(\frac{d\omega}{2})\cos(\omega x)}{\omega}d\omega
-\end{equation*}
-
-Malgré les simplifications, calculer analytiquement cette dernière intégrale ne semble pas facile. On peut l'approximer, par exemple, en prenant des bornes d'intégration $\left[0, b\right]$ qui tendent progressivement vers $[0, \infty)$. Les figures ci-dessous présentent cette approximation avec différentes bornes d'intégration. Naturellement, on voit que plus les bornes tendent vers $[0, \infty)$, plus on se rapproche du vrai pulse rectangulaire. 
-% Le notebook \lstinline|pulse_rectangulaire.ipynb| permet de jouer avec cet exemple. 
+en utilisant la formule d'Euler et la parité des fonctions en jeu. Pour vérifier que cela converge bien, il faudrait évaluer l'intégrale, ce qui ne semble pas facile à faire. On peut l'approximer, par exemple, en prenant des bornes d'intégration $\left[0, b\right]$ qui tendent progressivement vers $[0, \infty)$. Les figures ci-dessous présentent cette approximation avec différentes bornes d'intégration. Naturellement, on voit que plus les bornes tendent vers $[0, \infty)$, plus on se rapproche du vrai pulse rectangulaire. 
 
 \begin{figure}[H]
     \centering
