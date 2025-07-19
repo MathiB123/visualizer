@@ -1,6 +1,6 @@
 \newpage
 \section{Série de Fourier}
-Une série de Fourier est l'équivalent d'une série de Taylor pour les fonctions périodiques. Autrement dit, une série de Fourier a comme objectif d'écrire une fonction périodique raisonnable par une combinaison d'autres fonctions périodiques. Bien qu'on puisse se demander si cela fonctionne réellement, on peut se convaincre du moins que l'idée a un minimum de sens.
+Une série de Fourier est l'équivalent, en quelque sorte, d'une série de Taylor pour les fonctions périodiques. Autrement dit, une série de Fourier a comme objectif de décrire une fonction périodique raisonnable par une combinaison d'autres fonctions périodiques. Bien qu'on puisse se demander si cela fonctionne réellement, on peut se convaincre du moins que l'idée a un minimum de sens.
 
 \subsection{Série de Fourier trigonométrique}
 Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourier trigonométrique correspond à
@@ -12,12 +12,12 @@ Soit $f(x)$ une fonction périodique de période $T$. Alors, sa série de Fourie
 
 où les $a_n$ et $b_n$ sont des coefficients.
 
-Essayons de faire sens de tout cela. D'abord, la présence des sinus et des cosinus a du sens, car on peut les voir comme les fonctions périodiques de base. Cependant, comme $f(x)$ a une période $T$, il faut aussi que cela soit le cas pour chaque terme dans la série. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, alors $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (\ref{eq_serie_fourier_trig}) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$, ce qui ne concorde plus avec la période de $f(x)$. En fait, $\frac{T}{n}$ est la période fondamentale, mais, comme on le sait, ces sinus et cosinus se répètent aussi après $T$ qui est un multiple entier de la période fondamentale $\frac{T}{n}$. Au final, l'équation (\ref{eq_serie_fourier_trig}) est une combinaison de fonctions périodiques ayant une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
+Essayons de faire sens de tout cela. D'abord, la présence des sinus et des cosinus a du sens, car on peut les voir comme les fonctions périodiques les plus basiques. Cependant, comme $f(x)$ a une période $T$, il faut aussi que cela soit le cas pour chaque terme dans la série. Sachant que $\sin(x)$ et $\cos(x)$ ont une période de $2\pi$, alors $\sin(\frac{2\pi x}{T})$ et $\cos(\frac{2\pi x}{T})$ vont osciller $\frac{2\pi}{T}$ fois plus vite, ce qui leur donne une période de $2\pi \cdot \frac{T}{2\pi} = T$ comme on le souhaite. Par contre, on remarque que les sinus et cosinus dans (\ref{eq_serie_fourier_trig}) ont un $n$ en plus. Cela change leur période à $\frac{T}{n}$, ce qui ne concorde plus avec la période de $f(x)$. En fait, comme une fonction périodique se répète tout aussi bien après un multiple entier de sa période, les sinus et cosinus utilisés se répètent aussi après $T$ qui est un multiple entier de $\frac{T}{n}$. Au final, l'équation (\ref{eq_serie_fourier_trig}) est une combinaison de fonctions périodiques ayant une période $T$, ce qui a du sens sachant l'objectif d'une série de Fourier.
 
 Évidemment, rien ne garantit à priori que l'équation (\ref{eq_serie_fourier_trig}) est juste pour décrire toute fonction périodique $f(x)$. En fait, il existe des conditions suffisantes, se nommant les conditions de Dirichlet, qui doivent être satisfaites en même temps afin que $f(x)$ puisse avoir une série de Fourier. 
 
 \begin{enumerate}
-    \item L'intégrale sur une période de $\abs{f(x)}$ converge. Cela permet aux coefficients $a_n$ et $b_n$ d'avoir une valeur finie.
+    \item L'intégrale sur une période de $\abs{f(x)}$ converge.
     \item Sur une période, il y a un nombre fini de maxima et de minima.
     \item Sur une période, il y a un nombre fini de discontinuités et elles ont une amplitude finie.
 \end{enumerate}
@@ -122,7 +122,7 @@ Depuis le début, on intègre sur une période de 0 à $T$, ce qui semble être 
 
 De plus, selon la parité de $f(x)$, on peut tout de suite dire que certains coefficients seront nuls. Effectivement, une fonction paire aura tous ses coefficients $b_n$ égaux à 0. Cela est dû au fait que $f(x)$ est paire et que $\sin(\frac{2\pi nx}{T})$ est impaire. Donc, leur produit est une fonction impaire. Si ensuite on déplace les bornes d'intégration de $-\frac{T}{2}$ à $\frac{T}{2}$ par (\ref{eq_int_sym}), l'intégrale pour les $b_n$ sera donc celle d'une fonction impaire sur un intervalle symétrique. On sait que cette intégrale sera nulle. Par un même raisonnement, une fonction impaire n'aura pas de termes $a_0$ et $a_n$ dans sa série de Fourier.
 
-Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères qui nous indiqueraient s'il est possible ou non de faire une telle opération. Comme on assume que les conditions de Dirichlet sont respectées, donc que les coefficients sont finis, il est possible de faire une telle manipulation.
+Finalement, on a subtilement échangé la somme et l'intégrale lors du calcul des coefficients. Normalement, il existe des critères qui nous indiqueraient s'il est possible ou non de faire une telle opération. Comme on assume que les conditions de Dirichlet sont respectées, donc que la série de Fourier converge vers $f(x)$, il est possible de faire une telle manipulation.
 
 \subsection{Fonction en dents de scie}
 Soit $f(x) = Ax$ pour $-\frac{T}{2} \leq x < \frac{T}{2}$ de période $T$ où $A$ est une constante. On cherche à calculer sa série de Fourier.
@@ -147,20 +147,20 @@ Tout de suite, on voit que $f(x)$ est une fonction impaire. On sait alors qu'il 
 
 \begin{figure}[H]
     \centering
-     \includegraphics[width=0.6\textwidth]{images/ch2/bn.png}
+     \includegraphics[width=0.55\textwidth]{images/ch2/bn.png}
     \caption{Les premiers $b_n$ de la fonction en dents de scie ($A=2, T=2$)}
     \label{fig_bn_scie}
     \end{figure}
 
-On peut aussi les écrire selon leur spectre de magnitude $r_n$ et leur spectre de phase $\theta_n$ par $b_n = r_n e^{i\theta_n}$.
+% On peut aussi les écrire selon leur spectre de magnitude $r_n$ et leur spectre de phase $\theta_n$ par $b_n = r_n e^{i\theta_n}$.
 
-\begin{figure}[H]
-    \centering
-     \includegraphics[width=0.48\textwidth]{images/ch2/magnitude.png}
-     \includegraphics[width=0.48\textwidth]{images/ch2/phase.png}
-    \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $b_n$}
-    \label{fig_magn_phase_scie}
-    \end{figure}
+% \begin{figure}[H]
+%     \centering
+%      \includegraphics[width=0.48\textwidth]{images/ch2/magnitude.png}
+%      \includegraphics[width=0.48\textwidth]{images/ch2/phase.png}
+%     \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $b_n$}
+%     \label{fig_magn_phase_scie}
+%     \end{figure}
 
 Ainsi, la série de Fourier pour la fonction en dents de scie est 
 
@@ -187,7 +187,7 @@ La série de Fourier trigonométrique peut être condensée grâce aux identité
     \cos(x) = \frac{e^{ix} + e^{-ix}}{2}, \ \ \sin(x) = \frac{e^{ix} - e^{-ix}}{2i}
 \end{equation*}
 
-En remplaçant dans (\ref{eq_serie_fourier_trig}), on a la série de Fourier exponentielle.
+En remplaçant dans (\ref{eq_serie_fourier_trig}) et avec quelques manipulations, on a la série de Fourier exponentielle.
 
 \begin{equation*}
     f(x) = a_0 + \sum_{n=1}^{\infty}\left(a_n \frac{e^{2\pi inx/T} + e^{-2\pi inx/T}}{2} + b_n \frac{e^{2\pi inx/T} - e^{-2\pi inx/T}}{2i}\right)
@@ -203,7 +203,7 @@ En remplaçant dans (\ref{eq_serie_fourier_trig}), on a la série de Fourier exp
     \label{eq_serie_fourier_exp}
 \end{equation}
 
-Ainsi, chaque fréquence survient en paire $\left(e^{2\pi inx/T}, e^{-2\pi inx/T}\right)$. Pour le moment, on définit 
+Ainsi, chaque fréquence survient en paire $\left(e^{2\pi inx/T}, e^{-2\pi inx/T}\right)$ à cause de l'identité utilisée en début de section. Pour le moment, on définit 
 
 \begin{equation*}
     c_n = \begin{cases}
@@ -213,7 +213,7 @@ Ainsi, chaque fréquence survient en paire $\left(e^{2\pi inx/T}, e^{-2\pi inx/T
     \end{cases}
 \end{equation*}
 
-et on regarde chacun des cas possibles. Pour $n=0$, $c_0 = a_0$ dont on connaît la valeur par (\ref{eq_coeff_a0}). 
+et on simplifie en regardant chacun des cas possibles. Pour $n=0$, on a $c_0 = a_0$ dont on connaît la valeur par (\ref{eq_coeff_a0}). 
 
 \begin{equation*}
     a_0 = \frac{1}{T}\int_{0}^{T}f(x)dx = \frac{1}{T}\int_{0}^{T}f(x)e^{-2\pi i x \cdot 0/T}dx
@@ -245,29 +245,31 @@ On a calculé précédemment la série de Fourier trigonométrique de la fonctio
     c_n = \frac{1}{T}\int_{-T/2}^{T/2}Axe^{-2\pi inx/T}dx = \frac{A}{T}\int_{-T/2}^{T/2}xe^{-2\pi inx/T}dx = \underbrace{\dots}_\text{intégration par parties} = (-1)^n\frac{iAT}{2\pi n}
 \end{equation*} 
 
-\begin{figure}[H]
-    \centering
-     \includegraphics[width=0.48\textwidth]{images/ch2/magnitude_cn.png}
-     \includegraphics[width=0.48\textwidth]{images/ch2/phase_cn.png}
-    \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c_n$}
-    \label{fig_magn_phase_scie_exp}
-    \end{figure}
+% \begin{figure}[H]
+%     \centering
+%      \includegraphics[width=0.4\textwidth]{images/ch2/magnitude_cn.png}
+%      \includegraphics[width=0.4\textwidth]{images/ch2/phase_cn.png}
+%     \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c_n$}
+%     \label{fig_magn_phase_scie_exp}
+%     \end{figure}
 
-Donc, dans la forme exponentielle, la fonction en dents de scie correspond à 
+Donc, dans la forme exponentielle, la fonction en dents de scie s'écrit 
 
 \begin{equation*}
     f(x) = \sum_{n \neq 0}^{}(-1)^n\frac{iAT}{2\pi n}e^{2\pi inx/T}
 \end{equation*}
 
-Par la formule d'Euler, on retomberait exactement sur la série de Fourier trigonométrique trouvée auparavant. Par ailleurs, on remarque que le spectre de magnitude est symétrique par rapport à l'origine tandis que le spectre de phase est antisymétrique par rapport à l'origine. Cela est dû au fait que, pour une fonction réelle comme la fonction en dents de scie,
+Depuis cette dernière équation, par la formule d'Euler, on peut faire un peu d'algèbre afin de retomber exactement sur la série de Fourier trigonométrique trouvée auparavant. 
 
-\begin{equation*}
-    f^*(x) = f(x) \iff \sum_{n=-\infty}^{\infty}c_n^*e^{-2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T} \iff \sum_{-n=-\infty}^{\infty}c_{-n}^*e^{2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T}
-\end{equation*}
-\begin{equation*}
-    \iff \sum_{n=-\infty}^{\infty}c_{-n}^*e^{2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T} \iff c_{-n}^* = c_n \iff c_{-n} = c_n^* \iff r_{-n}e^{i\theta_{-n}} = r_n e^{-i\theta_n}
-\end{equation*}
-\begin{equation*}
-    \iff r_{-n} = r_n \ \text{ et } \ \theta_{-n} = -\theta_n
-\end{equation*}
+% Par ailleurs, on remarque que le spectre de magnitude est symétrique par rapport à l'origine tandis que le spectre de phase est antisymétrique par rapport à l'origine. Cela est dû au fait que, pour une fonction réelle comme la fonction en dents de scie,
+
+% \begin{equation*}
+%     f^*(x) = f(x) \iff \sum_{n=-\infty}^{\infty}c_n^*e^{-2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T} \iff \sum_{-n=-\infty}^{\infty}c_{-n}^*e^{2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T}
+% \end{equation*}
+% \begin{equation*}
+%     \iff \sum_{n=-\infty}^{\infty}c_{-n}^*e^{2\pi inx/T} = \sum_{n=-\infty}^{\infty}c_ne^{2\pi inx/T} \iff c_{-n}^* = c_n \iff c_{-n} = c_n^* \iff r_{-n}e^{i\theta_{-n}} = r_n e^{-i\theta_n}
+% \end{equation*}
+% \begin{equation*}
+%     \iff r_{-n} = r_n \ \text{ et } \ \theta_{-n} = -\theta_n
+% \end{equation*}
 

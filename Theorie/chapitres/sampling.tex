@@ -124,5 +124,8 @@ C'est ce qu'on appelle le théorème d'échantillonnage et, si respecté, il gar
 Grosso modo, la plage de fréquences audibles pour les humains va de 20Hz à 20kHz. Donc, selon (\ref{eq_nyquist_shannon}), il faut que la fréquence d'échantillonnage d'un son soit supérieure à 40kHz. Par contre, en pratique, un micro va aussi enregistrer des fréquences bien au-delà de ce qu'on peut entendre et le choix de $f_s = 40$kHz ne sera pas suffisant pour éviter les problèmes dus à l'\textit{aliasing}. En fait, dans les convertisseurs analogique à numérique, qui font l'échantillonnage du son, il y a un filtre qui coupe les fréquences en dehors de la plage audible des humains. Pour des raisons techniques, le filtre ne peut pas couper nettement les fréquences pile au-delà de 20kHz et il restera quand même des fréquences, certes atténuées, un peu au-dessus de 20kHz. Alors, pour contrer l'\textit{aliasing}, on prend une fréquence d'échantillonnage un peu plus grande dont le standard est 44.1kHz, 48kHz et bien d'autres.  
 
 \subsection{Quantification}
+Pour le moment, on échantillone le signal en gardant son amplitude exacte car il s'agit d'un signal.
+
+
 
 \subsection{Encodage}

@@ -10,7 +10,7 @@ On commence par recopier (\ref{eq_serie_fourier_exp}) et (\ref{eq_coeffs_cn}) en
     \label{eq_serie_fourier_exp_v2}
 \end{equation}
 
-Soit $\omega_n = \frac{2\pi n}{T}$ la fréquence angulaire de l'exponentielle complexe pour un $n$ donné. Alors, la différence entre deux $\omega_n$ successifs est $\Delta \omega_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$ puisque l'écart entre deux $n$ successifs est évidemment de 1. Dans la limite où $T \rightarrow \infty$, $\Delta \omega_n$ est infinitésimale et $\omega_n$ devient essentiellement une variable continue $\omega$. Sachant cela, on effectue quelques manipulations sur (\ref{eq_serie_fourier_exp_v2}). D'abord,
+Soit $\omega_n = \frac{2\pi n}{T}$ la fréquence angulaire de l'exponentielle complexe pour un $n$ donné. Alors, la différence entre deux $\omega_n$ successifs est $\Delta \omega_n = \frac{2\pi}{T}\Delta n = \frac{2\pi}{T}$. Dans la limite où $T \rightarrow \infty$, $\Delta \omega_n$ est infinitésimale et $\omega_n$ devient une variable continue $\omega$. Sachant cela, on effectue quelques manipulations sur (\ref{eq_serie_fourier_exp_v2}). D'abord, on peut dire que
 
 \begin{equation*}
     f(x) = \sum_{n = -\infty}^{\infty}c_ne^{2\pi inx/T} \cdot 1 = \sum_{n = -\infty}^{\infty}c_ne^{i\omega_nx} \Delta n = \sum_{n = -\infty}^{\infty}\left(c_n\frac{T}{2\pi}\right)e^{i\omega_nx}\Delta \omega_n  
@@ -46,7 +46,7 @@ Comme pour une série de Fourier, il existe des conditions pour qu'une TF soit j
     \item Sur tout intervalle fini de $f(x)$, il y a un nombre fini de discontinuités et elles ont une amplitude finie.
 \end{enumerate}
 
-Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques ayant une série de Fourier, car une telle fonction se répète aussi à l'infini. Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. Dans ce cas, on aurait ce facteur devant (\ref{eq_TF}) et il n'y aurait plus rien devant (\ref{eq_TFI}). En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
+Par ailleurs, bien que la TF soit à la base pour les fonctions qui ne sont pas périodiques, elle s'applique tout de même aux fonctions périodiques puisqu'elles se répètent techniquement aussi à l'infini. Finalement, le facteur $\frac{1}{2\pi}$ aurait pu être déplacé à l'intéreur de $c(\omega)$ si on le voulait. En fait, ce choix dépend des auteurs mais rien ne change mathématiquement.
 
 \subsection{Pulse rectangulaire}
 Soit un pulse rectangulaire décrit par $\text{Rect}(x) = \begin{cases}
@@ -56,7 +56,7 @@ Soit un pulse rectangulaire décrit par $\text{Rect}(x) = \begin{cases}
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.45\textwidth]{images/ch3/pulse_rectangulaire.png}
+        \includegraphics[width=0.5\textwidth]{images/ch3/pulse_rectangulaire.png}
     \caption{Pulse rectangulaire $(A = 5, d = 3)$}
     \label{fig_pulse_rect}
     \end{figure}
@@ -72,21 +72,20 @@ Par (\ref{eq_TF}),
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.45\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
+        \includegraphics[width=0.48\textwidth]{images/ch3/coeff_pulse_rectangulaire.png}
     \caption{Les premiers $c(\omega)$ pour le pulse rectangulaire ($A = 5, d = 3$)}
     \label{fig_TF_pulse_rect}
     \end{figure}
 
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=0.48\textwidth]{images/ch3/magnitude.png}
-        \includegraphics[width=0.48\textwidth]{images/ch3/phase.png}
-    \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c(\omega)$ ($A = 5, d = 3$)}
-    \label{fig_magn_phase_pulse_rect}
-    \end{figure}
+% \begin{figure}[H]
+%     \centering
+%         \includegraphics[width=0.48\textwidth]{images/ch3/magnitude.png}
+%         \includegraphics[width=0.48\textwidth]{images/ch3/phase.png}
+%     \caption{Spectre de magnitude (à gauche) et de phase (à droite) des premiers $c(\omega)$ ($A = 5, d = 3$)}
+%     \label{fig_magn_phase_pulse_rect}
+%     \end{figure}
 
-Là aussi, on peut montrer que $c(-\omega) = c^*(\omega) \iff r(-\omega)e^{i\theta(-\omega)} = r(\omega)e^{-i\theta(\omega)} \iff r(-\omega) = r(\omega) \ \text{ et } \ \theta(-\omega) = -\theta(\omega)$. Ainsi, le spectre de magnitude est symétrique par rapport à l'origine et le spectre de phase est antisymétrique par rapport à l'origine. À la figure \ref{fig_magn_phase_pulse_rect}, le spectre de phase n'a pas l'air antisymétrique, mais il l'est implicitement sachant que $e^{i\pi} = e^{-i\pi}$.
-
+% Là aussi, on peut montrer que $c(-\omega) = c^*(\omega) \iff r(-\omega)e^{i\theta(-\omega)} = r(\omega)e^{-i\theta(\omega)} \iff r(-\omega) = r(\omega) \ \text{ et } \ \theta(-\omega) = -\theta(\omega)$. Ainsi, le spectre de magnitude est symétrique par rapport à l'origine et le spectre de phase est antisymétrique par rapport à l'origine. À la figure \ref{fig_magn_phase_pulse_rect}, le spectre de phase n'a pas l'air antisymétrique, mais il l'est implicitement sachant que $e^{i\pi} = e^{-i\pi}$.
 
 Par (\ref{eq_TFI}),
 
@@ -112,4 +111,53 @@ en utilisant la formule d'Euler et la parité des fonctions en jeu. Pour vérifi
         \label{fig_TFI_pulse_rect_2}
         \end{figure}
 
+\subsection{Propriétés}
+La transformée de Fourier possède plusieurs propriétés qui peuvent grandement faciliter les calculs. En voici quelques unes.
+
+\subsubsection{Linéarité}
+Soient deux fonctions $f(x)$ et $g(x)$ ayant une TF ainsi que $a,b \in \mathbb{C}$. Alors,
+
+\begin{equation}
+    \text{TF}\left(af(x) + bg(x)\right) = a \text{TF}\left(f(x)\right) + b \text{TF}\left(g(x)\right)
+    \label{eq_linearite_TF}
+\end{equation}
+
+Preuve :
+
+\begin{equation*}
+    \text{TF}\left(af(x) + bg(x)\right) = \int_{-\infty}^{\infty}\left(af(x) + bg(x)\right)e^{-i\omega x}dx = a\int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx + b\int_{-\infty}^{\infty}g(x)e^{-i\omega x}dx
+\end{equation*}
+\begin{equation*}
+    = a \text{TF}\left(f(x)\right) + b \text{TF}\left(g(x)\right)
+\end{equation*}
+
+\subsubsection{Déplacement en temps/position}
+Soient une fonction $f(x)$ ayant une TF ainsi que $x_0 \in \mathbb{R}$. Alors,
+
+\begin{equation}
+    \text{TF}\left(f(x-x_0)\right) = e^{-i\omega x_0}\text{TF}\left(f(x)\right)
+    \label{eq_deplacement_temps_TF}
+\end{equation}
+
+Preuve :
+
+\begin{equation*}
+    \text{TF}\left(f(x-x_0)\right) = \int_{-\infty}^{\infty}f(x-x_0)e^{-i\omega x}dx = \int_{-\infty}^{\infty}f(x')e^{-i\omega (x'+x_0)}dx' = e^{-i\omega x_0}\int_{-\infty}^{\infty}f(x')e^{-i\omega x'} dx'
+\end{equation*}
+\begin{equation*}
+    = e^{-i\omega x_0}\text{TF}\left(f(x)\right)
+\end{equation*}
+
+\subsubsection{Déplacement du spectre de fréquences}
+Soient une fonction $f(x)$ ayant une TF ainsi que $\omega_0 \in \mathbb{R}$. Alors,
+
+\begin{equation}
+    \text{TF}\left(e^{i\omega_0 x}f(x)\right) = \text{TF}(f(x)) \text{ décalée de $\omega_0$ à gauche}
+\end{equation}
+
+Preuve : 
+
+\begin{equation*}
+    \text{TF}\left(e^{i\omega_0 x}f(x)\right) =  \int_{-\infty}^{\infty}e^{i\omega_0 x}f(x)e^{-i\omega x}dx = \int_{-\infty}^{\infty}f(x)e^{-i(\omega-\omega_0)x}dx = \text{TF}(f(x)) \text{ décalée de $\omega_0$ à gauche}
+\end{equation*}
 
