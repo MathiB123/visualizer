@@ -1,6 +1,6 @@
 \newpage
 \section{Transformée de Fourier discrète}
-Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, la prise de données ne peut se faire que de manière discrète.  Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise des données discrètes.
+Jusqu'à présent, les outils mathématiques exposés marchent bien, car on sait la forme exacte de la fonction d'intérêt. Cependant, lorsqu'on fait des expériences dans la vraie vie, il est impossible d'avoir autant d'informations. Par exemple, on aura des points au lieu d'une fonction analytique. Pour utiliser la TF dans ce contexte, ce qu'on nommera la transformée de Fourier discrète (TFD), il faudra la retravailler afin qu'elle utilise des données discrètes.
 
 \subsection{Delta de Dirac et propriété d'échantillonnage}
 Un delta de Dirac $\delta(x-x^*)$ est une "fonction" nulle partout sauf au point $x^*$ et dont $\int_{-\infty}^{\infty}\delta(x-x^*)dx = 1$. Par exemple, $\delta(x)$ est nulle partout sauf à l'origine. Naturellement, pour une fonction $f(x)$ quelconque, $f(x)\delta(x-x^*) = f(x^*)\delta(x-x^*)$. Dès lors, on remarque que 
@@ -44,7 +44,7 @@ Par la suite, on fait les hypothèses raisonnables qu'on commence les mesures au
     c(\omega) = \sum_{k=0}^{N-1}f(t_k)e^{-i\omega t_k} = \sum_{k=0}^{N-1}f(k\tau)e^{-i\omega k\tau}
 \end{equation*}
 
-Puis, il n'est pas vraiment nécessaire de regarder toutes les fréquences angulaires $\omega$. Par convivialité, comme on a $N$ échantillons, il serait pratique d'avoir $N$ fréquences angulaires à la sortie de la TFD. Pour y arriver, on peut faire comme si la suite de mesures étaient périodiques (ce que la fonction sous-jacente n'est pas nécessairement). Cela permet, à la même manière d'une série de Fourier, d'utiliser des fréquences angulaires discrètes. Ici, la période vaut $T = N\tau$, donc on remplace $\omega$ par $\frac{2\pi n}{T} = \frac{2\pi n}{N\tau}$ dans la dernière équation pour discrétiser la fréquence angulaire. On trouve 
+Puis, il n'est pas vraiment nécessaire de regarder toutes les fréquences angulaires $\omega$. Par convivialité, comme on a $N$ échantillons, il serait pratique d'avoir $N$ fréquences angulaires à la sortie de la TFD. Pour y arriver, on peut faire comme si la suite de mesures étaient périodiques (ce que la fonction sous-jacente n'est pas nécessairement). Cela permet, à la manière d'une série de Fourier, d'utiliser des fréquences angulaires discrètes. Ici, la période vaut $T = N\tau$, donc on remplace $\omega$ par $\frac{2\pi n}{T} = \frac{2\pi n}{N\tau}$ dans la dernière équation pour discrétiser la fréquence angulaire. On trouve 
 
 \begin{equation}
     c_n = \sum_{k=0}^{N-1}f(k\tau)e^{-i\frac{2\pi n}{N\tau}k\tau} = \sum_{k=0}^{N-1}f_ke^{-i\frac{2\pi}{N}nk}
@@ -100,7 +100,7 @@ Avec cela, il est facile de déduire que la TFD correspond simplement à un prod
     \end{bmatrix}
 \end{equation*}
 
-où $U = \left[W^{nk}\right]_{n,k=0}^{N-1}$. Pour faire la TFID, on a simplement à faire le produit entre $\frac{1}{N}$ fois le conjugué complexe de $U$ et le vecteur $\vec{c}$.
+où $U = \left[W^{nk}\right]_{n,k=0}^{N-1}$ est la matrice qui applique la TFD. Pour faire la TFID, on a simplement à faire le produit $\vec{c}$ et $\frac{1}{N}U^*$.
 
 \begin{equation*} 
     \begin{bmatrix}
@@ -124,4 +124,4 @@ où $U = \left[W^{nk}\right]_{n,k=0}^{N-1}$. Pour faire la TFID, on a simplement
     \end{bmatrix}
 \end{equation*}
 
-Grâce à la représentation matricielle, on voit qu'il y a un total de $N (N-1)$ additions/soustractions complexes à faire ainsi que $N^2$ multiplications complexes à réaliser autaut pour calculer la TFD que la TFID. En effet, il y a $N$ éléments à calculer demandant chacun $N$ multiplications complexes et $N-1$ additions/soustractions complexes. 
+Grâce à la représentation matricielle, on voit qu'il y a un total de $N (N-1)$ additions complexes à faire ainsi que $N^2$ multiplications complexes à réaliser autaut pour calculer la TFD que la TFID. En effet, il y a $N$ éléments à calculer demandant chacun $N$ multiplications complexes et $N-1$ additions complexes. 

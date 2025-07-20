@@ -62,22 +62,20 @@ import numpy as np
 
 
 
-x = np.arange(-20, 20, 1)
-y = np.zeros_like(x)
+# x = np.arange(-20, 20, 1)
+# y = np.zeros_like(x)
 
-for i,x_i in enumerate(x):
-    if x_i in [-18, -14, -2, 2, 14, 18]:
-        print(i)
-        y[i] = 1
-
-
-plt.stem(x,y)
-plt.xticks([-18, -16, -14, -2, 0, 2, 14, 16, 18])
-plt.yticks([])
-plt.xlabel("Fréquences (Hz)")
-plt.show()
+# for i,x_i in enumerate(x):
+#     if x_i in [-18, -14, -2, 2, 14, 18]:
+#         print(i)
+#         y[i] = 1
 
 
+# plt.stem(x,y)
+# plt.xticks([-18, -16, -14, -2, 0, 2, 14, 16, 18])
+# plt.yticks([])
+# plt.xlabel("Fréquences (Hz)")
+# plt.show()
 
 
 
