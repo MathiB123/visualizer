@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1753642968.69985 "main.aux" "main.bbl" "main" 1753642972.27382 0
+["bibtex main"] 1753643956.78066 "main.aux" "main.bbl" "main" 1753644342.11859 0
   "./refs.bib" 1749312074 4148 a3403025598d2e9e032e0efb0b6ef198 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1753642971 13388 5abcc653d90008e58a8a2ec2af35dbab "pdflatex"
+  "main.aux" 1753644341 13388 5abcc653d90008e58a8a2ec2af35dbab "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1753642968.98709 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Theorie/main.tex" "main.pdf" "main" 1753642972.27448 0
+["pdflatex"] 1753644338.98967 "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Theorie/main.tex" "main.pdf" "main" 1753644342.11923 0
   "C:/Users/mathi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1753290781 123599 87cc17b792b8d4a37cd4b6dde26c4c54 ""
   "C:/Users/mathi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1750682199 13235270 4b7db60529508b4bccd493c2650d3129 ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -247,7 +247,7 @@
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/mathi/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "c:/Users/mathi/OneDrive/Documents/uni/Personal_projects/visualizer/Theorie/main.tex" 1753041206 2504 fba06f5998fe57c9036ee4bb93d72db9 ""
-  "chapitres/dft.tex" 1753041606 7332 125fb65f4359c03e140fea2cb834113c ""
+  "chapitres/dft.tex" 1753644338 7203 cbb343315d023adb69e1b7db0b2a17ed ""
   "chapitres/fft.tex" 1743964951 10507 c330a167c60329498c9232d9159995fa ""
   "chapitres/fonctions.tex" 1752936127 7436 f4bbe3ed566e96e3ddeb8973e29c85c6 ""
   "chapitres/sampling.tex" 1753642964 12229 2bfc51ecdba2eeaf3b6c93e09ac89198 ""
@@ -279,11 +279,11 @@
   "images/ch6/filtre_echantillonnage.jpg" 1753023342 111100 afc482081d31a908e415d5bd7d46dc3a ""
   "images/ch6/quantification.png" 1753026617 15858 46c5c39258edcbd51d50136fd1db7f65 ""
   "images/ch6/superposition_2hz_18hz.png" 1751211131 64039 06fa467ac55b892040d2458525700d59 ""
-  "main.aux" 1753642971 13388 5abcc653d90008e58a8a2ec2af35dbab "pdflatex"
-  "main.bbl" 1753642968 1537 8ac26dccdb78180d7a543b0c2f79c498 "bibtex main"
-  "main.out" 1753642971 6686 d7caed4a4c4d69e61b31605d0f55a8b0 "pdflatex"
+  "main.aux" 1753644341 13388 5abcc653d90008e58a8a2ec2af35dbab "pdflatex"
+  "main.bbl" 1753643956 1537 8ac26dccdb78180d7a543b0c2f79c498 "bibtex main"
+  "main.out" 1753644341 6686 d7caed4a4c4d69e61b31605d0f55a8b0 "pdflatex"
   "main.tex" 1753041206 2504 fba06f5998fe57c9036ee4bb93d72db9 ""
-  "main.toc" 1753642971 3368 e85db83d4d4191a7971b0ebbfc72fd88 "pdflatex"
+  "main.toc" 1753644341 3368 e85db83d4d4191a7971b0ebbfc72fd88 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
