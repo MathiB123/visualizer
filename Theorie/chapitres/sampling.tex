@@ -62,13 +62,7 @@ et on peut ainsi calculer tous les alias possibles. Donc, dans l'exemple précé
 Quel est l'impact de l'échantillonnage sur le spectre de fréquences du signal à 2Hz? Normalement, après avoir appliqué la TF, on s'attend à uniquement deux pics à $\pm$2Hz. Cependant, à cause de l'échantillonnage, 
 
 \begin{equation*}
-    \text{TF}\left(\sum_{m=-\infty}^{\infty}\sin(2\pi \cdot 2 \cdot \frac{m}{16})\delta\left(t - \frac{m}{16}\right)\right) = \sum_{m=-\infty}^{\infty}\sin(2\pi \cdot 2 \cdot \frac{m}{16})e^{-i2\pi f\frac{m}{16}} \int_{-\infty}^{\infty}\delta\left(t - \frac{m}{16}\right)dt
-\end{equation*}
-\begin{equation*}
-    = \sum_{m=-\infty}^{\infty}\sin(2\pi \cdot 2 \cdot \frac{m}{16})e^{-i2\pi f\frac{m}{16}} \cdot 1 = \sum_{m=-\infty}^{\infty}\sin(2\pi \cdot 2 \cdot \frac{m}{16})e^{-i2\pi f\frac{m}{16}} \cdot \text{TF}\left(\delta(t)\right) 
-\end{equation*}
-\begin{equation*}
-    = \sum_{m=-\infty}^{\infty}\sin(2\pi \cdot 2 \cdot \frac{m}{16}) \cdot \text{TF}\left(\delta\left(t - \frac{m}{16}\right)\right) = \text{TF}\left(\sin(2\pi \cdot 2t)\sum_{m = -\infty}^{\infty}\delta\left(t - \frac{m}{16}\right)\right)
+    \text{TF}\left(\sum_{m=-\infty}^{\infty}\sin(2\pi \cdot 2 \cdot \frac{m}{16})\delta\left(t - \frac{m}{16}\right)\right) = \text{TF}\left(\sin(2\pi \cdot 2t)\sum_{m = -\infty}^{\infty}\delta\left(t - \frac{m}{16}\right)\right)
 \end{equation*}
 \begin{equation*}
     = \text{TF}\left(\sin(2\pi \cdot 2t)\cdot 16\sum_{m = -\infty}^{\infty}e^{i2\pi m\cdot 16t}\right) = 16\sum_{m=-\infty}^{\infty}\text{TF}\left(\sin(2\pi \cdot 2t) e^{i2\pi m\cdot 16t}\right)
@@ -77,16 +71,18 @@ Quel est l'impact de l'échantillonnage sur le spectre de fréquences du signal 
     = 16\sum_{m=-\infty}^{\infty}\text{TF}_{\text{déplacée par $16m$ sur l'axe des fréquences}}\left(\sin(2\pi \cdot 2t)\right)
 \end{equation*}
 
-où on a utilisé la propropriété de linéarité, de déplacement en temps et de déplacement en fréquences de la TF. De plus, on utilise la série de Fourier du peigne de Dirac et la TF du delta de Dirac. On voit alors des copies de la TF du signal à 2Hz ($\pm 2$Hz) à chaque multiple de la fréquence d'échantillonnage $f_s = 16$, c'est-à-dire là où se trouvent les alias. 
+où on a utilisé la propriété de linéarité et de déplacement en fréquences de la TF ainsi que la série de Fourier du peigne de Dirac. On voit alors des copies de la TF du signal à 2Hz ($\pm 2$Hz) à chaque multiple de la fréquence d'échantillonnage $f_s = 16$, c'est-à-dire là où se trouvent les alias. 
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.48\textwidth]{images/ch6/aliasing_2hz.png}
+        \includegraphics[width=0.5\textwidth]{images/ch6/aliasing_2hz.png}
     \caption{Effet de l'échantillonnage sur le spectre de fréquences du signal de 2Hz}
     \label{fig_copies_2hz}
     \end{figure}
 
 Si la fréquence d'échantillonnage était plus grande, les copies deviendraient de plus en plus espacées et, dans la limite où $f_s$ est infini, on obtiendrait la véritable TF du signal à 2Hz avec uniquement les fréquences $\pm$2Hz. Cela a du sens, car en échantillonnant davantage, il y a de moins en moins d'alias possibles du fait qu'on représente mieux le signal.
+
+
 
 Pour un signal échantillonné plus complexe ayant une plage limitée de fréquences entre $\pm f_{\text{max}}$, on voit ce même effet avec des copies plus ou moins espacées selon la fréquence d'échantillonnage (il suffit de généraliser la précédente dérivation).
 
@@ -121,7 +117,7 @@ Pour éviter tout recouvrement, on voit par les précédentes figures qu'il est 
 C'est ce qu'on appelle le théorème d'échantillonnage et, si respecté, il garantit que l'\textit{aliasing} ne causera aucun problème et que l'échantillonnage représente fidèlement le signal original dans la plage attendue de fréquences. De manière équivalente, on peut aussi dire que pour une fréquence d'échantillonnage $f_s$ donnée, la fréquence maximale qui ne subit pas les problèmes de l'\textit{aliasing} est $f_N = f_s / 2$ qu'on nomme la fréquence de Nyquist.
 
 \subsubsection{Échantillonnage de l'audio}
-Grosso modo, la plage de fréquences audibles pour les humains va de 20Hz à 20kHz. Donc, selon (\ref{eq_nyquist_shannon}), il faut que la fréquence d'échantillonnage d'un son soit supérieure à 40kHz. Par contre, en pratique, un micro va aussi enregistrer des fréquences bien au-delà de ce qu'on peut entendre et le choix de $f_s = 40$kHz ne sera pas suffisant pour éviter les problèmes dus à l'\textit{aliasing}. En fait, dans les convertisseurs analogique à numérique, qui font l'échantillonnage du son, il y a un filtre qui coupe les fréquences en dehors de la plage audible des humains avant de procéder à l'échantillonnage du signal. Pour des raisons techniques, le filtre ne peut pas couper nettement les fréquences pile au-delà de 20kHz et il restera quand même des fréquences, certes atténuées, un peu au-dessus de 20kHz avant qu'elles soient ensuite complètement bloquées. Alors, pour s'adapter à cette nouvelle plage, on doit prendre une fréquence d'échantillonnage un peu plus grande que 20kHz dont le standard est 44.1kHz, 48kHz et bien d'autres selon les applications.  
+Grosso modo, la plage de fréquences audibles pour les humains va de 20Hz à 20kHz. Donc, selon (\ref{eq_nyquist_shannon}), il faut que la fréquence d'échantillonnage d'un son soit supérieure à 40kHz. Par contre, en pratique, un micro va aussi enregistrer des fréquences bien au-delà de ce qu'on peut entendre et le choix de $f_s = 40$kHz ne sera pas suffisant pour éviter les problèmes dus à l'\textit{aliasing}. En fait, dans les convertisseurs analogique à numérique, qui font l'échantillonnage du son, il y a un filtre qui coupe les fréquences en dehors de la plage audible des humains avant de procéder à l'échantillonnage du signal. Pour des raisons techniques, le filtre ne peut pas couper nettement les fréquences pile au-delà de 20kHz et il restera quand même des fréquences, certes atténuées, un peu au-dessus de 20kHz avant qu'elles soient ensuite complètement bloquées. Alors, pour s'adapter à cette nouvelle plage, on doit prendre une fréquence d'échantillonnage un peu plus grande que 20kHz dont les standards sont 44.1kHz, 48kHz et bien d'autres selon les applications.  
 
 \begin{figure}[H]
     \centering
@@ -138,6 +134,6 @@ Pour la quantification, il est possible de choisir des \textit{ints} ou des \tex
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.3\textwidth]{images/ch6/quantification.png}
-    \caption{Quantification d'un signal}
+    \caption{Quantification d'un signal sur 3 bits}
     \label{fig_quantification}
     \end{figure}
